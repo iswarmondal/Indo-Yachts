@@ -15,6 +15,52 @@
 	--box-shadow:
 		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px
 		rgba(var(--gray), 33%);
+
+	/* Indo Yachts — Brand Colors */
+	--oxblood: #953334;
+	--oxblood-deep: #722728;
+	--oxblood-dark: #5C1F20;
+
+	/* Neutrals */
+	--iy-white: #FFFFFF;
+	--snow: #FAFAFA;
+	--mist: #E8E8E8;
+	--silver: #9A9A9A;
+	--pewter: #6B6B6B;
+	--slate: #4A4A4A;
+	--charcoal: #1A1A1A;
+
+	/* Expedition Palette */
+	--deep-sea: #0A1628;
+	--abyss: #061018;
+	--lagoon: #2B9E8F;
+	--reef: #1E7A6D;
+	--gold-muted: #B8A878;
+
+	/* Typography Scale (16px base) */
+	--text-xs: 9px;
+	--text-sm: 11px;
+	--text-base: 13px;
+	--text-md: 16px;
+	--text-lg: 18px;
+	--text-xl: 22px;
+	--text-2xl: 28px;
+	--text-3xl: 36px;
+	--text-4xl: 56px;
+	--text-5xl: 72px;
+
+	/* Spacing */
+	--space-xs: 8px;
+	--space-sm: 16px;
+	--space-md: 32px;
+	--space-lg: 64px;
+	--space-xl: 96px;
+	--space-2xl: 128px;
+	--space-3xl: 192px;
+
+	/* Font Families */
+	--font-serif: 'Cormorant Garamond', Georgia, serif;
+	--font-sans: 'Manrope', sans-serif;
 }
 @font-face {
 	font-family: "Atkinson";

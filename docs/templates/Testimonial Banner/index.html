@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials | Indo Yachts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --oxblood: #953334;
+            --deep-sea: #0A1628;
+            --deep-sea-light: #0F1E33;
+            --white: #FFFFFF;
+            --cream: #F8F6F3;
+            --gold: #C9B97A;
+            --gold-muted: #B8A878;
+            --silver: #8A8A8A;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: var(--cream);
+            color: var(--deep-sea);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            height: 80px;
+            background: var(--deep-sea-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Manrope', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+        }
+
+        /* =====================================================
+           TESTIMONIALS - OPTION 1: Single Featured Quote
+           Dark background, centered, elegant
+           ===================================================== */
+        .testimonials-1 {
+            background: var(--deep-sea);
+            padding: 140px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-1__decoration {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 240px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.02);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .testimonials-1__container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonials-1__eyebrow {
+            font-family: 'Manrope', sans-serif;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-muted);
+            margin-bottom: 48px;
+        }
+
+        .testimonials-1__quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--white);
+            line-height: 1.5;
+            margin-bottom: 48px;
+        }
+
+        .testimonials-1__attribution {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .testimonials-1__yacht {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--white);
+            letter-spacing: 0.02em;
+        }
+
+        .testimonials-1__location {
+            font-family: 'Manrope', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--white);
+            opacity: 0.4;
+            letter-spacing: 0.05em;
+        }
+
+        /* =====================================================
+           TESTIMONIALS - OPTION 3: Horizontal Slider Style
+           Dark with image accent
+           ===================================================== */
+        .testimonials-3 {
+            background: var(--deep-sea);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+        }
+
+        .testimonials-3__image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-3__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonials-3__content {
+            padding: 80px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .testimonials-3__eyebrow {
+            font-family: 'Manrope', sans-serif;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-muted);
+            margin-bottom: 40px;
+        }
+
+        .testimonials-3__quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--white);
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+
+        .testimonials-3__attribution {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .testimonials-3__divider-line {
+            width: 40px;
+            height: 1px;
+            background: var(--gold-muted);
+        }
+
+        .testimonials-3__details {}
+
+        .testimonials-3__yacht {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .testimonials-3__location {
+            font-family: 'Manrope', sans-serif;
+            font-size: 11px;
+            font-weight: 400;
+            color: var(--white);
+            opacity: 0.45;
+            letter-spacing: 0.04em;
+        }
+
+        .testimonials-3__nav {
+            display: flex;
+            gap: 16px;
+        }
+
+        .testimonials-3__nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .testimonials-3__nav-dot--active {
+            background: var(--gold-muted);
+        }
+
+        /* =====================================================
+           TESTIMONIALS - OPTION 4: Minimal Single Quote
+           White background, ultra clean
+           ===================================================== */
+        .testimonials-4 {
+            background: var(--white);
+            padding: 140px 80px;
+        }
+
+        .testimonials-4__container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonials-4__quote-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 80px;
+            font-weight: 300;
+            color: var(--oxblood);
+            line-height: 0.5;
+            margin-bottom: 40px;
+            opacity: 0.2;
+        }
+
+        .testimonials-4__quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--deep-sea);
+            line-height: 1.55;
+            margin-bottom: 48px;
+        }
+
+        .testimonials-4__divider {
+            width: 48px;
+            height: 1px;
+            background: var(--gold-muted);
+            margin: 0 auto 32px;
+        }
+
+        .testimonials-4__yacht {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--deep-sea);
+            margin-bottom: 8px;
+        }
+
+        .testimonials-4__location {
+            font-family: 'Manrope', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--silver);
+            letter-spacing: 0.05em;
+        }
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
+        @media (max-width: 1100px) {
+            .testimonials-1 { padding: 100px 48px; }
+            .testimonials-1__quote { font-size: 26px; }
+            
+            .testimonials-3 { grid-template-columns: 1fr; }
+            .testimonials-3__image { height: 400px; }
+            .testimonials-3__content { padding: 64px 48px; }
+            
+            .testimonials-4 { padding: 100px 48px; }
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-1 { padding: 80px 28px; }
+            .testimonials-1__quote { font-size: 22px; }
+            .testimonials-1__decoration { font-size: 160px; }
+            
+            .testimonials-3__image { height: 300px; }
+            .testimonials-3__content { padding: 48px 28px; }
+            .testimonials-3__quote { font-size: 22px; }
+            
+            .testimonials-4 { padding: 80px 28px; }
+            .testimonials-4__quote { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="section-divider">Option 1: Featured Quote (Dark Background)</div>
+
+    <!-- =====================================================
+         TESTIMONIALS - OPTION 1: Single Featured Quote
+         ===================================================== -->
+    <section class="testimonials-1">
+        <div class="testimonials-1__decoration">"</div>
+        <div class="testimonials-1__container">
+            <div class="testimonials-1__eyebrow">Guest Experiences</div>
+            <blockquote class="testimonials-1__quote">
+                "From the moment the RIB approached Dunia Baru, the whole family were in awe. This is not just one of the most beautiful vessels in Asian waters, it is also the most attentively cared for. The attention to detail was immediately apparent. The pride that the team take in getting every detail polished and prepared for guests is a tribute to their love of this yacht."
+            </blockquote>
+            <div class="testimonials-1__attribution">
+                <span class="testimonials-1__yacht">Dunia Baru Charter Guest</span>
+                <span class="testimonials-1__location">London, United Kingdom</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider">Option 3: Image + Quote Split</div>
+
+    <!-- =====================================================
+         TESTIMONIALS - OPTION 3: Horizontal Split
+         ===================================================== -->
+    <section class="testimonials-3">
+        <div class="testimonials-3__image">
+            <img src="Dunia_Baru-11.jpg" alt="Dunia Baru yacht deck">
+        </div>
+        <div class="testimonials-3__content">
+            <div class="testimonials-3__eyebrow">Guest Experiences</div>
+            <blockquote class="testimonials-3__quote">
+                "If only every day was a day aboard Dunia Baru. The crew has done above and beyond the call of duty to make sure that we all felt incredibly well taken care of. I don't know how to thank everyone!"
+            </blockquote>
+            <div class="testimonials-3__attribution">
+                <div class="testimonials-3__divider-line"></div>
+                <div class="testimonials-3__details">
+                    <span class="testimonials-3__yacht">Dunia Baru Charter Guest</span>
+                    <span class="testimonials-3__location">London, United Kingdom</span>
+                </div>
+            </div>
+            <div class="testimonials-3__nav">
+                <div class="testimonials-3__nav-dot testimonials-3__nav-dot--active"></div>
+                <div class="testimonials-3__nav-dot"></div>
+                <div class="testimonials-3__nav-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider">Option 4: Minimal (White Background)</div>
+
+    <!-- =====================================================
+         TESTIMONIALS - OPTION 4: Minimal Single Quote
+         ===================================================== -->
+    <section class="testimonials-4">
+        <div class="testimonials-4__container">
+            <div class="testimonials-4__quote-mark">"</div>
+            <blockquote class="testimonials-4__quote">
+                "Raja Ampat is the most beautiful place I've ever visited, and our trip was made even better by being on board Rascal. Everything—the gorgeous interiors, delicious meals, the friendly crew, the amazing activities—exceeded our expectations. We'll definitely be back."
+            </blockquote>
+            <div class="testimonials-4__divider"></div>
+            <span class="testimonials-4__yacht">Rascal Charter Guest</span>
+            <span class="testimonials-4__location">Singapore</span>
+        </div>
+    </section>
+
+</body>
+</html>
