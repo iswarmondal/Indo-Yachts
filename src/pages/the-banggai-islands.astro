@@ -1,9 +1,48 @@
 ---
 import Header from "../components/Header.astro";
+import BaseHead from "../components/BaseHead.astro";
 ---
 
-<style>
+<head>
+  <BaseHead />
+</head>
 
+<style>
+  :root {
+    --oxblood: #953334;
+    --oxblood-deep: #722728;
+    --oxblood-light: #a84445;
+    --deep-sea: #0a1628;
+    --deep-sea-light: #142238;
+    --white: #ffffff;
+    --snow: #fafafa;
+    --cream: #f8f6f3;
+    --sand: #e8e4de;
+    --charcoal: #1a1a1a;
+    --slate: #4a4a4a;
+    --silver: #9a9a9a;
+    --gold-muted: #b8a878;
+    --peak: #2d6a4f;
+    --shoulder: #c17f24;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: "Manrope", sans-serif;
+    background: var(--white);
+    color: var(--charcoal);
+  }
   /* ════════════════════════════════════════════════════════════════
        HERO - CONCEPT B EDITORIAL FRAME
        ════════════════════════════════════════════════════════════════ */
@@ -276,7 +315,7 @@ import Header from "../components/Header.astro";
   }
 
   /* ════════════════════════════════════════════════════════════════
-       OVERVIEW — TEXT + IMAGE
+       OVERVIEW - TEXT + IMAGE
        ════════════════════════════════════════════════════════════════ */
   .overview-grid {
     display: grid;
@@ -731,7 +770,7 @@ import Header from "../components/Header.astro";
   }
 
   /* ════════════════════════════════════════════════════════════════
-       REGIONS — THE FOUR KINGDOMS
+       REGIONS - THE FOUR KINGDOMS
        ════════════════════════════════════════════════════════════════ */
   .region-grid {
     display: grid;
@@ -947,7 +986,7 @@ import Header from "../components/Header.astro";
   }
 
   /* ════════════════════════════════════════════════════════════════
-       BIODIVERSITY — Horizontal Cards
+       BIODIVERSITY - Horizontal Cards
        ════════════════════════════════════════════════════════════════ */
   .bio-grid {
     display: grid;
@@ -1192,7 +1231,7 @@ import Header from "../components/Header.astro";
   }
 
   /* ════════════════════════════════════════════════════════════════
-       SEASON CHART — With Color Coding
+       SEASON CHART - With Color Coding
        ════════════════════════════════════════════════════════════════ */
   .season-wrapper {
     background: var(--white);
@@ -1501,7 +1540,7 @@ import Header from "../components/Header.astro";
   }
 
   /* ════════════════════════════════════════════════════════════════
-       INSIDER KNOWLEDGE — Gold Bar on Top
+       INSIDER KNOWLEDGE - Gold Bar on Top
        ════════════════════════════════════════════════════════════════ */
   .insider-grid {
     display: grid;
@@ -1567,7 +1606,7 @@ import Header from "../components/Header.astro";
   }
 
   /* ════════════════════════════════════════════════════════════════
-       ITINERARY CARDS — Exact Match to Itineraries Page
+       ITINERARY CARDS - Exact Match to Itineraries Page
        ════════════════════════════════════════════════════════════════ */
   .itin-grid {
     display: grid;
@@ -1732,7 +1771,7 @@ import Header from "../components/Header.astro";
   }
 
   /* ════════════════════════════════════════════════════════════════
-       YACHT CARDS — Exact Match to Yachts Page
+       YACHT CARDS - Exact Match to Yachts Page
        ════════════════════════════════════════════════════════════════ */
   .yacht-grid {
     display: grid;
@@ -1851,7 +1890,7 @@ import Header from "../components/Header.astro";
   }
 
   /* ════════════════════════════════════════════════════════════════
-       DESTINATION CARDS — Exact Match to Destinations Page
+       DESTINATION CARDS - Exact Match to Destinations Page
        ════════════════════════════════════════════════════════════════ */
   .dest-grid {
     display: grid;
@@ -2487,7 +2526,9 @@ import Header from "../components/Header.astro";
         <span class="hero__eyebrow-text">Central Sulawesi, Indonesia</span>
       </div>
       <h1 class="hero__title">The Banggai Islands</h1>
-      <p class="hero__tagline">A realistic guide to Sulawesi's fragile archipelago</p>
+      <p class="hero__tagline">
+        A realistic guide to Sulawesi's fragile archipelago
+      </p>
     </div>
     <div class="hero__scroll">
       <span class="hero__scroll-text">Scroll</span>
@@ -2506,7 +2547,7 @@ import Header from "../components/Header.astro";
         <div class="info-footer__label">Two Main Island Groups</div>
       </div>
       <div class="info-footer__item">
-        <div class="info-footer__value">Sept – Nov</div>
+        <div class="info-footer__value">Sept - Nov</div>
         <div class="info-footer__label">Ideal Season</div>
       </div>
       <div class="info-footer__item">
@@ -2518,7 +2559,7 @@ import Header from "../components/Header.astro";
 </section>
 
 <!-- ════════════════════════════════════════════════════════════════
-       OVERVIEW — THE BANGGAI ISLANDS
+       OVERVIEW - THE BANGGAI ISLANDS
        ════════════════════════════════════════════════════════════════ -->
 <section id="overview" class="section section--white">
   <div class="section__inner">
@@ -2527,27 +2568,49 @@ import Header from "../components/Header.astro";
         <h2>A Realistic Guide to Sulawesi's Fragile Archipelago</h2>
 
         <p>
-          The wooden boat smelled of clove cigarettes and dried fish, a scent that seems to permeate every harbor in Sulawesi. We were sitting on plastic stools on the open deck of a public ferry leaving Luwuk, watching the mainland fade into a haze of humidity. Ahead of us lay the Banggai Archipelago, a cluster of islands that has recently drifted into the peripheral vision of the adventurous travel circuit.
+          The wooden boat smelled of clove cigarettes and dried fish, a scent
+          that seems to permeate every harbor in Sulawesi. We were sitting on
+          plastic stools on the open deck of a public ferry leaving Luwuk,
+          watching the mainland fade into a haze of humidity. Ahead of us lay
+          the Banggai Archipelago, a cluster of islands that has recently
+          drifted into the peripheral vision of the adventurous travel circuit.
         </p>
 
         <p>
-          Most people come here for one reason: <strong>Lake Paisupok</strong>. You have likely seen the photos—a body of water so glassy and distinctively blue that it looks like a swimming pool dropped into a jungle. It is the image that launched a thousand Instagram saves.
+          Most people come here for one reason: <strong>Lake Paisupok</strong>.
+          You have likely seen the photos-a body of water so glassy and
+          distinctively blue that it looks like a swimming pool dropped into a
+          jungle. It is the image that launched a thousand Instagram saves.
         </p>
 
         <p>
-          But the reality of the Banggai Islands is far more complex, and far less polished, than a single drone shot suggests. This is not the next Raja Ampat, nor is it a bite-sized version of Bali. It is a <strong>remote regency in Central Sulawesi</strong> where tourism is still an awkward, fledgling concept. Infrastructure is brittle. English is rarely spoken. The electricity grid is a part-time participant in daily life.
+          But the reality of the Banggai Islands is far more complex, and far
+          less polished, than a single drone shot suggests. This is not the next
+          Raja Ampat, nor is it a bite-sized version of Bali. It is a <strong
+            >remote regency in Central Sulawesi</strong
+          > where tourism is still an awkward, fledgling concept. Infrastructure is
+          brittle. English is rarely spoken. The electricity grid is a part-time participant
+          in daily life.
         </p>
 
         <p>
-          We spent two weeks moving between Peleng, Banggai Laut, and the smaller satellites. We found a region of quiet beauty and frustrating logistics. It is a place where you might swim in the clearest water of your life in the morning and spend the afternoon stranded on a roadside because a petrol station ran dry.
+          We spent two weeks moving between Peleng, Banggai Laut, and the
+          smaller satellites. We found a region of quiet beauty and frustrating
+          logistics. It is a place where you might swim in the clearest water of
+          your life in the morning and spend the afternoon stranded on a
+          roadside because a petrol station ran dry.
         </p>
 
         <p>
-          If you are patient, self-sufficient, and willing to trade comfort for silence, the Banggai Islands are remarkable. If you are looking for seamless transfers and air-conditioned cafes, you should probably stop reading here.
+          If you are patient, self-sufficient, and willing to trade comfort for
+          silence, the Banggai Islands are remarkable. If you are looking for
+          seamless transfers and air-conditioned cafes, you should probably stop
+          reading here.
         </p>
 
         <p>
-          This guide is a documentation of how we did it, what went wrong, and what we would do differently.
+          This guide is a documentation of how we did it, what went wrong, and
+          what we would do differently.
         </p>
       </div>
 
@@ -2557,21 +2620,24 @@ import Header from "../components/Header.astro";
           alt="Islands of the Banggai Archipelago, Central Sulawesi"
         />
         <p class="overview__image-caption">
-          The Banggai Archipelago—quiet beauty and challenging logistics
+          The Banggai Archipelago-quiet beauty and challenging logistics
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURED QUOTE — Full Width -->
+<!-- FEATURED QUOTE - Full Width -->
 <section class="featured-quote">
   <div class="featured-quote__inner">
     <p class="featured-quote__text">
-      "If you are patient, self-sufficient, and willing to trade comfort for silence, the Banggai Islands are remarkable. In exchange, they offer glimpses of a world that feels untouched, even if the edges are starting to fray."
+      "If you are patient, self-sufficient, and willing to trade comfort for
+      silence, the Banggai Islands are remarkable. In exchange, they offer
+      glimpses of a world that feels untouched, even if the edges are starting
+      to fray."
     </p>
     <span class="featured-quote__attribution"
-      >— From the road: a traveller's reflection on the Banggai Islands</span
+      >- From the road: a traveller's reflection on the Banggai Islands</span
     >
   </div>
 </section>
@@ -2584,15 +2650,36 @@ import Header from "../components/Header.astro";
         <h3>Understanding the Destination</h3>
 
         <p>
-          <strong>Geography and Layout:</strong> The archipelago is split into two main administrative regencies: Banggai Kepulauan (Bangkep) and Banggai Laut (Balut). <strong>Peleng Island</strong> (Bangkep) is the massive, mountainous island closest to the mainland—home to Lake Paisupok, the jellyfish lagoon, and most tourist accommodation; the capital is Salakan. <strong>Banggai Island</strong> (Balut) lies further south and east, the historical center of the Banggai Kingdom, more maritime and culturally distinct. Labobo and Bokan are smaller islands offering incredible reefs and isolation, but requiring significant effort to reach.
+          <strong>Geography and Layout:</strong> The archipelago is split into two
+          main administrative regencies: Banggai Kepulauan (Bangkep) and Banggai Laut
+          (Balut). <strong>Peleng Island</strong> (Bangkep) is the massive, mountainous
+          island closest to the mainland-home to Lake Paisupok, the jellyfish lagoon,
+          and most tourist accommodation; the capital is Salakan. <strong
+            >Banggai Island</strong
+          > (Balut) lies further south and east, the historical center of the Banggai
+          Kingdom, more maritime and culturally distinct. Labobo and Bokan are smaller
+          islands offering incredible reefs and isolation, but requiring significant
+          effort to reach.
         </p>
 
         <p>
-          <strong>Access and Gateways:</strong> There is no airport on the islands for commercial jets from Jakarta or Bali. The gateway is <strong>Luwuk (LWK)</strong> on the Sulawesi mainland. You typically fly into Luwuk (usually via Makassar), take a taxi to the harbor, and ferry across to Peleng Island.
+          <strong>Access and Gateways:</strong> There is no airport on the islands
+          for commercial jets from Jakarta or Bali. The gateway is <strong
+            >Luwuk (LWK)</strong
+          > on the Sulawesi mainland. You typically fly into Luwuk (usually via Makassar),
+          take a taxi to the harbor, and ferry across to Peleng Island.
         </p>
 
         <p>
-          <strong>The Budget Reality:</strong> While Indonesia is generally cheap, remote Indonesia is surprisingly expensive. Logistics cost money. Accommodation: 250,000–400,000 IDR (16–26 USD) per night for a basic room. Food: 30,000–60,000 IDR (2–4 USD) per meal. Transport is the budget killer: a car charter can cost 700,000 IDR (45 USD) per day; boat charters to outlying islands can run from 800,000 to 1,500,000 IDR (50–100 USD) depending on fuel prices. You need cash. We found ATMs in Luwuk and Salakan (the capital of Peleng), and one lonely machine in Banggai town that rejected our cards. Once you leave the main towns, cash is the only way to pay.
+          <strong>The Budget Reality:</strong> While Indonesia is generally cheap,
+          remote Indonesia is surprisingly expensive. Logistics cost money. Accommodation:
+          250,000-400,000 IDR (16-26 USD) per night for a basic room. Food: 30,000-60,000
+          IDR (2-4 USD) per meal. Transport is the budget killer: a car charter can
+          cost 700,000 IDR (45 USD) per day; boat charters to outlying islands can
+          run from 800,000 to 1,500,000 IDR (50-100 USD) depending on fuel prices.
+          You need cash. We found ATMs in Luwuk and Salakan (the capital of Peleng),
+          and one lonely machine in Banggai town that rejected our cards. Once you
+          leave the main towns, cash is the only way to pay.
         </p>
       </div>
 
@@ -2606,20 +2693,49 @@ import Header from "../components/Header.astro";
   </div>
 </section>
 
-<!-- THE MIRROR LAKE & BEYOND — Full Width Feature -->
+<!-- THE MIRROR LAKE & BEYOND - Full Width Feature -->
 <section class="beyond-section">
   <div class="beyond-section__inner">
     <div class="beyond-section__content">
       <span class="beyond-section__label">Peleng Island</span>
       <h2>Lake Paisupok & the Jellyfish Lagoon</h2>
       <p>
-        <strong>Paisupok Lake</strong> is genuinely shocking—the water is so clear you can see every submerged log and rock fifty feet down. The color is not a filter; it is a deep, impossible turquoise. We walked down a dirt track and paid the entrance fee (15,000 IDR). We rented a small canoe (30,000 IDR); this is mandatory if you want to get away from the main dock. We paddled out to the center of the lake. It was dead silent. The jungle overhangs the water, and because the lake is freshwater but connected to the sea via underground tunnels, there are no waves. It is like floating on glass. The wooden boardwalks that zigzag across the western end are slippery with moss and missing planks in places—watch your step. Go on a weekday; on Sundays, locals from Salakan flood the area with karaoke speakers and picnic baskets.
+        <strong>Paisupok Lake</strong> is genuinely shocking-the water is so clear
+        you can see every submerged log and rock fifty feet down. The color is not
+        a filter; it is a deep, impossible turquoise. We walked down a dirt track
+        and paid the entrance fee (15,000 IDR). We rented a small canoe (30,000 IDR);
+        this is mandatory if you want to get away from the main dock. We paddled out
+        to the center of the lake. It was dead silent. The jungle overhangs the water,
+        and because the lake is freshwater but connected to the sea via underground
+        tunnels, there are no waves. It is like floating on glass. The wooden boardwalks
+        that zigzag across the western end are slippery with moss and missing planks
+        in places-watch your step. Go on a weekday; on Sundays, locals from Salakan
+        flood the area with karaoke speakers and picnic baskets.
       </p>
       <p>
-        In the afternoon we rented a scooter (100,000 IDR) to explore the coast. The road east of Luk Panenteng is rough; potholes are the size of dinner plates. We passed small fishing hamlets where children screamed "Hello Mister!" with frantic enthusiasm. We found a small cove with white sand, but as is common in Indonesia, the high tide line was choked with plastic waste—bottles, wrappers, flip-flops. It's a heartbreaking reality that is impossible to edit out of the experience.
+        In the afternoon we rented a scooter (100,000 IDR) to explore the coast.
+        The road east of Luk Panenteng is rough; potholes are the size of dinner
+        plates. We passed small fishing hamlets where children screamed "Hello
+        Mister!" with frantic enthusiasm. We found a small cove with white sand,
+        but as is common in Indonesia, the high tide line was choked with
+        plastic waste-bottles, wrappers, flip-flops. It's a heartbreaking
+        reality that is impossible to edit out of the experience.
       </p>
       <p>
-        About 30 minutes from Luk Panenteng is <strong>Paisubatango</strong>, a lagoon home to stingless jellyfish—smaller and murkier than Raja Ampat's or Kakaban's, but thousands of them pulsating quietly in the green gloom. A local farmer pointed us toward a muddy path through a cocoa plantation; the walk took 15 minutes and was humid enough to soak our clothes instantly. Do not wear sunscreen or insect repellent here; the chemicals kill the jellyfish. We saw an oil slick on the surface near the entry point, likely from previous tourists. Nearby <strong>Paisu Pok</strong> is a freshwater cave pool—freezing cold and often empty; the "facilities" consisted of a broken wooden bench. Back at the homestay, the power didn't come on at 6:00 PM once—the generator had a mechanical issue. We ate dinner by the light of our headlamps. The power kicked in at 9:00 PM, and the village cheered.
+        About 30 minutes from Luk Panenteng is <strong>Paisubatango</strong>, a
+        lagoon home to stingless jellyfish-smaller and murkier than Raja Ampat's
+        or Kakaban's, but thousands of them pulsating quietly in the green
+        gloom. A local farmer pointed us toward a muddy path through a cocoa
+        plantation; the walk took 15 minutes and was humid enough to soak our
+        clothes instantly. Do not wear sunscreen or insect repellent here; the
+        chemicals kill the jellyfish. We saw an oil slick on the surface near
+        the entry point, likely from previous tourists. Nearby <strong
+          >Paisu Pok</strong
+        > is a freshwater cave pool-freezing cold and often empty; the "facilities"
+        consisted of a broken wooden bench. Back at the homestay, the power didn't
+        come on at 6:00 PM once-the generator had a mechanical issue. We ate dinner
+        by the light of our headlamps. The power kicked in at 9:00 PM, and the village
+        cheered.
       </p>
       <div class="beyond-section__highlights">
         <div class="beyond-section__highlight">
@@ -2652,13 +2768,10 @@ import Header from "../components/Header.astro";
   </div>
 </section>
 
-<!-- CLOSING REFLECTION — Left-Aligned Bounded -->
+<!-- CLOSING REFLECTION - Left-Aligned Bounded -->
 <section class="expertise-hero">
   <div class="expertise-hero__image">
-    <img
-      src="images/hero-phinisi.jpg"
-      alt="The Banggai Islands at dawn"
-    />
+    <img src="images/hero-phinisi.jpg" alt="The Banggai Islands at dawn" />
   </div>
   <div class="expertise-hero__overlay"></div>
   <div class="expertise-hero__inner">
@@ -2666,17 +2779,28 @@ import Header from "../components/Header.astro";
       <span class="expertise-hero__label">Go Gently</span>
       <h2 class="expertise-hero__title">A Fragile Transition</h2>
       <p class="expertise-hero__text">
-        On our last morning, we went back to Paisupok Lake one more time. We didn't take photos. We just drifted in the canoe, listening to the hornbills in the canopy.
+        On our last morning, we went back to Paisupok Lake one more time. We
+        didn't take photos. We just drifted in the canoe, listening to the
+        hornbills in the canopy.
       </p>
       <p class="expertise-hero__text">
-        The Banggai Islands are in a fragile transition. The road to Luk Panenteng is being widened. More homestays are being built. A "resort" is rumored. In five years, the silence we experienced might be gone, replaced by the hum of constant generators and tour buses.
+        The Banggai Islands are in a fragile transition. The road to Luk
+        Panenteng is being widened. More homestays are being built. A "resort"
+        is rumored. In five years, the silence we experienced might be gone,
+        replaced by the hum of constant generators and tour buses.
       </p>
       <p class="expertise-hero__text">
-        Right now, it is a destination that demands something from you—patience, resilience, and a willingness to be uncomfortable. In exchange, it offers glimpses of a world that feels untouched, even if the edges are starting to fray. If you go, go gently. Tread lightly on the boardwalks, take your trash with you, and appreciate the dark, quiet nights where the only light comes from the stars and the erratic glow of fireflies. It is imperfect, difficult, and absolutely worth the journey.
+        Right now, it is a destination that demands something from you-patience,
+        resilience, and a willingness to be uncomfortable. In exchange, it
+        offers glimpses of a world that feels untouched, even if the edges are
+        starting to fray. If you go, go gently. Tread lightly on the boardwalks,
+        take your trash with you, and appreciate the dark, quiet nights where
+        the only light comes from the stars and the erratic glow of fireflies.
+        It is imperfect, difficult, and absolutely worth the journey.
       </p>
       <div class="expertise-hero__stats">
         <div>
-          <div class="expertise-hero__stat-value">Sept–Nov</div>
+          <div class="expertise-hero__stat-value">Sept-Nov</div>
           <div class="expertise-hero__stat-label">Ideal Season</div>
         </div>
         <div>
@@ -2693,7 +2817,7 @@ import Header from "../components/Header.astro";
 </section>
 
 <!-- ════════════════════════════════════════════════════════════════
-       THE ARCHIPELAGO — REGIONS
+       THE ARCHIPELAGO - REGIONS
        ════════════════════════════════════════════════════════════════ -->
 <section id="regions" class="section section--snow">
   <div class="section__inner">
@@ -2701,7 +2825,10 @@ import Header from "../components/Header.astro";
       <span class="section-header__label">The Archipelago</span>
       <h2 class="section-header__title">Exploring the Banggai Islands</h2>
       <p class="section-header__subtitle">
-        The archipelago is split into Banggai Kepulauan (Bangkep) and Banggai Laut (Balut). Peleng holds the famous lake and most accommodation; Banggai Island is the historical and maritime heart; smaller islands offer reefs and isolation for those willing to make the effort.
+        The archipelago is split into Banggai Kepulauan (Bangkep) and Banggai
+        Laut (Balut). Peleng holds the famous lake and most accommodation;
+        Banggai Island is the historical and maritime heart; smaller islands
+        offer reefs and isolation for those willing to make the effort.
       </p>
     </div>
 
@@ -2717,7 +2844,10 @@ import Header from "../components/Header.astro";
           <span class="region-card__label">Bangkep</span>
           <h3 class="region-card__title">Peleng Island</h3>
           <p class="region-card__desc">
-            The massive, mountainous island closest to the mainland. Home to Lake Paisupok, the jellyfish lagoon at Paisubatango, and the majority of tourist accommodation. The capital is Salakan; Luk Panenteng is the village base for the lake.
+            The massive, mountainous island closest to the mainland. Home to
+            Lake Paisupok, the jellyfish lagoon at Paisubatango, and the
+            majority of tourist accommodation. The capital is Salakan; Luk
+            Panenteng is the village base for the lake.
           </p>
           <div class="region-card__highlights">
             <span class="region-card__highlight">Lake Paisupok</span>
@@ -2738,7 +2868,11 @@ import Header from "../components/Header.astro";
           <span class="region-card__label">Balut</span>
           <h3 class="region-card__title">Banggai Island</h3>
           <p class="region-card__desc">
-            Further south and east. The historical center of the Banggai Kingdom. Feels more maritime, denser, and culturally distinct. Banggai Town is built right up to the water's edge, with mosques and houses on stilts. Home to the endemic Banggai Cardinalfish and the King's Bath.
+            Further south and east. The historical center of the Banggai
+            Kingdom. Feels more maritime, denser, and culturally distinct.
+            Banggai Town is built right up to the water's edge, with mosques and
+            houses on stilts. Home to the endemic Banggai Cardinalfish and the
+            King's Bath.
           </p>
           <div class="region-card__highlights">
             <span class="region-card__highlight">Cardinalfish</span>
@@ -2750,16 +2884,15 @@ import Header from "../components/Header.astro";
 
       <div class="region-card">
         <div class="region-card__image">
-          <img
-            src="images/misool-lagoon.jpg"
-            alt="Labobo and Bokan islands"
-          />
+          <img src="images/misool-lagoon.jpg" alt="Labobo and Bokan islands" />
         </div>
         <div class="region-card__content">
           <span class="region-card__label">Further South</span>
           <h3 class="region-card__title">Labobo & Bokan</h3>
           <p class="region-card__desc">
-            Smaller islands offering incredible reefs and isolation. Require significant effort to reach—boat charters from Banggai Town or Peleng. For those with time and a taste for the remote.
+            Smaller islands offering incredible reefs and isolation. Require
+            significant effort to reach-boat charters from Banggai Town or
+            Peleng. For those with time and a taste for the remote.
           </p>
           <div class="region-card__highlights">
             <span class="region-card__highlight">Reefs</span>
@@ -2781,7 +2914,9 @@ import Header from "../components/Header.astro";
       <span class="section-header__label">What to See & Do</span>
       <h2 class="section-header__title">Highlights of the Banggai Islands</h2>
       <p class="section-header__subtitle">
-        From the mirror lake to stingless jellyfish, freshwater caves, and the endemic Banggai Cardinalfish—here are the places that define a trip to this archipelago.
+        From the mirror lake to stingless jellyfish, freshwater caves, and the
+        endemic Banggai Cardinalfish-here are the places that define a trip to
+        this archipelago.
       </p>
     </div>
 
@@ -2795,7 +2930,8 @@ import Header from "../components/Header.astro";
           <span class="dive-card__region">Peleng · Luk Panenteng</span>
           <h3 class="dive-card__title">Lake Paisupok</h3>
           <p class="dive-card__desc">
-            The mirror lake—impossibly clear, deep turquoise. Canoe to the center; go early and avoid weekends.
+            The mirror lake-impossibly clear, deep turquoise. Canoe to the
+            center; go early and avoid weekends.
           </p>
           <div class="dive-card__tags">
             <span class="dive-card__tag">Must-See</span>
@@ -2812,7 +2948,8 @@ import Header from "../components/Header.astro";
           <span class="dive-card__region">Peleng · Near Luk Panenteng</span>
           <h3 class="dive-card__title">Paisubatango</h3>
           <p class="dive-card__desc">
-            Lagoon with thousands of stingless jellyfish. No sunscreen or repellent—chemicals kill them.
+            Lagoon with thousands of stingless jellyfish. No sunscreen or
+            repellent-chemicals kill them.
           </p>
           <div class="dive-card__tags">
             <span class="dive-card__tag">Jellyfish</span>
@@ -2829,7 +2966,8 @@ import Header from "../components/Header.astro";
           <span class="dive-card__region">Peleng</span>
           <h3 class="dive-card__title">Paisu Pok (Cave)</h3>
           <p class="dive-card__desc">
-            Freshwater cave pool—freezing cold, often empty. A relief after the humidity.
+            Freshwater cave pool-freezing cold, often empty. A relief after the
+            humidity.
           </p>
           <div class="dive-card__tags">
             <span class="dive-card__tag">Cave</span>
@@ -2846,7 +2984,8 @@ import Header from "../components/Header.astro";
           <span class="dive-card__region">Banggai Laut · Island Hopping</span>
           <h3 class="dive-card__title">Bone Baru</h3>
           <p class="dive-card__desc">
-            Beach with incredibly fine white sand; vibrant coral just offshore—massive table corals and healthy soft corals.
+            Beach with incredibly fine white sand; vibrant coral just
+            offshore-massive table corals and healthy soft corals.
           </p>
           <div class="dive-card__tags">
             <span class="dive-card__tag">Snorkel</span>
@@ -2863,7 +3002,8 @@ import Header from "../components/Header.astro";
           <span class="dive-card__region">Banggai Laut · Island Hopping</span>
           <h3 class="dive-card__title">Mandel</h3>
           <p class="dive-card__desc">
-            Another beach spot on the island-hopping circuit. Turtles possible; currents can be strong.
+            Another beach spot on the island-hopping circuit. Turtles possible;
+            currents can be strong.
           </p>
           <div class="dive-card__tags">
             <span class="dive-card__tag">Turtles</span>
@@ -2880,7 +3020,8 @@ import Header from "../components/Header.astro";
           <span class="dive-card__region">Banggai Island</span>
           <h3 class="dive-card__title">The King's Bath</h3>
           <p class="dive-card__desc">
-            Pemandian Raja—freshwater spring once reserved for royalty. Now a public swimming hole; cool and clear.
+            Pemandian Raja-freshwater spring once reserved for royalty. Now a
+            public swimming hole; cool and clear.
           </p>
           <div class="dive-card__tags">
             <span class="dive-card__tag">History</span>
@@ -2897,7 +3038,8 @@ import Header from "../components/Header.astro";
           <span class="dive-card__region">Banggai Town</span>
           <h3 class="dive-card__title">Banggai Cardinalfish</h3>
           <p class="dive-card__desc">
-            Endemic black-and-white fish. See them under the main jetty—hovering among sea urchins by the pilings.
+            Endemic black-and-white fish. See them under the main jetty-hovering
+            among sea urchins by the pilings.
           </p>
           <div class="dive-card__tags">
             <span class="dive-card__tag">Endemic</span>
@@ -2914,7 +3056,8 @@ import Header from "../components/Header.astro";
           <span class="dive-card__region">Peleng · East of Luk Panenteng</span>
           <h3 class="dive-card__title">Coastal Scooter Ride</h3>
           <p class="dive-card__desc">
-            Rent a scooter and explore the coast—rough roads, small fishing hamlets, coves. Watch for potholes.
+            Rent a scooter and explore the coast-rough roads, small fishing
+            hamlets, coves. Watch for potholes.
           </p>
           <div class="dive-card__tags">
             <span class="dive-card__tag">Explore</span>
@@ -2934,7 +3077,8 @@ import Header from "../components/Header.astro";
           <span class="dive-card__region">Peleng · Arrival</span>
           <h3 class="dive-card__title">Leme-Leme</h3>
           <p class="dive-card__desc">
-            The village harbor where the wooden boat from Luwuk docks. Concrete jetty; pre-arrange pickup to Luk Panenteng.
+            The village harbor where the wooden boat from Luwuk docks. Concrete
+            jetty; pre-arrange pickup to Luk Panenteng.
           </p>
           <div class="dive-card__tags">
             <span class="dive-card__tag">Gateway</span>
@@ -2951,7 +3095,8 @@ import Header from "../components/Header.astro";
           <span class="dive-card__region">Peleng · Capital</span>
           <h3 class="dive-card__title">Salakan</h3>
           <p class="dive-card__desc">
-            Capital of Peleng. Indomarets, a traffic light, ATMs. Transit point for ferries to Banggai Town.
+            Capital of Peleng. Indomarets, a traffic light, ATMs. Transit point
+            for ferries to Banggai Town.
           </p>
           <div class="dive-card__tags">
             <span class="dive-card__tag">Capital</span>
@@ -2968,7 +3113,8 @@ import Header from "../components/Header.astro";
           <span class="dive-card__region">Banggai Town</span>
           <h3 class="dive-card__title">Pasar Malam (Night Market)</h3>
           <p class="dive-card__desc">
-            Grilled fish with dabu-dabu (spicy tomato and chili salsa). Best meal of the trip—smoky, spicy, fresh.
+            Grilled fish with dabu-dabu (spicy tomato and chili salsa). Best
+            meal of the trip-smoky, spicy, fresh.
           </p>
           <div class="dive-card__tags">
             <span class="dive-card__tag">Food</span>
@@ -2985,7 +3131,8 @@ import Header from "../components/Header.astro";
           <span class="dive-card__region">Peleng · Day Trip</span>
           <h3 class="dive-card__title">Poco Island</h3>
           <p class="dive-card__desc">
-            Island hopping option from Luk Panenteng when you have an extra day. Arrange boat locally.
+            Island hopping option from Luk Panenteng when you have an extra day.
+            Arrange boat locally.
           </p>
           <div class="dive-card__tags">
             <span class="dive-card__tag">Snorkel</span>
@@ -3002,7 +3149,8 @@ import Header from "../components/Header.astro";
           <span class="dive-card__region">Mainland Gateway</span>
           <h3 class="dive-card__title">Luwuk (LWK)</h3>
           <p class="dive-card__desc">
-            Gateway airport and harbor. Fly in via Makassar; taxi to ferry terminal. ATMs and supplies here.
+            Gateway airport and harbor. Fly in via Makassar; taxi to ferry
+            terminal. ATMs and supplies here.
           </p>
           <div class="dive-card__tags">
             <span class="dive-card__tag">Gateway</span>
@@ -3013,13 +3161,17 @@ import Header from "../components/Header.astro";
 
       <div class="dive-card">
         <div class="dive-card__image">
-          <img src="images/soft-coral-mangrove.jpg" alt="Homestay Luk Panenteng" />
+          <img
+            src="images/soft-coral-mangrove.jpg"
+            alt="Homestay Luk Panenteng"
+          />
         </div>
         <div class="dive-card__content">
           <span class="dive-card__region">Peleng</span>
           <h3 class="dive-card__title">Luk Panenteng Homestays</h3>
           <p class="dive-card__desc">
-            Rustic rooms on the water. Electricity 6 PM–6 AM; mandi-style bathroom. Book via Google Maps and WhatsApp.
+            Rustic rooms on the water. Electricity 6 PM-6 AM; mandi-style
+            bathroom. Book via Google Maps and WhatsApp.
           </p>
           <div class="dive-card__tags">
             <span class="dive-card__tag">Stay</span>
@@ -3036,7 +3188,8 @@ import Header from "../components/Header.astro";
           <span class="dive-card__region">Return</span>
           <h3 class="dive-card__title">Speedboat Banggai → Luwuk</h3>
           <p class="dive-card__desc">
-            Direct option (approx. 250,000 IDR). Departs ~8 AM; 3.5 hours. Bone-jarring but saves a day.
+            Direct option (approx. 250,000 IDR). Departs ~8 AM; 3.5 hours.
+            Bone-jarring but saves a day.
           </p>
           <div class="dive-card__tags">
             <span class="dive-card__tag">Transport</span>
@@ -3053,7 +3206,8 @@ import Header from "../components/Header.astro";
           <span class="dive-card__region">Crossings</span>
           <h3 class="dive-card__title">Wooden Public Ferries</h3>
           <p class="dive-card__desc">
-            Luwuk–Leme-Leme (3–4 hrs) or Salakan–Banggai Town (3–4 hrs). Cheap, slow, unforgettable. "Jam karet" applies.
+            Luwuk-Leme-Leme (3-4 hrs) or Salakan-Banggai Town (3-4 hrs). Cheap,
+            slow, unforgettable. "Jam karet" applies.
           </p>
           <div class="dive-card__tags">
             <span class="dive-card__tag">Ferry</span>
@@ -3075,7 +3229,7 @@ import Header from "../components/Header.astro";
 </section>
 
 <!-- ════════════════════════════════════════════════════════════════
-       WILDLIFE & NATURE — What You'll See
+       WILDLIFE & NATURE - What You'll See
        ════════════════════════════════════════════════════════════════ -->
 <section id="biodiversity" class="section section--cream">
   <div class="section__inner">
@@ -3083,7 +3237,9 @@ import Header from "../components/Header.astro";
       <span class="section-header__label">Wildlife & Nature</span>
       <h2 class="section-header__title">What You'll See</h2>
       <p class="section-header__subtitle">
-        From the endemic Banggai Cardinalfish to stingless jellyfish, sea turtles, and the mirror-like waters of Paisupok—here's what defines the Banggai experience.
+        From the endemic Banggai Cardinalfish to stingless jellyfish, sea
+        turtles, and the mirror-like waters of Paisupok-here's what defines the
+        Banggai experience.
       </p>
     </div>
 
@@ -3096,7 +3252,9 @@ import Header from "../components/Header.astro";
           <h3 class="bio-card__name">Banggai Cardinalfish</h3>
           <p class="bio-card__latin">Pterapogon kauderni</p>
           <p class="bio-card__desc">
-            Striking black-and-white fish endemic to this tiny region. Aquarium trade nearly wiped them out; they are recovering. See them under the main jetty in Banggai Town, hovering among sea urchins.
+            Striking black-and-white fish endemic to this tiny region. Aquarium
+            trade nearly wiped them out; they are recovering. See them under the
+            main jetty in Banggai Town, hovering among sea urchins.
           </p>
         </div>
       </div>
@@ -3109,7 +3267,9 @@ import Header from "../components/Header.astro";
           <h3 class="bio-card__name">Stingless Jellyfish</h3>
           <p class="bio-card__latin">Paisubatango Lagoon</p>
           <p class="bio-card__desc">
-            Thousands pulsating in the brackish green gloom of Paisubatango. Smaller and murkier than Raja Ampat's or Kakaban's—eerie and beautiful. No sunscreen or repellent; chemicals kill them.
+            Thousands pulsating in the brackish green gloom of Paisubatango.
+            Smaller and murkier than Raja Ampat's or Kakaban's-eerie and
+            beautiful. No sunscreen or repellent; chemicals kill them.
           </p>
         </div>
       </div>
@@ -3122,7 +3282,9 @@ import Header from "../components/Header.astro";
           <h3 class="bio-card__name">Lake Paisupok</h3>
           <p class="bio-card__latin">The mirror lake</p>
           <p class="bio-card__desc">
-            Freshwater connected to the sea via underground tunnels—no waves, dead silent. Deep turquoise; visibility to every submerged log and rock. Like floating on glass.
+            Freshwater connected to the sea via underground tunnels-no waves,
+            dead silent. Deep turquoise; visibility to every submerged log and
+            rock. Like floating on glass.
           </p>
         </div>
       </div>
@@ -3135,7 +3297,9 @@ import Header from "../components/Header.astro";
           <h3 class="bio-card__name">Table Corals & Reefs</h3>
           <p class="bio-card__latin">Bone Baru, Mandel</p>
           <p class="bio-card__desc">
-            Island-hopping reveals vibrant coral just offshore—massive table corals and healthy soft corals. Bone Baru has incredibly fine white sand and thriving reef.
+            Island-hopping reveals vibrant coral just offshore-massive table
+            corals and healthy soft corals. Bone Baru has incredibly fine white
+            sand and thriving reef.
           </p>
         </div>
       </div>
@@ -3148,7 +3312,9 @@ import Header from "../components/Header.astro";
           <h3 class="bio-card__name">Jungle & Coast</h3>
           <p class="bio-card__latin">Peleng</p>
           <p class="bio-card__desc">
-            Dense coconut plantations, overhanging jungle at the lake, small fishing hamlets along the coast. Hornbills in the canopy; fireflies and stars at night.
+            Dense coconut plantations, overhanging jungle at the lake, small
+            fishing hamlets along the coast. Hornbills in the canopy; fireflies
+            and stars at night.
           </p>
         </div>
       </div>
@@ -3161,7 +3327,8 @@ import Header from "../components/Header.astro";
           <h3 class="bio-card__name">Sea Turtles</h3>
           <p class="bio-card__latin">Mandel & reefs</p>
           <p class="bio-card__desc">
-            Possible on island-hopping days—e.g. Mandel. Currents can be strong; choose calm spots for snorkelling.
+            Possible on island-hopping days-e.g. Mandel. Currents can be strong;
+            choose calm spots for snorkelling.
           </p>
         </div>
       </div>
@@ -3174,7 +3341,9 @@ import Header from "../components/Header.astro";
           <h3 class="bio-card__name">The King's Bath</h3>
           <p class="bio-card__latin">Pemandian Raja</p>
           <p class="bio-card__desc">
-            Freshwater spring historically reserved for Banggai royalty. Cool, clear water; now a public swimming hole. Concrete surroundings; local hangout.
+            Freshwater spring historically reserved for Banggai royalty. Cool,
+            clear water; now a public swimming hole. Concrete surroundings;
+            local hangout.
           </p>
         </div>
       </div>
@@ -3187,7 +3356,9 @@ import Header from "../components/Header.astro";
           <h3 class="bio-card__name">Night Skies</h3>
           <p class="bio-card__latin">Luk Panenteng & villages</p>
           <p class="bio-card__desc">
-            When the generator is off or the grid fails, the only light comes from the stars and the erratic glow of fireflies. Dark, quiet, unforgettable.
+            When the generator is off or the grid fails, the only light comes
+            from the stars and the erratic glow of fireflies. Dark, quiet,
+            unforgettable.
           </p>
         </div>
       </div>
@@ -3199,32 +3370,31 @@ import Header from "../components/Header.astro";
         <h3 class="stats-showcase__title">Budget Snapshot</h3>
         <ul class="stats-showcase__list">
           <li class="stats-showcase__item">
-            <span class="stats-showcase__number">250–400K</span>
+            <span class="stats-showcase__number">250-400K</span>
             <span class="stats-showcase__label"
-             >IDR (16–26 USD) per night basic accommodation</span
+              >IDR (16-26 USD) per night basic accommodation</span
             >
           </li>
           <li class="stats-showcase__item">
-            <span class="stats-showcase__number">30–60K</span>
-            <span class="stats-showcase__label"
-             >IDR (2–4 USD) per meal</span
-            >
+            <span class="stats-showcase__number">30-60K</span>
+            <span class="stats-showcase__label">IDR (2-4 USD) per meal</span>
           </li>
           <li class="stats-showcase__item">
             <span class="stats-showcase__number">700K</span>
             <span class="stats-showcase__label"
-             >IDR (~45 USD) per day car charter</span
+              >IDR (~45 USD) per day car charter</span
             >
           </li>
           <li class="stats-showcase__item">
-            <span class="stats-showcase__number">800K–1.5M</span>
-            <span class="stats-showcase__label">IDR (50–100 USD) boat charter</span
+            <span class="stats-showcase__number">800K-1.5M</span>
+            <span class="stats-showcase__label"
+              >IDR (50-100 USD) boat charter</span
             >
           </li>
           <li class="stats-showcase__item">
             <span class="stats-showcase__number">Cash</span>
             <span class="stats-showcase__label"
-             >ATMs in Luwuk & Salakan; bring extra</span
+              >ATMs in Luwuk & Salakan; bring extra</span
             >
           </li>
         </ul>
@@ -3233,19 +3403,23 @@ import Header from "../components/Header.astro";
         <h3 class="stats-showcase__rare-title">When to Go</h3>
         <div class="stats-showcase__rare-text">
           <p>
-            <strong>Ideally September–November:</strong> seas calmest, rain manageable. Avoid peak monsoon (Dec–Feb) unless you have buffer time—winds pick up and crossings can be cancelled or dangerous.
+            <strong>Ideally September-November:</strong> seas calmest, rain manageable.
+            Avoid peak monsoon (Dec-Feb) unless you have buffer time-winds pick up
+            and crossings can be cancelled or dangerous.
           </p>
           <p>
-            Paisupok is clear year-round. Heavy rains can make the surrounding ocean murky. <strong>Ramadan</strong> (dates vary): food stalls close by day; evenings are festive.
+            Paisupok is clear year-round. Heavy rains can make the surrounding
+            ocean murky. <strong>Ramadan</strong> (dates vary): food stalls close
+            by day; evenings are festive.
           </p>
         </div>
         <div class="stats-showcase__rare-creatures">
           <div class="stats-showcase__creature">
-            <div class="stats-showcase__creature-name">Sept–Nov</div>
+            <div class="stats-showcase__creature-name">Sept-Nov</div>
             <div class="stats-showcase__creature-note">Ideal</div>
           </div>
           <div class="stats-showcase__creature">
-            <div class="stats-showcase__creature-name">Dec–Feb</div>
+            <div class="stats-showcase__creature-name">Dec-Feb</div>
             <div class="stats-showcase__creature-note">Risky</div>
           </div>
           <div class="stats-showcase__creature">
@@ -3259,7 +3433,7 @@ import Header from "../components/Header.astro";
 </section>
 
 <!-- ════════════════════════════════════════════════════════════════
-       WHEN TO VISIT — Banggai Islands
+       WHEN TO VISIT - Banggai Islands
        ════════════════════════════════════════════════════════════════ -->
 <section id="seasons" class="section section--white">
   <div class="section__inner">
@@ -3267,28 +3441,37 @@ import Header from "../components/Header.astro";
       <span class="section-header__label">Planning</span>
       <h2 class="section-header__title">When to Visit the Banggai Islands</h2>
       <p class="section-header__subtitle">
-        Ideally September to November—seas calmest, rain manageable. Avoid the peak of the monsoon (Dec–Feb) unless you have buffer time for delays.
+        Ideally September to November-seas calmest, rain manageable. Avoid the
+        peak of the monsoon (Dec-Feb) unless you have buffer time for delays.
       </p>
     </div>
 
     <div class="two-col-text">
       <div>
-        <h3>Ideal: September – November</h3>
+        <h3>Ideal: September - November</h3>
         <p>
-          The seas are calmest and the rain is manageable. This is when the Banggai Islands deliver the best experience—reliable ferry crossings, clearer water for snorkelling, and fewer cancelled boats.
+          The seas are calmest and the rain is manageable. This is when the
+          Banggai Islands deliver the best experience-reliable ferry crossings,
+          clearer water for snorkelling, and fewer cancelled boats.
         </p>
 
         <p>
-          <strong>January and February:</strong> the winds pick up. The crossing between Luwuk and the islands can be cancelled or become dangerous. We would avoid the peak of the monsoon unless you have a lot of buffer time for delays.
+          <strong>January and February:</strong> the winds pick up. The crossing between
+          Luwuk and the islands can be cancelled or become dangerous. We would avoid
+          the peak of the monsoon unless you have a lot of buffer time for delays.
         </p>
 
         <p>
-          <strong>Water clarity:</strong> Paisupok Lake is clear year-round. Heavy rains can make the surrounding ocean murky, ruining the snorkelling. Plan lake days for any season; ocean days for calmer, drier windows.
+          <strong>Water clarity:</strong> Paisupok Lake is clear year-round. Heavy
+          rains can make the surrounding ocean murky, ruining the snorkelling. Plan
+          lake days for any season; ocean days for calmer, drier windows.
         </p>
 
         <h3>Ramadan</h3>
         <p>
-          Travel during Ramadan (dates vary) is tricky. Food stalls close during the day. Drivers are fasting and may be fatigued. However, the evenings are festive. Plan accordingly if your dates overlap.
+          Travel during Ramadan (dates vary) is tricky. Food stalls close during
+          the day. Drivers are fasting and may be fatigued. However, the
+          evenings are festive. Plan accordingly if your dates overlap.
         </p>
       </div>
 
@@ -3307,25 +3490,34 @@ import Header from "../components/Header.astro";
                 </thead>
                 <tbody>
                   <tr class="season-peak">
-                    <td><span class="season-chart__month-name">Sept–Nov</span></td>
+                    <td
+                      ><span class="season-chart__month-name">Sept-Nov</span
+                      ></td
+                    >
                     <td><span class="season-status">Ideal</span></td>
                     <td>Calm</td>
                     <td>Best time</td>
                   </tr>
                   <tr class="season-shoulder">
-                    <td><span class="season-chart__month-name">May–Aug</span></td>
+                    <td
+                      ><span class="season-chart__month-name">May-Aug</span></td
+                    >
                     <td><span class="season-status">Variable</span></td>
                     <td>Mixed</td>
                     <td>Possible</td>
                   </tr>
                   <tr class="season-off">
-                    <td><span class="season-chart__month-name">Dec–Feb</span></td>
+                    <td
+                      ><span class="season-chart__month-name">Dec-Feb</span></td
+                    >
                     <td><span class="season-status">Monsoon</span></td>
                     <td>Rough</td>
                     <td>Buffer time</td>
                   </tr>
                   <tr class="season-shoulder">
-                    <td><span class="season-chart__month-name">Mar–Apr</span></td>
+                    <td
+                      ><span class="season-chart__month-name">Mar-Apr</span></td
+                    >
                     <td><span class="season-status">Transition</span></td>
                     <td>Improving</td>
                     <td>OK</td>
@@ -3354,9 +3546,12 @@ import Header from "../components/Header.astro";
     </div>
 
     <div class="offseason-note">
-      <h4 class="offseason-note__title">A Note on the Winds (Jan–Feb)</h4>
+      <h4 class="offseason-note__title">A Note on the Winds (Jan-Feb)</h4>
       <p>
-        The crossing between Luwuk and the islands can be cancelled or become dangerous. Do not plan tight connections. "Jam karet" (rubber time) applies to all boat schedules—drivers and captains may run late; build in buffer days.
+        The crossing between Luwuk and the islands can be cancelled or become
+        dangerous. Do not plan tight connections. "Jam karet" (rubber time)
+        applies to all boat schedules-drivers and captains may run late; build
+        in buffer days.
       </p>
     </div>
   </div>
@@ -3382,43 +3577,56 @@ import Header from "../components/Header.astro";
         <div class="flight-table__row">
           <span class="flight-table__city">Fly to Luwuk (LWK)</span>
           <span class="flight-table__time"
-            >Usually via Makassar <span class="flight-table__stops">from Jakarta/Bali</span></span
+            >Usually via Makassar <span class="flight-table__stops"
+              >from Jakarta/Bali</span
+            ></span
           >
         </div>
         <div class="flight-table__row">
           <span class="flight-table__city">Taxi → Luwuk Harbor</span>
           <span class="flight-table__time"
-            >Ignore touts <span class="flight-table__stops">flag a car at gate</span></span
+            >Ignore touts <span class="flight-table__stops"
+              >flag a car at gate</span
+            ></span
           >
         </div>
         <div class="flight-table__row">
           <span class="flight-table__city">Wooden boat → Leme-Leme</span>
           <span class="flight-table__time"
-            >~2 PM daily <span class="flight-table__stops">3–4 hrs, cheap</span></span
+            >~2 PM daily <span class="flight-table__stops">3-4 hrs, cheap</span
+            ></span
           >
         </div>
         <div class="flight-table__row">
           <span class="flight-table__city">Fast boat → Salakan</span>
           <span class="flight-table__time"
-            >Fiberglass <span class="flight-table__stops">expensive, 2 hrs drive to lake</span></span
+            >Fiberglass <span class="flight-table__stops"
+              >expensive, 2 hrs drive to lake</span
+            ></span
           >
         </div>
         <div class="flight-table__row">
           <span class="flight-table__city">Leme-Leme → Luk Panenteng</span>
           <span class="flight-table__time"
-            >Pre-arrange pickup <span class="flight-table__stops">20 min drive</span></span
+            >Pre-arrange pickup <span class="flight-table__stops"
+              >20 min drive</span
+            ></span
           >
         </div>
         <div class="flight-table__row">
           <span class="flight-table__city">Salakan → Banggai Town</span>
           <span class="flight-table__time"
-            >Daily wooden boat 2 PM <span class="flight-table__stops">50K IDR, 3–4 hrs</span></span
+            >Daily wooden boat 2 PM <span class="flight-table__stops"
+              >50K IDR, 3-4 hrs</span
+            ></span
           >
         </div>
         <div class="flight-table__row">
           <span class="flight-table__city">Banggai → Luwuk (return)</span>
           <span class="flight-table__time"
-            >Speedboat ~8 AM <span class="flight-table__stops">250K IDR, 3.5 hrs</span></span
+            >Speedboat ~8 AM <span class="flight-table__stops"
+              >250K IDR, 3.5 hrs</span
+            ></span
           >
         </div>
       </div>
@@ -3428,40 +3636,73 @@ import Header from "../components/Header.astro";
         <div class="logistics-content__block">
           <h3 class="logistics-content__title">Reaching Luwuk</h3>
           <p class="logistics-content__text">
-            There is no airport on the islands for commercial jets from Jakarta or Bali. The gateway is <strong>Luwuk (LWK)</strong> on the Sulawesi mainland. Fly into Luwuk (usually via Makassar), take a taxi to the harbor, and ferry across to Peleng Island. From Peleng you move deeper into the archipelago by boat.
+            There is no airport on the islands for commercial jets from Jakarta
+            or Bali. The gateway is <strong>Luwuk (LWK)</strong> on the Sulawesi mainland.
+            Fly into Luwuk (usually via Makassar), take a taxi to the harbor, and
+            ferry across to Peleng Island. From Peleng you move deeper into the archipelago
+            by boat.
           </p>
           <p class="logistics-content__text">
-            <strong>You need cash.</strong> ATMs in Luwuk and Salakan (capital of Peleng), and one lonely machine in Banggai Town that rejected our cards. Once you leave main towns, cash is the only way to pay. Bring all the cash you think you need, then add 30%. ATMs often run out of money or reject foreign cards due to connection errors. We almost got stuck in Banggai Town because the BNI ATM was down for two days; we luckily had emergency USD we exchanged at a gold shop at a terrible rate.
+            <strong>You need cash.</strong> ATMs in Luwuk and Salakan (capital of
+            Peleng), and one lonely machine in Banggai Town that rejected our cards.
+            Once you leave main towns, cash is the only way to pay. Bring all the
+            cash you think you need, then add 30%. ATMs often run out of money or
+            reject foreign cards due to connection errors. We almost got stuck in
+            Banggai Town because the BNI ATM was down for two days; we luckily had
+            emergency USD we exchanged at a gold shop at a terrible rate.
           </p>
         </div>
 
         <div class="logistics-content__block">
           <h3 class="logistics-content__title">Scooters & Local Transport</h3>
           <p class="logistics-content__text">
-            Rentals are informal—you are renting someone's personal bike. Check the brakes. Check the tires (many are bald). Helmets are often not provided or are cracked plastic shells. Petrol is sold in glass Absolut Vodka bottles at roadside shacks (Pertamini).
+            Rentals are informal-you are renting someone's personal bike. Check
+            the brakes. Check the tires (many are bald). Helmets are often not
+            provided or are cracked plastic shells. Petrol is sold in glass
+            Absolut Vodka bottles at roadside shacks (Pertamini).
           </p>
         </div>
 
         <div class="logistics-content__block">
-          <h3 class="logistics-content__title">Accommodation: The Honest Breakdown</h3>
+          <h3 class="logistics-content__title">
+            Accommodation: The Honest Breakdown
+          </h3>
           <p class="logistics-content__text">
-            Accommodation in the Banggai Islands is functional, not experiential. You are paying for a roof, not a vibe.
+            Accommodation in the Banggai Islands is functional, not
+            experiential. You are paying for a roof, not a vibe.
           </p>
           <p class="logistics-content__text">
-            <strong>Luk Panenteng (Peleng):</strong> Rustic homestays—usually a row of rooms facing the sea or the road. The walls are thin plywood; you will hear your neighbour snoring, the geckos fighting, and the generator humming. Sheets were clean but worn. The bathrooms are wet rooms (toilet, shower bucket, sink in one tiled space); the floor is perpetually wet. Food is included because there are no restaurants—expect fish, rice, noodles, and eggs. If you are vegetarian, you will eat a lot of eggs and kangkung. Most are not on Booking.com; find them on Google Maps and WhatsApp the owner. Use Google Translate.
+            <strong>Luk Panenteng (Peleng):</strong> Rustic homestays-usually a row
+            of rooms facing the sea or the road. The walls are thin plywood; you will
+            hear your neighbour snoring, the geckos fighting, and the generator humming.
+            Sheets were clean but worn. The bathrooms are wet rooms (toilet, shower
+            bucket, sink in one tiled space); the floor is perpetually wet. Food is
+            included because there are no restaurants-expect fish, rice, noodles,
+            and eggs. If you are vegetarian, you will eat a lot of eggs and kangkung.
+            Most are not on Booking.com; find them on Google Maps and WhatsApp the
+            owner. Use Google Translate.
           </p>
           <p class="logistics-content__text">
-            <strong>Salakan (Peleng):</strong> Government worker transit hotels. Sterile, tiled, fluorescent lighting. Cleaner than village homestays but zero charm. Usually have AC and TV.
+            <strong>Salakan (Peleng):</strong> Government worker transit hotels. Sterile,
+            tiled, fluorescent lighting. Cleaner than village homestays but zero charm.
+            Usually have AC and TV.
           </p>
           <p class="logistics-content__text">
-            <strong>Banggai Town (Banggai Laut):</strong> Faded glory—old hotels with heavy wooden furniture and high ceilings. Some rooms have no windows; ask to see the room before paying. Check the AC unit—if it looks brown and ancient, it probably just blows fan air.
+            <strong>Banggai Town (Banggai Laut):</strong> Faded glory-old hotels with
+            heavy wooden furniture and high ceilings. Some rooms have no windows;
+            ask to see the room before paying. Check the AC unit-if it looks brown
+            and ancient, it probably just blows fan air.
           </p>
         </div>
 
         <div class="logistics-content__block">
           <h3 class="logistics-content__title">Language & Connectivity</h3>
           <p class="logistics-content__text">
-            English is virtually non-existent outside a few guides. Use Google Translate offline; learn basic Bahasa (e.g. kanan/kiri, mahal, jam berapa?). <strong>Telkomsel</strong> is the only carrier that matters; 4G in Salakan and Banggai Town, 3G or Edge in Luk Panenteng. Download offline maps.
+            English is virtually non-existent outside a few guides. Use Google
+            Translate offline; learn basic Bahasa (e.g. kanan/kiri, mahal, jam
+            berapa?). <strong>Telkomsel</strong> is the only carrier that matters;
+            4G in Salakan and Banggai Town, 3G or Edge in Luk Panenteng. Download
+            offline maps.
           </p>
         </div>
 
@@ -3485,7 +3726,7 @@ import Header from "../components/Header.astro";
 </section>
 
 <!-- ════════════════════════════════════════════════════════════════
-       PRACTICAL ADVICE — What We Learned
+       PRACTICAL ADVICE - What We Learned
        ════════════════════════════════════════════════════════════════ -->
 <section class="section section--deep">
   <div class="section__inner">
@@ -3500,15 +3741,13 @@ import Header from "../components/Header.astro";
     <div class="insider-grid">
       <div class="insider-card">
         <div class="insider-card__image">
-          <img
-            src="images/manta-rays.jpg"
-            alt="Dry bag for boats"
-          />
+          <img src="images/manta-rays.jpg" alt="Dry bag for boats" />
         </div>
         <div class="insider-card__content">
           <h3 class="insider-card__title">Bring a Dry Bag</h3>
           <p class="insider-card__text">
-            Between open boats, sudden downpours, and slippery docks, your gear will get wet. A 20L dry bag is essential for camera and passport.
+            Between open boats, sudden downpours, and slippery docks, your gear
+            will get wet. A 20L dry bag is essential for camera and passport.
           </p>
         </div>
       </div>
@@ -3520,7 +3759,9 @@ import Header from "../components/Header.astro";
         <div class="insider-card__content">
           <h3 class="insider-card__title">Mosquito Management</h3>
           <p class="insider-card__text">
-            Dengue is a risk in Sulawesi. Mosquitoes in Luk Panenteng are aggressive at dusk. Burn coils, wear long linen; bring DEET—hard to find there.
+            Dengue is a risk in Sulawesi. Mosquitoes in Luk Panenteng are
+            aggressive at dusk. Burn coils, wear long linen; bring DEET-hard to
+            find there.
           </p>
         </div>
       </div>
@@ -3532,7 +3773,9 @@ import Header from "../components/Header.astro";
         <div class="insider-card__content">
           <h3 class="insider-card__title">"Rubber Time" (Jam Karet)</h3>
           <p class="insider-card__text">
-            If a boat driver says 8:00 AM, he may mean he'll wake at 8, have coffee, buy fuel, and find you at 9:30. Do not plan tight connections.
+            If a boat driver says 8:00 AM, he may mean he'll wake at 8, have
+            coffee, buy fuel, and find you at 9:30. Do not plan tight
+            connections.
           </p>
         </div>
       </div>
@@ -3544,7 +3787,8 @@ import Header from "../components/Header.astro";
         <div class="insider-card__content">
           <h3 class="insider-card__title">Snacks Are Salvation</h3>
           <p class="insider-card__text">
-            Food is repetitive. Village kiosks sell mostly sweet biscuits. Bring nuts, protein bars, or whatever comfort food you need.
+            Food is repetitive. Village kiosks sell mostly sweet biscuits. Bring
+            nuts, protein bars, or whatever comfort food you need.
           </p>
         </div>
       </div>
@@ -3556,7 +3800,9 @@ import Header from "../components/Header.astro";
         <div class="insider-card__content">
           <h3 class="insider-card__title">Snorkel Gear</h3>
           <p class="insider-card__text">
-            Rental gear is often moldy, leaks, or has bitten-off mouthpieces. Bring your own mask and snorkel. Fins can be rented; mask is personal.
+            Rental gear is often moldy, leaks, or has bitten-off mouthpieces.
+            Bring your own mask and snorkel. Fins can be rented; mask is
+            personal.
           </p>
         </div>
       </div>
@@ -3568,7 +3814,9 @@ import Header from "../components/Header.astro";
         <div class="insider-card__content">
           <h3 class="insider-card__title">Waste</h3>
           <p class="insider-card__text">
-            No formal trash disposal in villages. Carry plastic back to Luwuk. If you leave it in the village bin, it will likely be burned or dumped in the river.
+            No formal trash disposal in villages. Carry plastic back to Luwuk.
+            If you leave it in the village bin, it will likely be burned or
+            dumped in the river.
           </p>
         </div>
       </div>
@@ -3577,7 +3825,7 @@ import Header from "../components/Header.astro";
 </section>
 
 <!-- ════════════════════════════════════════════════════════════════
-       ITINERARIES — Banggai Islands
+       ITINERARIES - Banggai Islands
        ════════════════════════════════════════════════════════════════ -->
 <section id="itineraries" class="section section--cream">
   <div class="section__inner">
@@ -3585,7 +3833,8 @@ import Header from "../components/Header.astro";
       <span class="section-header__label">Sample Itineraries</span>
       <h2 class="section-header__title">Banggai Islands Itineraries</h2>
       <p class="section-header__subtitle">
-        A realistic 6-day loop (Peleng + Banggai Laut) or a shorter 4–5 day highlights-only focus on Peleng and the lake.
+        A realistic 6-day loop (Peleng + Banggai Laut) or a shorter 4-5 day
+        highlights-only focus on Peleng and the lake.
       </p>
     </div>
 
@@ -3600,12 +3849,12 @@ import Header from "../components/Header.astro";
           </div>
         </div>
         <div class="itin-medium__content">
-          <span class="itin-medium__destination"
-            >Peleng + Banggai Laut</span
-          >
+          <span class="itin-medium__destination">Peleng + Banggai Laut</span>
           <h3 class="itin-medium__name">The Full 6-Day Loop</h3>
           <p class="itin-medium__tagline">
-            Peleng (lake, jellyfish, cave) then ferry to Banggai Laut for Cardinalfish, island hopping, King's Bath and night market; return by speedboat to Luwuk.
+            Peleng (lake, jellyfish, cave) then ferry to Banggai Laut for
+            Cardinalfish, island hopping, King's Bath and night market; return
+            by speedboat to Luwuk.
           </p>
           <p class="itin-medium__route">
             Luwuk → Peleng → Banggai Laut → Luwuk
@@ -3618,7 +3867,7 @@ import Header from "../components/Header.astro";
           <img src="images/coral-reef.jpg" alt="4-5 day highlights" />
           <div class="itin-medium__badge">Highlights Only</div>
           <div class="itin-medium__duration">
-            <div class="itin-medium__duration-number">4–5</div>
+            <div class="itin-medium__duration-number">4-5</div>
             <div class="itin-medium__duration-label">Days</div>
           </div>
         </div>
@@ -3626,7 +3875,8 @@ import Header from "../components/Header.astro";
           <span class="itin-medium__destination">Peleng only</span>
           <h3 class="itin-medium__name">Shorter "Highlights Only" Loop</h3>
           <p class="itin-medium__tagline">
-            Lake Paisupok and jellyfish lagoon, then island hop or coastal scooter; drive to Salakan and return to Luwuk. Skip Banggai Laut.
+            Lake Paisupok and jellyfish lagoon, then island hop or coastal
+            scooter; drive to Salakan and return to Luwuk. Skip Banggai Laut.
           </p>
           <p class="itin-medium__route">
             Luwuk → Luk Panenteng → Salakan → Luwuk
@@ -3638,30 +3888,95 @@ import Header from "../components/Header.astro";
     <div class="two-col-text" style="margin-top: 48px;">
       <div>
         <h3>Day 1: The Crossing</h3>
-        <p>Route: Luwuk Airport → Luwuk Harbor → Leme-Leme (Peleng) → Luk Panenteng. We landed in Luwuk around midday, ignored the taxi touts and flagged a car to the ferry terminal. Two options: the public wooden boat to Leme-Leme (slow, 3–4 hours, cheap) or the fast boat to Salakan (expensive, then 2 hours drive to the lake). We chose the wooden boat; it departs daily around 2:00 PM—"2:00 PM" is a suggestion. We sat on the roof with the locals; the sea was calm but the boat is loud. We docked in Leme-Leme just before sunset; no taxis—pre-arrange pickup to Luk Panenteng. 20-minute drive through dense coconut plantations. Homestay: concrete room, mattress on floor, mosquito net; electricity 6 PM–6 AM only; mandi style, cold water. Cost: 350,000 IDR ($23 USD) including three meals.</p>
+        <p>
+          Route: Luwuk Airport → Luwuk Harbor → Leme-Leme (Peleng) → Luk
+          Panenteng. We landed in Luwuk around midday, ignored the taxi touts
+          and flagged a car to the ferry terminal. Two options: the public
+          wooden boat to Leme-Leme (slow, 3-4 hours, cheap) or the fast boat to
+          Salakan (expensive, then 2 hours drive to the lake). We chose the
+          wooden boat; it departs daily around 2:00 PM-"2:00 PM" is a
+          suggestion. We sat on the roof with the locals; the sea was calm but
+          the boat is loud. We docked in Leme-Leme just before sunset; no
+          taxis-pre-arrange pickup to Luk Panenteng. 20-minute drive through
+          dense coconut plantations. Homestay: concrete room, mattress on floor,
+          mosquito net; electricity 6 PM-6 AM only; mandi style, cold water.
+          Cost: 350,000 IDR ($23 USD) including three meals.
+        </p>
 
         <h3>Day 2: The Mirror Lake (Paisupok)</h3>
-        <p>We woke at 5:30 AM. Paisupok Lake is a 10-minute walk from the homestays; entrance 15,000 IDR. We rented a canoe (30,000 IDR) and paddled to the center—dead silent, like floating on glass. By 11:00 AM the sun was blistering; we retreated for lunch (grilled fish and kangkung—this became our diet for the week). Afternoon: scooter rental (100,000 IDR) east along rough roads, fishing hamlets, and a small cove (plastic waste at the high tide line).</p>
+        <p>
+          We woke at 5:30 AM. Paisupok Lake is a 10-minute walk from the
+          homestays; entrance 15,000 IDR. We rented a canoe (30,000 IDR) and
+          paddled to the center-dead silent, like floating on glass. By 11:00 AM
+          the sun was blistering; we retreated for lunch (grilled fish and
+          kangkung-this became our diet for the week). Afternoon: scooter rental
+          (100,000 IDR) east along rough roads, fishing hamlets, and a small
+          cove (plastic waste at the high tide line).
+        </p>
 
         <h3>Day 3: Jellyfish and Caves</h3>
-        <p>Paisubatango (stingless jellyfish lagoon) about 30 minutes away—muddy path through a cocoa plantation, 15 minutes humid walk. Then Paisu Pok, a freezing freshwater cave pool; we were the only ones there. That evening the power didn't come on at 6 PM; the generator had a mechanical issue. We ate dinner by headlamp; the host brought extra tea. Power came on at 9:00 PM and the village cheered.</p>
+        <p>
+          Paisubatango (stingless jellyfish lagoon) about 30 minutes away-muddy
+          path through a cocoa plantation, 15 minutes humid walk. Then Paisu
+          Pok, a freezing freshwater cave pool; we were the only ones there.
+          That evening the power didn't come on at 6 PM; the generator had a
+          mechanical issue. We ate dinner by headlamp; the host brought extra
+          tea. Power came on at 9:00 PM and the village cheered.
+        </p>
 
         <h3>Day 4: Moving South to Banggai Laut</h3>
-        <p>Luk Panenteng → Salakan (2 hours by pre-arranged driver; the road improves near the capital—Salakan has Indomarets and a traffic light). Daily wooden boat from Salakan to Banggai Town departs 2:00 PM; 50,000 IDR per person; 3–4 hours. The crossing was rougher; we crossed open water where currents meet; passengers were vomiting into plastic bags. Banggai Town feels totally different—maritime, dense, built to the water's edge, mosques and houses on stilts. We stayed at a hotel near the harbor: AC, private bathroom with shower (cold water), Wi-Fi for WhatsApp. Cost: 300,000 IDR ($20 USD).</p>
+        <p>
+          Luk Panenteng → Salakan (2 hours by pre-arranged driver; the road
+          improves near the capital-Salakan has Indomarets and a traffic light).
+          Daily wooden boat from Salakan to Banggai Town departs 2:00 PM; 50,000
+          IDR per person; 3-4 hours. The crossing was rougher; we crossed open
+          water where currents meet; passengers were vomiting into plastic bags.
+          Banggai Town feels totally different-maritime, dense, built to the
+          water's edge, mosques and houses on stilts. We stayed at a hotel near
+          the harbor: AC, private bathroom with shower (cold water), Wi-Fi for
+          WhatsApp. Cost: 300,000 IDR ($20 USD).
+        </p>
 
         <h3>Day 5: The Cardinal Fish & The King's Bath</h3>
-        <p>We walked to the main jetty in Banggai Town and looked down between the pilings—hundreds of Banggai Cardinalfish among the sea urchins under the busy dock. We chartered a boat for the day (800,000 IDR): Bone Baru (fine white sand, vibrant table and soft corals), Mandel (saw a turtle; current was strong). Back on Banggai Island we took an ojek to the King's Bath (Pemandian Raja)—freshwater spring once reserved for royalty, now a public swimming hole; cool and clear but concrete covered in moss and some litter. Dinner at the Night Market (Pasar Malam) near the harbor: grilled fish with dabu-dabu. Best meal of the trip. Cost: 40,000 IDR for a whole fish and rice.</p>
+        <p>
+          We walked to the main jetty in Banggai Town and looked down between
+          the pilings-hundreds of Banggai Cardinalfish among the sea urchins
+          under the busy dock. We chartered a boat for the day (800,000 IDR):
+          Bone Baru (fine white sand, vibrant table and soft corals), Mandel
+          (saw a turtle; current was strong). Back on Banggai Island we took an
+          ojek to the King's Bath (Pemandian Raja)-freshwater spring once
+          reserved for royalty, now a public swimming hole; cool and clear but
+          concrete covered in moss and some litter. Dinner at the Night Market
+          (Pasar Malam) near the harbor: grilled fish with dabu-dabu. Best meal
+          of the trip. Cost: 40,000 IDR for a whole fish and rice.
+        </p>
 
         <h3>Day 6: The Long Road Back</h3>
-        <p>Speedboat from Banggai to Luwuk direct: 250,000 IDR per person, supposedly departs 8:00 AM. Long narrow fiberglass tube, windows sealed; 3.5 hours, bone-jarring. We checked into a hotel in Luwuk for the night—hot shower and a predictable electrical grid.</p>
+        <p>
+          Speedboat from Banggai to Luwuk direct: 250,000 IDR per person,
+          supposedly departs 8:00 AM. Long narrow fiberglass tube, windows
+          sealed; 3.5 hours, bone-jarring. We checked into a hotel in Luwuk for
+          the night-hot shower and a predictable electrical grid.
+        </p>
       </div>
       <div>
-        <h3>Shorter 4–5 Day Itinerary (Highlights Only)</h3>
+        <h3>Shorter 4-5 Day Itinerary (Highlights Only)</h3>
         <p>If you don't have a week, skip Banggai Laut and focus on Peleng.</p>
-        <p><strong>Day 1:</strong> Fly to Luwuk AM. Ferry to Leme-Leme. Sleep Luk Panenteng.</p>
-        <p><strong>Day 2:</strong> Paisupok Lake (early AM). Paisubatango (Jellyfish) PM.</p>
-        <p><strong>Day 3:</strong> Island hopping around Luk Panenteng (Poco Island) or coastal scooter ride.</p>
-        <p><strong>Day 4:</strong> Morning swim. Drive to Salakan. Ferry or speedboat to Luwuk.</p>
+        <p>
+          <strong>Day 1:</strong> Fly to Luwuk AM. Ferry to Leme-Leme. Sleep Luk Panenteng.
+        </p>
+        <p>
+          <strong>Day 2:</strong> Paisupok Lake (early AM). Paisubatango (Jellyfish)
+          PM.
+        </p>
+        <p>
+          <strong>Day 3:</strong> Island hopping around Luk Panenteng (Poco Island)
+          or coastal scooter ride.
+        </p>
+        <p>
+          <strong>Day 4:</strong> Morning swim. Drive to Salakan. Ferry or speedboat
+          to Luwuk.
+        </p>
         <p><strong>Day 5:</strong> Fly out.</p>
       </div>
     </div>
@@ -3675,7 +3990,7 @@ import Header from "../components/Header.astro";
 </section>
 
 <!-- ════════════════════════════════════════════════════════════════
-       YACHTS — Exact Match to Yachts Page
+       YACHTS - Exact Match to Yachts Page
        ════════════════════════════════════════════════════════════════ -->
 <section id="yachts" class="section section--white">
   <div class="section__inner">
@@ -3764,7 +4079,8 @@ import Header from "../components/Header.astro";
       <span class="section-header__label">Continue Exploring</span>
       <h2 class="section-header__title">More Indonesian Destinations</h2>
       <p class="section-header__subtitle">
-        The Banggai Islands are one of many remote corners of Indonesia worth exploring.
+        The Banggai Islands are one of many remote corners of Indonesia worth
+        exploring.
       </p>
     </div>
 
@@ -3796,7 +4112,7 @@ import Header from "../components/Header.astro";
         <div class="dest-card__season">
           <div class="dest-card__season-dot dest-card__season-dot--shoulder">
           </div>
-          <span class="dest-card__season-text">Apr–Nov</span>
+          <span class="dest-card__season-text">Apr-Nov</span>
         </div>
         <div class="dest-card__content">
           <span class="dest-card__region">Lesser Sundas</span>
@@ -3813,7 +4129,7 @@ import Header from "../components/Header.astro";
         <div class="dest-card__overlay"></div>
         <div class="dest-card__season">
           <div class="dest-card__season-dot"></div>
-          <span class="dest-card__season-text">Oct–Apr</span>
+          <span class="dest-card__season-text">Oct-Apr</span>
         </div>
         <div class="dest-card__content">
           <span class="dest-card__region">Bird's Head Peninsula</span>
@@ -3851,32 +4167,37 @@ import Header from "../components/Header.astro";
           What's the best time to visit the Banggai Islands?
         </h3>
         <p class="faq-item__answer">
-          Ideally September to November—seas calmest, rain manageable. Avoid the peak of the monsoon (Dec–Feb) unless you have buffer time for delays. Paisupok Lake is clear year-round.
+          Ideally September to November-seas calmest, rain manageable. Avoid the
+          peak of the monsoon (Dec-Feb) unless you have buffer time for delays.
+          Paisupok Lake is clear year-round.
         </p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-item__question">
-          How do I get there?
-        </h3>
+        <h3 class="faq-item__question">How do I get there?</h3>
         <p class="faq-item__answer">
-          Fly to Luwuk (LWK) on the Sulawesi mainland (usually via Makassar). Taxi to the harbor, then take the wooden ferry to Leme-Leme (Peleng) or the fast boat to Salakan. Pre-arrange pickup to Luk Panenteng.
+          Fly to Luwuk (LWK) on the Sulawesi mainland (usually via Makassar).
+          Taxi to the harbor, then take the wooden ferry to Leme-Leme (Peleng)
+          or the fast boat to Salakan. Pre-arrange pickup to Luk Panenteng.
         </p>
       </div>
 
       <div class="faq-item">
         <h3 class="faq-item__question">Is it suitable for everyone?</h3>
         <p class="faq-item__answer">
-          If you are patient, self-sufficient, and willing to trade comfort for silence, the Banggai Islands are remarkable. If you need seamless transfers and air-conditioned cafes, consider a different destination.
+          If you are patient, self-sufficient, and willing to trade comfort for
+          silence, the Banggai Islands are remarkable. If you need seamless
+          transfers and air-conditioned cafes, consider a different destination.
         </p>
       </div>
 
       <div class="faq-item">
-        <h3 class="faq-item__question">
-          How much cash do I need?
-        </h3>
+        <h3 class="faq-item__question">How much cash do I need?</h3>
         <p class="faq-item__answer">
-          Bring all the cash you think you need, then add 30%. Accommodation ~250–400K IDR/night; car charter ~700K/day; boat charters 800K–1.5M IDR. ATMs in Luwuk and Salakan; often reject foreign cards in Banggai Town.
+          Bring all the cash you think you need, then add 30%. Accommodation
+          ~250-400K IDR/night; car charter ~700K/day; boat charters 800K-1.5M
+          IDR. ATMs in Luwuk and Salakan; often reject foreign cards in Banggai
+          Town.
         </p>
       </div>
     </div>
@@ -3886,21 +4207,27 @@ import Header from "../components/Header.astro";
       <div class="faq-item">
         <h3 class="faq-item__question">What about accommodation?</h3>
         <p class="faq-item__answer">
-          Luk Panenteng: rustic homestays, electricity 6 PM–6 AM, mandi-style bathrooms, meals included. Salakan: government-style transit hotels. Banggai Town: older hotels with AC; ask to see the room before paying.
+          Luk Panenteng: rustic homestays, electricity 6 PM-6 AM, mandi-style
+          bathrooms, meals included. Salakan: government-style transit hotels.
+          Banggai Town: older hotels with AC; ask to see the room before paying.
         </p>
       </div>
 
       <div class="faq-item">
         <h3 class="faq-item__question">Do I need to speak Indonesian?</h3>
         <p class="faq-item__answer">
-          English is virtually non-existent outside a few guides. Use Google Translate offline; learn basic phrases (e.g. kanan, kiri, mahal, jam berapa?). Booking homestays often via Google Maps + WhatsApp.
+          English is virtually non-existent outside a few guides. Use Google
+          Translate offline; learn basic phrases (e.g. kanan, kiri, mahal, jam
+          berapa?). Booking homestays often via Google Maps + WhatsApp.
         </p>
       </div>
 
       <div class="faq-item">
         <h3 class="faq-item__question">Is there mobile coverage?</h3>
         <p class="faq-item__answer">
-          Telkomsel is the only carrier that matters. 4G in Salakan and Banggai Town; 3G or Edge in Luk Panenteng. Large dead zones on the roads. Download offline maps.
+          Telkomsel is the only carrier that matters. 4G in Salakan and Banggai
+          Town; 3G or Edge in Luk Panenteng. Large dead zones on the roads.
+          Download offline maps.
         </p>
       </div>
 
@@ -3909,7 +4236,9 @@ import Header from "../components/Header.astro";
           Can I see the Banggai Cardinalfish without a boat?
         </h3>
         <p class="faq-item__answer">
-          Yes. Walk to the main jetty in Banggai Town and look down into the water between the pilings—hundreds of Cardinalfish hover among the sea urchins under the busy commercial dock.
+          Yes. Walk to the main jetty in Banggai Town and look down into the
+          water between the pilings-hundreds of Cardinalfish hover among the sea
+          urchins under the busy commercial dock.
         </p>
       </div>
     </div>
@@ -3987,10 +4316,10 @@ import Header from "../components/Header.astro";
           <div class="form__field">
             <select name="guests" required>
               <option value="" disabled selected>Group Size</option>
-              <option value="2-4">2–4 Guests</option>
-              <option value="5-8">5–8 Guests</option>
-              <option value="9-12">9–12 Guests</option>
-              <option value="13-16">13–16 Guests</option>
+              <option value="2-4">2-4 Guests</option>
+              <option value="5-8">5-8 Guests</option>
+              <option value="9-12">9-12 Guests</option>
+              <option value="13-16">13-16 Guests</option>
               <option value="17+">17+ Guests</option>
             </select>
           </div>
@@ -3998,8 +4327,8 @@ import Header from "../components/Header.astro";
             <select name="budget">
               <option value="" disabled selected>Budget (Per Week)</option>
               <option value="under-50k">Under $50,000</option>
-              <option value="50k-80k">$50,000 – $80,000</option>
-              <option value="80k-120k">$80,000 – $120,000</option>
+              <option value="50k-80k">$50,000 - $80,000</option>
+              <option value="80k-120k">$80,000 - $120,000</option>
               <option value="120k+">$120,000+</option>
               <option value="flexible">Flexible</option>
             </select>
@@ -4011,7 +4340,11 @@ import Header from "../components/Header.astro";
             placeholder="Dates you're considering, destinations that interest you, or anything else that helps us personalize your recommendations."
           ></textarea>
         </div>
-        <input type="hidden" name="source" value="destination-banggai-islands" />
+        <input
+          type="hidden"
+          name="source"
+          value="destination-banggai-islands"
+        />
         <input type="hidden" name="destination" value="Banggai Islands" />
         <button type="submit" class="form__submit"
           >Plan Your Voyage <span>→</span></button

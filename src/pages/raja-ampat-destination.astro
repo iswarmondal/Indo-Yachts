@@ -1,8 +1,48 @@
 ---
 import Header from "../components/Header.astro";
+import BaseHead from "../components/BaseHead.astro";
 ---
 
+<head>
+  <BaseHead />
+</head>
 <style>
+  :root {
+    --oxblood: #953334;
+    --oxblood-deep: #722728;
+    --oxblood-light: #a84445;
+    --deep-sea: #0a1628;
+    --deep-sea-light: #142238;
+    --white: #ffffff;
+    --snow: #fafafa;
+    --cream: #f8f6f3;
+    --sand: #e8e4de;
+    --charcoal: #1a1a1a;
+    --slate: #4a4a4a;
+    --silver: #9a9a9a;
+    --gold-muted: #b8a878;
+    --peak: #2d6a4f;
+    --shoulder: #c17f24;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: "Manrope", sans-serif;
+    background: var(--white);
+    color: var(--charcoal);
+  }
+
   /* ════════════════════════════════════════════════════════════════
        HERO - CONCEPT B EDITORIAL FRAME
        ════════════════════════════════════════════════════════════════ */
