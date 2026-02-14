@@ -1,49 +1,148 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+// import Footer from "../components/Footer.astro";
+// import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+// import "../styles/global.css";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <BaseHead />
+
+  <body>
+    <!-- HEADER -->
+    <Header />
+
+    <!-- HERO -->
+    <section class="hero">
+      <div
+        class="hero-bg"
+        style="background-image: url('images/Raja_Ampat_Expedition.jpg');"
+      >
+      </div>
+      <div class="hero-content">
+        <h1>Explore Indonesia's Hidden Waters</h1>
+        <p>Private luxury yacht charters through Raja Ampat, Komodo & beyond</p>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll to Discover</span>
+      </div>
+    </section>
+
+    <!-- CONTENT SECTIONS (for scroll testing) -->
+    <section class="content-section">
+      <h2>A Legacy of Exploration</h2>
+      <p>
+        Since 2012, Indo Yachts has been charting courses through Indonesia's
+        most spectacular waters. Our fleet of traditional phinisi sailing
+        vessels offers an unparalleled way to experience the world's most
+        biodiverse marine environment.
+      </p>
+      <p>
+        From the limestone karsts of Raja Ampat to the volcanic landscapes of
+        Komodo, each journey is crafted to reveal the extraordinary beauty of
+        the Indonesian archipelago. With over 500 charters completed, we bring
+        deep local knowledge and genuine passion to every expedition.
+      </p>
+    </section>
+
+    <section class="content-section">
+      <h2>Exceptional Vessels</h2>
+      <p>
+        Each yacht in our fleet represents the pinnacle of Indonesian
+        craftsmanship. Built by master shipwrights using traditional techniques
+        passed down through generations, our phinisi vessels combine authentic
+        character with modern comfort.
+      </p>
+      <p>
+        From intimate voyages aboard Si Datu Bua to grand expeditions on our
+        flagship Dunia Baru, we offer the perfect vessel for every journey.
+        Professional crews, gourmet cuisine, and thoughtfully designed
+        itineraries ensure an experience that exceeds expectations.
+      </p>
+    </section>
+
+    
+
+	<style>
+		/* =====================================================
+		 HERO SECTION
+		 ===================================================== */
+		 .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(10, 22, 40, 0.6) 0%,
+        rgba(10, 22, 40, 0.3) 50%,
+        rgba(10, 22, 40, 0.5) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 0 48px;
+    }
+
+    .hero-content h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 52px;
+      font-weight: 300;
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .hero-content p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      z-index: 10;
+    }
+
+    .scroll-indicator span {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .scroll-indicator::after {
+      content: "";
+      width: 1px;
+      height: 32px;
+      background: linear-gradient(to bottom, var(--oxblood), transparent);
+    }
+	</style>
+  </body>
 </html>

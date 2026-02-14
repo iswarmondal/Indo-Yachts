@@ -1,0 +1,4321 @@
+---
+import Header from "../components/Header.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Raja Ampat Yacht Charter | Complete Guide to the World's Best Diving |
+      Indo Yachts
+    </title>
+    <meta
+      name="description"
+      content="The definitive guide to Raja Ampat yacht charters. Explore the world's most biodiverse marine ecosystem aboard luxury phinisi yachts. 500+ charters since 2012. Dive sites, seasons, marine life, itineraries, and insider knowledge."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --oxblood: #953334;
+        --oxblood-deep: #722728;
+        --oxblood-light: #a84445;
+        --deep-sea: #0a1628;
+        --deep-sea-light: #142238;
+        --white: #ffffff;
+        --snow: #fafafa;
+        --cream: #f8f6f3;
+        --sand: #e8e4de;
+        --charcoal: #1a1a1a;
+        --slate: #4a4a4a;
+        --silver: #9a9a9a;
+        --gold-muted: #b8a878;
+        --peak: #2d6a4f;
+        --shoulder: #c17f24;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Manrope", sans-serif;
+        background: var(--white);
+        color: var(--charcoal);
+      }
+
+      /* ════════════════════════════════════════════════════════════════
+       HERO - CONCEPT B EDITORIAL FRAME
+       ════════════════════════════════════════════════════════════════ */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: var(--snow);
+      }
+
+      .hero__frame {
+        flex: 1;
+        position: relative;
+        margin: 24px;
+        margin-top: 0;
+        margin-bottom: 0;
+        overflow: hidden;
+        min-height: 500px;
+      }
+
+      .hero__image {
+        position: absolute;
+        inset: 0;
+      }
+
+      .hero__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero__overlay {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            to bottom,
+            rgba(10, 22, 40, 0.5) 0%,
+            rgba(10, 22, 40, 0.2) 15%,
+            transparent 30%
+          ),
+          linear-gradient(
+            to top,
+            rgba(10, 22, 40, 0.75) 0%,
+            rgba(10, 22, 40, 0.25) 40%,
+            transparent 70%
+          );
+      }
+
+      .hero__content {
+        position: absolute;
+        bottom: 60px;
+        left: 8%;
+        right: 8%;
+        z-index: 2;
+      }
+
+      .hero__eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      .hero__eyebrow-line {
+        width: 40px;
+        height: 1px;
+        background: var(--gold-muted);
+      }
+
+      .hero__eyebrow-text {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--gold-muted);
+      }
+
+      .hero__title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(52px, 8vw, 88px);
+        font-weight: 300;
+        font-style: italic;
+        color: var(--white);
+        letter-spacing: 0.02em;
+        line-height: 0.95;
+        margin-bottom: 16px;
+      }
+
+      .hero__tagline {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(18px, 2vw, 22px);
+        font-weight: 300;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      .hero__scroll {
+        position: absolute;
+        bottom: 60px;
+        right: 8%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .hero__scroll-text {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      .hero__scroll-line {
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        animation: scrollPulse 2s ease-in-out infinite;
+      }
+
+      @keyframes scrollPulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scaleY(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scaleY(0.8);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .hero__frame {
+          margin: 0;
+        }
+        .hero__content {
+          left: 24px;
+          right: 24px;
+          bottom: 40px;
+        }
+        .hero__scroll {
+          display: none;
+        }
+      }
+
+      /* ════════════════════════════════════════════════════════════════
+       INFO FOOTER - TRUST BAR (LIGHT STYLE)
+       ════════════════════════════════════════════════════════════════ */
+      .info-footer {
+        padding: 40px 8%;
+        background: var(--snow);
+      }
+
+      .info-footer__inner {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        flex-wrap: wrap;
+      }
+
+      .info-footer__item {
+        text-align: center;
+      }
+
+      .info-footer__value {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(20px, 2.5vw, 26px);
+        font-weight: 300;
+        color: var(--deep-sea);
+        margin-bottom: 8px;
+      }
+
+      .info-footer__label {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--silver);
+      }
+
+      @media (max-width: 900px) {
+        .info-footer {
+          padding: 32px 24px;
+        }
+        .info-footer__inner {
+          gap: 32px;
+        }
+        .info-footer__item {
+          flex: 1 1 45%;
+        }
+      }
+
+      /* ════════════════════════════════════════════════════════════════
+       SECTIONS
+       ════════════════════════════════════════════════════════════════ */
+      .section {
+        padding: 100px 48px;
+      }
+      .section--white {
+        background: var(--white);
+      }
+      .section--snow {
+        background: var(--snow);
+      }
+      .section--cream {
+        background: var(--cream);
+      }
+      .section--deep {
+        background: var(--deep-sea);
+        color: var(--white);
+      }
+      .section__inner {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 768px) {
+        .section {
+          padding: 60px 24px;
+        }
+      }
+
+      /* Section Headers */
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-header__label {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--oxblood);
+        margin-bottom: 16px;
+      }
+
+      .section-header__title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(32px, 5vw, 42px);
+        font-weight: 300;
+        color: var(--deep-sea);
+        line-height: 1.15;
+        margin-bottom: 20px;
+      }
+
+      .section-header__subtitle {
+        font-size: 15px;
+        line-height: 1.9;
+        color: var(--slate);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .section--deep .section-header__label {
+        color: var(--gold-muted);
+      }
+      .section--deep .section-header__title {
+        color: var(--white);
+      }
+      .section--deep .section-header__subtitle {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* ════════════════════════════════════════════════════════════════
+       OVERVIEW — TEXT + IMAGE
+       ════════════════════════════════════════════════════════════════ */
+      .overview-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: start;
+      }
+
+      .overview__text h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 36px;
+        font-weight: 300;
+        color: var(--deep-sea);
+        margin-bottom: 28px;
+        line-height: 1.2;
+      }
+
+      .overview__text h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 24px;
+        font-weight: 400;
+        color: var(--deep-sea);
+        margin: 32px 0 16px;
+      }
+
+      .overview__text p {
+        font-size: 15px;
+        line-height: 1.95;
+        color: var(--slate);
+        margin-bottom: 20px;
+      }
+
+      .overview__text p strong {
+        color: var(--deep-sea);
+      }
+
+      .overview__image {
+      }
+      .overview__image img {
+        width: 100%;
+        height: auto;
+      }
+
+      .overview__image-caption {
+        font-size: 12px;
+        color: var(--silver);
+        margin-top: 12px;
+        text-align: center;
+        font-style: italic;
+      }
+
+      @media (max-width: 1000px) {
+        .overview-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+      }
+
+      /* Featured Quote - Full Width */
+      .featured-quote {
+        background: var(--deep-sea);
+        padding: 100px 48px;
+        text-align: center;
+        position: relative;
+      }
+
+      .featured-quote::before {
+        content: '"';
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 180px;
+        font-weight: 300;
+        color: var(--oxblood);
+        opacity: 0.3;
+        line-height: 1;
+      }
+
+      .featured-quote__inner {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .featured-quote__text {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(28px, 4vw, 40px);
+        font-weight: 300;
+        font-style: italic;
+        color: var(--white);
+        line-height: 1.4;
+        margin-bottom: 24px;
+      }
+
+      .featured-quote__attribution {
+        font-size: 14px;
+        color: var(--gold-muted);
+        letter-spacing: 0.05em;
+      }
+
+      /* Two Column with Image */
+      .two-col-with-image {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+      }
+
+      .two-col-with-image__text h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 36px;
+        font-weight: 300;
+        color: var(--deep-sea);
+        margin-bottom: 24px;
+        line-height: 1.2;
+      }
+
+      .two-col-with-image__text p {
+        font-size: 15px;
+        line-height: 1.9;
+        color: var(--slate);
+        margin-bottom: 16px;
+      }
+
+      .two-col-with-image__text p strong {
+        color: var(--deep-sea);
+      }
+
+      .two-col-with-image__image img {
+        width: 100%;
+        height: auto;
+      }
+
+      @media (max-width: 900px) {
+        .two-col-with-image {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+      }
+
+      /* Highlight Box */
+      .highlight-box {
+        background: var(--cream);
+        padding: 32px;
+        margin: 32px 0;
+        border-left: 3px solid var(--oxblood);
+      }
+
+      .highlight-box__title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 20px;
+        font-weight: 400;
+        color: var(--deep-sea);
+        margin-bottom: 12px;
+      }
+
+      .highlight-box p {
+        font-size: 14px;
+        line-height: 1.8;
+        color: var(--slate);
+        margin: 0;
+      }
+
+      /* Experience Grid */
+      .experience-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        margin-top: 60px;
+      }
+
+      .experience-card {
+        background: var(--snow);
+        padding: 40px;
+      }
+
+      .experience-card__title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 24px;
+        font-weight: 400;
+        color: var(--deep-sea);
+        margin-bottom: 16px;
+      }
+
+      .experience-card p {
+        font-size: 14px;
+        line-height: 1.8;
+        color: var(--slate);
+      }
+
+      @media (max-width: 768px) {
+        .experience-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+      }
+
+      /* Beyond Underwater - Full Width Feature */
+      .beyond-section {
+        background: var(--cream);
+        padding: 100px 48px;
+        position: relative;
+      }
+
+      .beyond-section__inner {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+      }
+
+      .beyond-section__content {
+        position: relative;
+      }
+
+      .beyond-section__label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--oxblood);
+        margin-bottom: 20px;
+      }
+
+      .beyond-section__label::before {
+        content: "";
+        width: 40px;
+        height: 1px;
+        background: var(--oxblood);
+      }
+
+      .beyond-section__content h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 36px;
+        font-weight: 300;
+        color: var(--deep-sea);
+        margin-bottom: 24px;
+        line-height: 1.2;
+      }
+
+      .beyond-section__content p {
+        font-size: 15px;
+        line-height: 1.9;
+        color: var(--slate);
+        margin-bottom: 20px;
+      }
+
+      .beyond-section__content p strong {
+        color: var(--deep-sea);
+      }
+
+      .beyond-section__highlights {
+        display: flex;
+        gap: 32px;
+        margin-top: 32px;
+        padding-top: 28px;
+        border-top: 1px solid var(--sand);
+      }
+
+      .beyond-section__highlight {
+        flex: 1;
+      }
+
+      .beyond-section__highlight-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--deep-sea);
+        margin-bottom: 6px;
+      }
+
+      .beyond-section__highlight-text {
+        font-size: 13px;
+        color: var(--silver);
+        line-height: 1.6;
+      }
+
+      .beyond-section__image {
+        position: relative;
+      }
+
+      .beyond-section__image img {
+        width: 100%;
+        height: auto;
+      }
+
+      .beyond-section__image-accent {
+        position: absolute;
+        bottom: -20px;
+        left: -20px;
+        width: 120px;
+        height: 120px;
+        border: 1px solid var(--gold-muted);
+        opacity: 0.4;
+        z-index: -1;
+      }
+
+      @media (max-width: 900px) {
+        .beyond-section {
+          padding: 60px 24px;
+        }
+        .beyond-section__inner {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .beyond-section__highlights {
+          flex-direction: column;
+          gap: 20px;
+        }
+        .beyond-section__image-accent {
+          display: none;
+        }
+      }
+
+      /* Indo Yachts Experience - Left-Aligned Bounded (V1) */
+      .expertise-hero {
+        position: relative;
+        min-height: 600px;
+        overflow: hidden;
+      }
+
+      .expertise-hero__image {
+        position: absolute;
+        inset: 0;
+      }
+
+      .expertise-hero__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .expertise-hero__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to right,
+          rgba(10, 22, 40, 0.92) 0%,
+          rgba(10, 22, 40, 0.85) 35%,
+          rgba(10, 22, 40, 0.5) 60%,
+          rgba(10, 22, 40, 0.2) 100%
+        );
+      }
+
+      .expertise-hero__inner {
+        position: relative;
+        z-index: 2;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 100px 48px;
+        display: flex;
+        align-items: center;
+        min-height: 600px;
+      }
+
+      .expertise-hero__content {
+        max-width: 580px;
+      }
+
+      .expertise-hero__label {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold-muted);
+        margin-bottom: 24px;
+      }
+
+      .expertise-hero__label::after {
+        content: "";
+        width: 60px;
+        height: 1px;
+        background: var(--gold-muted);
+        opacity: 0.4;
+      }
+
+      .expertise-hero__title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(40px, 5vw, 56px);
+        font-weight: 300;
+        color: var(--white);
+        line-height: 1.1;
+        margin-bottom: 28px;
+      }
+
+      .expertise-hero__text {
+        font-size: 16px;
+        line-height: 1.9;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 16px;
+      }
+
+      .expertise-hero__stats {
+        display: flex;
+        gap: 48px;
+        margin-top: 40px;
+        padding-top: 32px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .expertise-hero__stat-value {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 40px;
+        font-weight: 300;
+        color: var(--white);
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+
+      .expertise-hero__stat-label {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold-muted);
+      }
+
+      @media (max-width: 900px) {
+        .expertise-hero {
+          min-height: 650px;
+        }
+        .expertise-hero__overlay {
+          background: linear-gradient(
+            to top,
+            rgba(10, 22, 40, 0.95) 0%,
+            rgba(10, 22, 40, 0.8) 50%,
+            rgba(10, 22, 40, 0.5) 100%
+          );
+        }
+        .expertise-hero__inner {
+          padding: 60px 24px;
+          align-items: flex-end;
+        }
+        .expertise-hero__content {
+          max-width: 100%;
+        }
+        .expertise-hero__stats {
+          flex-wrap: wrap;
+          gap: 32px;
+        }
+      }
+
+      /* ════════════════════════════════════════════════════════════════
+       REGIONS — THE FOUR KINGDOMS
+       ════════════════════════════════════════════════════════════════ */
+      .region-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .region-card {
+        background: var(--white);
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(10, 22, 40, 0.06);
+      }
+
+      .region-card__image {
+        aspect-ratio: 16/10;
+        overflow: hidden;
+      }
+
+      .region-card__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .region-card:hover .region-card__image img {
+        transform: scale(1.05);
+      }
+
+      .region-card__content {
+        padding: 32px;
+      }
+
+      .region-card__label {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--oxblood);
+        margin-bottom: 12px;
+      }
+
+      .region-card__title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 28px;
+        font-weight: 300;
+        color: var(--deep-sea);
+        margin-bottom: 16px;
+      }
+
+      .region-card__desc {
+        font-size: 14px;
+        line-height: 1.8;
+        color: var(--slate);
+        margin-bottom: 20px;
+      }
+
+      .region-card__highlights {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .region-card__highlight {
+        padding: 6px 12px;
+        background: var(--snow);
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--slate);
+      }
+
+      @media (max-width: 1100px) {
+        .region-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ════════════════════════════════════════════════════════════════
+       DIVE SITES
+       ════════════════════════════════════════════════════════════════ */
+      .dive-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+
+      .dive-card {
+        background: var(--white);
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(10, 22, 40, 0.06);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .dive-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(10, 22, 40, 0.1);
+      }
+
+      .dive-card__image {
+        aspect-ratio: 4/3;
+        overflow: hidden;
+      }
+
+      .dive-card__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s ease;
+      }
+
+      .dive-card:hover .dive-card__image img {
+        transform: scale(1.05);
+      }
+
+      .dive-card__content {
+        padding: 24px;
+      }
+
+      .dive-card__region {
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--oxblood);
+        margin-bottom: 8px;
+      }
+
+      .dive-card__title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 22px;
+        font-weight: 400;
+        color: var(--deep-sea);
+        margin-bottom: 10px;
+      }
+
+      .dive-card__desc {
+        font-size: 13px;
+        line-height: 1.6;
+        color: var(--slate);
+        margin-bottom: 16px;
+      }
+
+      .dive-card__tags {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .dive-card__tag {
+        padding: 5px 10px;
+        background: var(--snow);
+        font-size: 10px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--slate);
+      }
+
+      .dive-grid--hidden {
+        display: none;
+        margin-top: 24px;
+      }
+      .dive-grid--hidden.active {
+        display: grid;
+      }
+
+      .view-more-wrapper {
+        text-align: center;
+        margin-top: 48px;
+      }
+
+      .link-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: none;
+        border: none;
+        font-family: "Manrope", sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #722f37;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 0;
+      }
+
+      .link-toggle:hover {
+        color: #5a252c;
+        gap: 14px;
+      }
+
+      .link-toggle__arrow {
+        width: 14px;
+        height: 14px;
+        stroke: currentColor;
+        stroke-width: 2;
+        fill: none;
+      }
+
+      @media (max-width: 1200px) {
+        .dive-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        .dive-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ════════════════════════════════════════════════════════════════
+       BIODIVERSITY — Horizontal Cards
+       ════════════════════════════════════════════════════════════════ */
+      .bio-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .bio-card {
+        display: flex;
+        background: var(--white);
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(10, 22, 40, 0.06);
+        transition: transform 0.3s ease;
+      }
+
+      .bio-card:hover {
+        transform: translateY(-2px);
+      }
+
+      .bio-card__image {
+        width: 180px;
+        flex-shrink: 0;
+        overflow: hidden;
+      }
+
+      .bio-card__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .bio-card:hover .bio-card__image img {
+        transform: scale(1.05);
+      }
+
+      .bio-card__content {
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .bio-card__name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 24px;
+        font-weight: 400;
+        color: var(--deep-sea);
+        margin-bottom: 4px;
+      }
+
+      .bio-card__latin {
+        font-size: 12px;
+        font-style: italic;
+        color: var(--gold-muted);
+        margin-bottom: 12px;
+      }
+
+      .bio-card__desc {
+        font-size: 13px;
+        line-height: 1.7;
+        color: var(--slate);
+      }
+
+      @media (max-width: 900px) {
+        .bio-grid {
+          grid-template-columns: 1fr;
+        }
+        .bio-card__image {
+          width: 140px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .bio-card {
+          flex-direction: column;
+        }
+        .bio-card__image {
+          width: 100%;
+          aspect-ratio: 16/9;
+        }
+      }
+
+      /* Numbers & Rare Encounters */
+      .stats-showcase {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        margin-top: 60px;
+      }
+
+      .stats-showcase__numbers {
+        background: var(--deep-sea);
+        padding: 60px;
+      }
+
+      .stats-showcase__title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 28px;
+        font-weight: 300;
+        color: var(--white);
+        margin-bottom: 32px;
+      }
+
+      .stats-showcase__list {
+        list-style: none;
+      }
+
+      .stats-showcase__item {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .stats-showcase__item:last-child {
+        border-bottom: none;
+      }
+
+      .stats-showcase__number {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 32px;
+        font-weight: 300;
+        color: var(--white);
+        min-width: 100px;
+      }
+
+      .stats-showcase__label {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Rare Encounters - More Visual Excitement */
+      .stats-showcase__rare {
+        background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+        padding: 60px;
+        border-left: 4px solid var(--gold-muted);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .stats-showcase__rare::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(
+          circle,
+          rgba(184, 168, 120, 0.15) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+      }
+
+      .stats-showcase__rare::after {
+        content: "";
+        position: absolute;
+        bottom: -30px;
+        right: 40%;
+        width: 120px;
+        height: 120px;
+        background: radial-gradient(
+          circle,
+          rgba(149, 51, 52, 0.08) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+      }
+
+      .stats-showcase__rare-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 28px;
+        font-weight: 300;
+        color: var(--deep-sea);
+        margin-bottom: 24px;
+        position: relative;
+      }
+
+      .stats-showcase__rare-text {
+        font-size: 15px;
+        line-height: 1.9;
+        color: var(--slate);
+        position: relative;
+      }
+
+      .stats-showcase__rare-text p {
+        margin-bottom: 16px;
+      }
+      .stats-showcase__rare-text p:last-child {
+        margin-bottom: 0;
+      }
+      .stats-showcase__rare-text strong {
+        color: var(--deep-sea);
+      }
+
+      .stats-showcase__rare-creatures {
+        display: flex;
+        gap: 24px;
+        margin-top: 28px;
+        padding-top: 24px;
+        border-top: 1px solid var(--sand);
+        position: relative;
+      }
+
+      .stats-showcase__creature {
+        flex: 1;
+        text-align: center;
+        padding: 16px 12px;
+        background: var(--white);
+        border-bottom: 2px solid var(--gold-muted);
+      }
+
+      .stats-showcase__creature-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--deep-sea);
+        margin-bottom: 4px;
+      }
+
+      .stats-showcase__creature-note {
+        font-size: 11px;
+        color: var(--silver);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      @media (max-width: 900px) {
+        .stats-showcase {
+          grid-template-columns: 1fr;
+        }
+        .stats-showcase__numbers,
+        .stats-showcase__rare {
+          padding: 40px 24px;
+        }
+      }
+
+      /* ════════════════════════════════════════════════════════════════
+       SEASON CHART — With Color Coding
+       ════════════════════════════════════════════════════════════════ */
+      .season-wrapper {
+        background: var(--white);
+        border: 1px solid var(--sand);
+        overflow: hidden;
+      }
+
+      .season-chart-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .season-chart {
+        min-width: 700px;
+      }
+
+      .season-chart__table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .season-chart__table th,
+      .season-chart__table td {
+        padding: 18px 16px;
+        text-align: center;
+        border-bottom: 1px solid var(--sand);
+        font-family: "Manrope", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--slate);
+      }
+
+      .season-chart__table th {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--silver);
+        background: var(--cream);
+      }
+
+      .season-chart__table th:first-child,
+      .season-chart__table td:first-child {
+        text-align: left;
+        padding-left: 24px;
+      }
+
+      .season-chart__table tbody tr:hover {
+        background: rgba(248, 246, 243, 0.5);
+      }
+
+      .season-chart__month-name {
+        font-weight: 500;
+        color: var(--deep-sea);
+      }
+
+      /* Color coded cells */
+      .season-peak {
+        background: rgba(45, 106, 79, 0.1);
+      }
+
+      .season-peak .season-status {
+        color: var(--peak);
+        font-weight: 500;
+      }
+
+      .season-shoulder {
+        background: rgba(193, 127, 36, 0.08);
+      }
+
+      .season-shoulder .season-status {
+        color: var(--shoulder);
+      }
+
+      .season-off {
+        background: rgba(149, 51, 52, 0.05);
+      }
+
+      .season-off .season-status {
+        color: var(--oxblood);
+      }
+
+      .season-legend {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        padding: 20px;
+        background: var(--snow);
+        border-top: 1px solid var(--sand);
+      }
+
+      .season-legend__item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .season-legend__dot {
+        width: 10px;
+        height: 10px;
+      }
+
+      .season-legend__dot--peak {
+        background: var(--peak);
+      }
+      .season-legend__dot--shoulder {
+        background: var(--shoulder);
+      }
+      .season-legend__dot--off {
+        background: transparent;
+        border: 1px solid var(--sand);
+      }
+
+      .season-legend__text {
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--slate);
+      }
+
+      .two-col-text {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+      }
+
+      .two-col-text h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 24px;
+        font-weight: 400;
+        color: var(--deep-sea);
+        margin-bottom: 16px;
+      }
+
+      .two-col-text p {
+        font-size: 15px;
+        line-height: 1.9;
+        color: var(--slate);
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 900px) {
+        .two-col-text {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+      }
+
+      .offseason-note {
+        background: rgba(149, 51, 52, 0.06);
+        border-left: 3px solid var(--oxblood);
+        padding: 24px 32px;
+        margin-top: 32px;
+      }
+
+      .offseason-note__title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 20px;
+        font-weight: 400;
+        color: var(--deep-sea);
+        margin-bottom: 12px;
+      }
+
+      .offseason-note p {
+        font-size: 14px;
+        line-height: 1.8;
+        color: var(--slate);
+        margin: 0;
+      }
+
+      /* ════════════════════════════════════════════════════════════════
+       GETTING THERE - Two Column with Flight Table
+       ════════════════════════════════════════════════════════════════ */
+      .logistics-two-col {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 60px;
+        margin-bottom: 40px;
+      }
+
+      .flight-table {
+        background: var(--white);
+        border: 1px solid var(--sand);
+      }
+
+      .flight-table__header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 16px 24px;
+        background: var(--cream);
+        border-bottom: 1px solid var(--sand);
+      }
+
+      .flight-table__col-label {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--oxblood);
+      }
+
+      .flight-table__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 14px 24px;
+        border-bottom: 1px solid var(--sand);
+      }
+
+      .flight-table__row:last-child {
+        border-bottom: none;
+      }
+
+      .flight-table__city {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--deep-sea);
+      }
+
+      .flight-table__time {
+        font-size: 14px;
+        color: var(--slate);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .flight-table__stops {
+        font-size: 11px;
+        color: var(--silver);
+        padding: 2px 8px;
+        background: var(--snow);
+        border-radius: 2px;
+      }
+
+      .logistics-content {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      .logistics-content__block {
+      }
+
+      .logistics-content__title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 24px;
+        font-weight: 400;
+        color: var(--deep-sea);
+        margin-bottom: 12px;
+      }
+
+      .logistics-content__text {
+        font-size: 14px;
+        line-height: 1.8;
+        color: var(--slate);
+      }
+
+      .logistics-content__text + .logistics-content__text {
+        margin-top: 12px;
+      }
+
+      .logistics-stats {
+        display: flex;
+        gap: 48px;
+        padding-top: 24px;
+        border-top: 1px solid var(--sand);
+        margin-top: auto;
+      }
+
+      .logistics-stats__item {
+        text-align: center;
+      }
+
+      .logistics-stats__value {
+        font-family: "Manrope", sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        color: var(--deep-sea);
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .logistics-stats__label {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--silver);
+      }
+
+      @media (max-width: 900px) {
+        .logistics-two-col {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .logistics-stats {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .logistics-stats {
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+
+      /* ════════════════════════════════════════════════════════════════
+       INSIDER KNOWLEDGE — Gold Bar on Top
+       ════════════════════════════════════════════════════════════════ */
+      .insider-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .insider-card {
+        background: rgba(255, 255, 255, 0.05);
+        overflow: hidden;
+      }
+
+      .insider-card__image {
+        position: relative;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+      }
+
+      .insider-card__image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--gold-muted);
+        z-index: 2;
+      }
+
+      .insider-card__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .insider-card:hover .insider-card__image img {
+        transform: scale(1.05);
+      }
+
+      .insider-card__content {
+        padding: 28px;
+      }
+
+      .insider-card__title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 22px;
+        font-weight: 400;
+        color: var(--white);
+        margin-bottom: 12px;
+      }
+
+      .insider-card__text {
+        font-size: 14px;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      @media (max-width: 1000px) {
+        .insider-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ════════════════════════════════════════════════════════════════
+       ITINERARY CARDS — Exact Match to Itineraries Page
+       ════════════════════════════════════════════════════════════════ */
+      .itin-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+      }
+
+      .itin-medium {
+        display: flex;
+        flex-direction: column;
+        background: var(--white);
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        text-decoration: none;
+        box-shadow:
+          0 4px 6px rgba(10, 22, 40, 0.03),
+          0 12px 24px rgba(10, 22, 40, 0.06);
+        transition:
+          box-shadow 0.4s ease,
+          transform 0.4s ease;
+      }
+
+      .itin-medium:hover {
+        box-shadow:
+          0 8px 12px rgba(10, 22, 40, 0.04),
+          0 20px 40px rgba(10, 22, 40, 0.08);
+        transform: translateY(-4px);
+      }
+
+      .itin-medium::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--oxblood);
+        z-index: 2;
+      }
+
+      .itin-medium__image {
+        aspect-ratio: 16/10;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .itin-medium__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .itin-medium:hover .itin-medium__image img {
+        transform: scale(1.04);
+      }
+
+      .itin-medium__badge {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: var(--deep-sea);
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--white);
+        padding: 10px 14px;
+      }
+
+      .itin-medium__duration {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--white);
+        padding: 16px 22px;
+        text-align: center;
+        box-shadow: 0 4px 16px rgba(10, 22, 40, 0.12);
+      }
+
+      .itin-medium__duration-number {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 34px;
+        font-weight: 300;
+        color: var(--deep-sea);
+        line-height: 1;
+      }
+
+      .itin-medium__duration-label {
+        font-size: 8px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--deep-sea);
+        opacity: 0.4;
+        margin-top: 6px;
+      }
+
+      .itin-medium__content {
+        padding: 32px;
+        text-align: center;
+      }
+
+      .itin-medium__destination {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--oxblood);
+        margin-bottom: 12px;
+      }
+
+      .itin-medium__name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 26px;
+        font-weight: 400;
+        color: var(--deep-sea);
+        margin-bottom: 8px;
+        line-height: 1.2;
+      }
+
+      .itin-medium__tagline {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 15px;
+        font-weight: 300;
+        font-style: italic;
+        color: var(--deep-sea);
+        opacity: 0.5;
+        margin-bottom: 16px;
+      }
+
+      .itin-medium__route {
+        font-size: 12px;
+        color: var(--deep-sea);
+        opacity: 0.4;
+        margin-bottom: 20px;
+      }
+
+      .itin-medium__cta {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--oxblood);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding-top: 18px;
+        border-top: 1px solid var(--sand);
+        transition: gap 0.3s ease;
+      }
+
+      .itin-medium:hover .itin-medium__cta {
+        gap: 16px;
+      }
+
+      @media (max-width: 1000px) {
+        .itin-grid {
+          grid-template-columns: 1fr;
+          max-width: 500px;
+          margin: 0 auto;
+        }
+      }
+
+      /* ════════════════════════════════════════════════════════════════
+       YACHT CARDS — Exact Match to Yachts Page
+       ════════════════════════════════════════════════════════════════ */
+      .yacht-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .yacht-card {
+        background: var(--deep-sea);
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        text-decoration: none;
+        color: var(--white);
+        display: block;
+      }
+
+      .yacht-card__image {
+        position: relative;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+      }
+
+      .yacht-card__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .yacht-card:hover .yacht-card__image img {
+        transform: scale(1.03);
+      }
+
+      .yacht-card__badge {
+        position: absolute;
+        top: 24px;
+        left: 24px;
+        background: var(--white);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--oxblood);
+        padding: 10px 16px;
+        z-index: 1;
+      }
+
+      .yacht-card__content {
+        padding: 28px 32px 32px;
+      }
+
+      .yacht-card__name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 32px;
+        font-weight: 300;
+        margin-bottom: 8px;
+        letter-spacing: 0.01em;
+      }
+
+      .yacht-card__specs {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 28px;
+        letter-spacing: 0.02em;
+      }
+
+      .yacht-card__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      .yacht-card__cta {
+        font-size: 12px;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: gap 0.3s ease;
+      }
+
+      .yacht-card:hover .yacht-card__cta {
+        gap: 12px;
+      }
+
+      .yacht-card__price {
+        text-align: right;
+      }
+
+      .yacht-card__price-label {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+        margin-bottom: 4px;
+      }
+
+      .yacht-card__price-value {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 22px;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+      }
+
+      @media (max-width: 1100px) {
+        .yacht-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 700px) {
+        .yacht-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ════════════════════════════════════════════════════════════════
+       DESTINATION CARDS — Exact Match to Destinations Page
+       ════════════════════════════════════════════════════════════════ */
+      .dest-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+      }
+
+      .dest-card {
+        position: relative;
+        aspect-ratio: 16/10;
+        display: block;
+        text-decoration: none;
+        overflow: hidden;
+      }
+
+      .dest-card__image {
+        position: absolute;
+        inset: 0;
+      }
+
+      .dest-card__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .dest-card:hover .dest-card__image img {
+        transform: scale(1.06);
+      }
+
+      .dest-card__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(10, 22, 40, 0.9) 0%,
+          rgba(10, 22, 40, 0.4) 40%,
+          rgba(10, 22, 40, 0.1) 100%
+        );
+        transition: background 0.5s ease;
+      }
+
+      .dest-card:hover .dest-card__overlay {
+        background: linear-gradient(
+          to top,
+          rgba(10, 22, 40, 0.95) 0%,
+          rgba(10, 22, 40, 0.5) 45%,
+          rgba(10, 22, 40, 0.2) 100%
+        );
+      }
+
+      .dest-card__season {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--white);
+        padding: 10px 16px;
+        z-index: 2;
+      }
+
+      .dest-card__season-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--peak);
+      }
+
+      .dest-card__season-dot--shoulder {
+        background: var(--shoulder);
+      }
+
+      .dest-card__season-text {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--slate);
+      }
+
+      .dest-card__content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 28px;
+        z-index: 2;
+      }
+
+      .dest-card__region {
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold-muted);
+        margin-bottom: 10px;
+      }
+
+      .dest-card__title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 30px;
+        font-weight: 300;
+        color: var(--white);
+        line-height: 1.15;
+        margin-bottom: 8px;
+      }
+
+      .dest-card__tagline {
+        font-family: "Manrope", sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.5;
+      }
+
+      .dest-card__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--white);
+        margin-top: 16px;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+      }
+
+      .dest-card:hover .dest-card__cta {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 1100px) {
+        .dest-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 768px) {
+        .dest-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Explore All CTA - Simple Link Style */
+      .explore-cta {
+        text-align: center;
+        margin-top: 48px;
+      }
+
+      .explore-cta__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Manrope", sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #722f37;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .explore-cta__link:hover {
+        color: #5a252c;
+        gap: 14px;
+      }
+
+      .explore-cta__link svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      /* Section Footer Links */
+      .section-footer {
+        text-align: center;
+        margin-top: 48px;
+      }
+
+      .section-footer__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Manrope", sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #722f37;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .section-footer__link:hover {
+        color: #5a252c;
+        gap: 14px;
+      }
+
+      .section-footer__link svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      /* ════════════════════════════════════════════════════════════════
+       FAQ SECTION
+       ════════════════════════════════════════════════════════════════ */
+      .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .faq-item {
+        background: var(--white);
+        padding: 32px;
+        border-left: 3px solid var(--oxblood);
+      }
+
+      .faq-item__question {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 20px;
+        font-weight: 400;
+        color: var(--deep-sea);
+        margin-bottom: 12px;
+        line-height: 1.3;
+      }
+
+      .faq-item__answer {
+        font-size: 14px;
+        line-height: 1.8;
+        color: var(--slate);
+      }
+
+      @media (max-width: 900px) {
+        .faq-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .faq-grid--hidden {
+        display: none;
+        margin-top: 24px;
+      }
+      .faq-grid--hidden.active {
+        display: grid;
+      }
+
+      /* ════════════════════════════════════════════════════════════════
+       CTA BANNER (Standardized Blue)
+       ════════════════════════════════════════════════════════════════ */
+      .cta-banner {
+        background: var(--deep-sea);
+        padding: 100px 48px;
+        text-align: center;
+      }
+
+      .cta-banner__inner {
+        max-width: 620px;
+        margin: 0 auto;
+      }
+
+      .cta-banner__title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(28px, 4vw, 38px);
+        font-weight: 300;
+        color: var(--white);
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .cta-banner__text {
+        font-family: "Manrope", sans-serif;
+        font-size: 15px;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 36px;
+      }
+
+      .cta-banner__button {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: var(--oxblood);
+        color: var(--white);
+        padding: 18px 36px;
+        font-family: "Manrope", sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.4s ease;
+      }
+
+      .cta-banner__button:hover {
+        background: var(--oxblood-deep);
+        gap: 16px;
+      }
+
+      .cta-banner__button span {
+        transition: transform 0.3s ease;
+      }
+
+      .cta-banner__button:hover span {
+        transform: translateX(4px);
+      }
+
+      @media (max-width: 768px) {
+        .cta-banner {
+          padding: 70px 24px;
+        }
+        .cta-banner__text {
+          font-size: 14px;
+        }
+        .cta-banner__button {
+          padding: 16px 28px;
+          font-size: 11px;
+        }
+      }
+
+      /* ════════════════════════════════════════════════════════════════
+       MODAL POPUP
+       ════════════════════════════════════════════════════════════════ */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 22, 40, 0.95);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.3s ease,
+          visibility 0.3s ease;
+      }
+
+      .modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal {
+        background: var(--white);
+        max-width: 520px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        transform: translateY(20px);
+        opacity: 0;
+        transition:
+          transform 0.4s ease,
+          opacity 0.4s ease;
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+      }
+
+      .modal-overlay.active .modal {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .modal::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 3px;
+        background: var(--oxblood);
+      }
+
+      .modal__close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        background: var(--snow);
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s ease;
+        z-index: 10;
+      }
+
+      .modal__close:hover {
+        background: var(--sand);
+      }
+      .modal__close svg {
+        width: 18px;
+        height: 18px;
+        color: var(--deep-sea);
+      }
+
+      .modal__content {
+        padding: 44px 40px 40px;
+      }
+
+      .modal__header {
+        text-align: center;
+        margin-bottom: 28px;
+      }
+
+      .modal__eyebrow {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--oxblood);
+        margin-bottom: 12px;
+      }
+
+      .modal__headline {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 1.2;
+        color: var(--deep-sea);
+        margin-bottom: 14px;
+      }
+
+      .modal__body {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 17px;
+        font-weight: 300;
+        font-style: italic;
+        line-height: 1.6;
+        color: var(--slate);
+      }
+
+      .form__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .form__field {
+        margin-bottom: 12px;
+      }
+
+      .form__field input,
+      .form__field textarea,
+      .form__field select {
+        width: 100%;
+        font-family: "Manrope", sans-serif;
+        font-size: 14px;
+        color: var(--deep-sea);
+        padding: 14px 16px;
+        background: var(--snow);
+        border: 1px solid transparent;
+        border-radius: 0;
+        outline: none;
+        transition: all 0.3s ease;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+
+      .form__field select {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239A9A9A' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+        background-size: 16px;
+        padding-right: 44px;
+        cursor: pointer;
+      }
+
+      .form__field input:focus,
+      .form__field textarea:focus,
+      .form__field select:focus {
+        background: var(--white);
+        border-color: var(--gold-muted);
+      }
+
+      .form__field input::placeholder,
+      .form__field textarea::placeholder {
+        color: var(--silver);
+      }
+
+      .form__field textarea {
+        resize: none;
+        height: 100px;
+      }
+
+      .form__submit {
+        width: 100%;
+        background: var(--oxblood);
+        color: var(--white);
+        font-family: "Manrope", sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 18px 32px;
+        border: none;
+        border-radius: 0;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 8px;
+      }
+
+      .form__submit:hover {
+        background: var(--oxblood-deep);
+        gap: 14px;
+      }
+      .form__submit span {
+        transition: transform 0.3s ease;
+      }
+      .form__submit:hover span {
+        transform: translateX(4px);
+      }
+
+      .form-success {
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .form-success__icon {
+        width: 56px;
+        height: 56px;
+        color: var(--oxblood);
+        margin-bottom: 20px;
+      }
+
+      .form-success__title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 28px;
+        font-weight: 400;
+        color: var(--deep-sea);
+        margin-bottom: 12px;
+      }
+
+      .form-success__text {
+        font-size: 15px;
+        color: var(--silver);
+        line-height: 1.6;
+        max-width: 300px;
+        margin: 0 auto 32px;
+      }
+
+      .form-success__close {
+        background: var(--oxblood);
+        color: var(--white);
+        font-family: "Manrope", sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 14px 28px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .form-success__close:hover {
+        background: var(--oxblood-deep);
+      }
+
+      @media (max-width: 600px) {
+        .modal-overlay {
+          padding: 16px;
+          align-items: flex-start;
+          padding-top: 24px;
+        }
+        .modal {
+          max-height: calc(100vh - 48px);
+        }
+        .modal__content {
+          padding: 36px 24px 28px;
+        }
+        .modal__header {
+          margin-bottom: 24px;
+        }
+        .modal__headline {
+          font-size: 26px;
+        }
+        .modal__body {
+          font-size: 15px;
+        }
+        .form__row {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+        .form__field {
+          margin-bottom: 12px;
+        }
+        .form__field input,
+        .form__field textarea,
+        .form__field select {
+          font-size: 16px;
+          padding: 16px;
+        }
+        .form__submit {
+          padding: 18px 24px;
+          margin-top: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <!-- ════════════════════════════════════════════════════════════════
+       HERO - CONCEPT B EDITORIAL FRAME
+       ════════════════════════════════════════════════════════════════ -->
+    <section class="hero" data-hero-dark>
+      <div class="hero__frame">
+        <div class="hero__image">
+          <img
+            src="images/hero-phinisi.jpg"
+            alt="Luxury phinisi yacht anchored among the karst islands of Raja Ampat"
+          />
+        </div>
+        <div class="hero__overlay"></div>
+
+        <div class="hero__content">
+          <div class="hero__eyebrow">
+            <span class="hero__eyebrow-line"></span>
+            <span class="hero__eyebrow-text">West Papua, Indonesia</span>
+          </div>
+          <h1 class="hero__title">Raja Ampat</h1>
+          <p class="hero__tagline">The epicenter of marine biodiversity</p>
+        </div>
+        <div class="hero__scroll">
+          <span class="hero__scroll-text">Scroll</span>
+          <div class="hero__scroll-line"></div>
+        </div>
+      </div>
+
+      <div class="info-footer">
+        <div class="info-footer__inner">
+          <div class="info-footer__item">
+            <div class="info-footer__value">75% of Global Coral</div>
+            <div class="info-footer__label">Species Found Here</div>
+          </div>
+          <div class="info-footer__item">
+            <div class="info-footer__value">1,600+ Fish Species</div>
+            <div class="info-footer__label">Record Biodiversity</div>
+          </div>
+          <div class="info-footer__item">
+            <div class="info-footer__value">Oct – Apr</div>
+            <div class="info-footer__label">Peak Season</div>
+          </div>
+          <div class="info-footer__item">
+            <div class="info-footer__value">40,000 km²</div>
+            <div class="info-footer__label">Marine Protected Area</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       OVERVIEW — WHY RAJA AMPAT IS DIFFERENT
+       ════════════════════════════════════════════════════════════════ -->
+    <section id="overview" class="section section--white">
+      <div class="section__inner">
+        <div class="overview-grid">
+          <div class="overview__text">
+            <h2>The World's Most Biodiverse Marine Ecosystem</h2>
+
+            <p>
+              Raja Ampat isn't just another dive destination. It is, by every
+              scientific measure, the richest marine environment on Earth—a
+              place where the numbers defy belief and the reality exceeds
+              expectation.
+            </p>
+
+            <p>
+              Located at the heart of the Coral Triangle—the Amazon of the
+              seas—Raja Ampat comprises over 1,500 islands scattered across
+              40,000 square kilometers of West Papua's Bird's Head Peninsula.
+              These waters contain <strong
+                >75% of all known coral species</strong
+              > (over 600), more than <strong>1,600 fish species</strong>, and
+              the kind of marine life density that has marine biologists
+              genuinely struggling for superlatives.
+            </p>
+
+            <p>
+              At Cape Kri, scientists recorded 374 fish species on a single
+              dive—a world record that still stands. That's more species in 75
+              minutes than exist in the entire Caribbean Sea.
+            </p>
+          </div>
+
+          <div class="overview__image">
+            <img
+              src="images/wayag-aerial.jpg"
+              alt="Aerial view of Wayag Islands' iconic karst limestone formations in Raja Ampat"
+            />
+            <p class="overview__image-caption">
+              The iconic karst formations of Wayag—Indonesia's most photographed
+              seascape
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED QUOTE — Full Width -->
+    <section class="featured-quote">
+      <div class="featured-quote__inner">
+        <p class="featured-quote__text">
+          "Raja Ampat is like diving in an aquarium, except every aquarium
+          you've ever seen was just a pale imitation of what exists here
+          naturally."
+        </p>
+        <span class="featured-quote__attribution"
+          >— Dr. Gerald Allen, ichthyologist and co-discoverer of Raja Ampat's
+          biodiversity</span
+        >
+      </div>
+    </section>
+
+    <!-- WHY RAJA AMPAT IS DIFFERENT + PHOTO -->
+    <section class="section section--white">
+      <div class="section__inner">
+        <div class="two-col-with-image">
+          <div class="two-col-with-image__text">
+            <h3>Why Raja Ampat Is Different</h3>
+
+            <p>
+              <strong>Convergence Zone:</strong> Raja Ampat sits where the Pacific
+              and Indian Oceans meet, creating nutrient-rich upwellings that support
+              extraordinary productivity. The currents that flow through channels
+              like the Dampier Strait bring constant supplies of plankton, attracting
+              filter-feeding mantas and fueling the entire food chain.
+            </p>
+
+            <p>
+              <strong>Isolation:</strong> The region's remoteness has protected it
+              from the overfishing and development that degraded reefs elsewhere.
+              Traditional Papuan communities have practiced sustainable fishing for
+              generations, and modern marine protected areas now formalize that protection.
+            </p>
+
+            <p>
+              <strong>Habitat Diversity:</strong> Within a single anchorage, you might
+              find coral walls, mangrove forests, seagrass beds, and sandy slopes—each
+              supporting distinct communities. This habitat variety translates directly
+              into species diversity.
+            </p>
+          </div>
+
+          <div class="two-col-with-image__image">
+            <img
+              src="images/coral-reef.jpg"
+              alt="Vibrant coral reef in Raja Ampat"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEYOND THE UNDERWATER WORLD — Full Width Feature -->
+    <section class="beyond-section">
+      <div class="beyond-section__inner">
+        <div class="beyond-section__content">
+          <span class="beyond-section__label">Above the Surface</span>
+          <h2>Beyond the Underwater World</h2>
+          <p>
+            While the diving draws most visitors, Raja Ampat's terrestrial
+            beauty is equally extraordinary. The iconic karst limestone
+            formations of Wayag—mushroom-shaped islands covered in dense
+            vegetation, rising from impossibly turquoise lagoons—have become
+            Indonesia's most photographed seascape.
+          </p>
+          <p>
+            The region is also home to <strong>Wilson's Bird-of-Paradise</strong
+            > and the <strong>Red Bird-of-Paradise</strong>—endemic species
+            found nowhere else on Earth. Local guides can arrange predawn hikes
+            to witness their remarkable courtship displays.
+          </p>
+          <div class="beyond-section__highlights">
+            <div class="beyond-section__highlight">
+              <div class="beyond-section__highlight-title">Wayag Viewpoint</div>
+              <div class="beyond-section__highlight-text">
+                Climb for panoramic views of the iconic karst lagoons
+              </div>
+            </div>
+            <div class="beyond-section__highlight">
+              <div class="beyond-section__highlight-title">
+                Bird-of-Paradise
+              </div>
+              <div class="beyond-section__highlight-text">
+                Predawn hikes to witness courtship displays
+              </div>
+            </div>
+            <div class="beyond-section__highlight">
+              <div class="beyond-section__highlight-title">Village Visits</div>
+              <div class="beyond-section__highlight-text">
+                Papuan culture and traditional stilt houses
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="beyond-section__image">
+          <img
+            src="images/wayag-aerial.jpg"
+            alt="Raja Ampat's iconic karst formations at Wayag"
+          />
+          <div class="beyond-section__image-accent"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDO YACHTS EXPERIENCE — Left-Aligned Bounded (V1) -->
+    <section class="expertise-hero">
+      <div class="expertise-hero__image">
+        <img
+          src="images/hero-phinisi.jpg"
+          alt="Indo Yachts phinisi sailing through Raja Ampat"
+        />
+      </div>
+      <div class="expertise-hero__overlay"></div>
+      <div class="expertise-hero__inner">
+        <div class="expertise-hero__content">
+          <span class="expertise-hero__label">The Indo Yachts Difference</span>
+          <h2 class="expertise-hero__title">We Know These Waters</h2>
+          <p class="expertise-hero__text">
+            We've been chartering in Raja Ampat since 2015—hundreds of voyages
+            through these islands. We know which sites deliver in which
+            conditions, when the mantas are feeding, where to find the endemic
+            walking sharks at night.
+          </p>
+          <p class="expertise-hero__text">
+            This isn't theoretical knowledge; it's earned through thousands of
+            hours on these reefs.
+          </p>
+          <div class="expertise-hero__stats">
+            <div>
+              <div class="expertise-hero__stat-value">10+</div>
+              <div class="expertise-hero__stat-label">Seasons</div>
+            </div>
+            <div>
+              <div class="expertise-hero__stat-value">500+</div>
+              <div class="expertise-hero__stat-label">Voyages</div>
+            </div>
+            <div>
+              <div class="expertise-hero__stat-value">100+</div>
+              <div class="expertise-hero__stat-label">Dive Sites</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       THE FOUR KINGDOMS — REGIONS
+       ════════════════════════════════════════════════════════════════ -->
+    <section id="regions" class="section section--snow">
+      <div class="section__inner">
+        <div class="section-header">
+          <span class="section-header__label">The Four Kingdoms</span>
+          <h2 class="section-header__title">Exploring Raja Ampat's Regions</h2>
+          <p class="section-header__subtitle">
+            Raja Ampat's four main island groups—Waigeo, Batanta, Salawati, and
+            Misool—each offer distinct experiences. A well-planned itinerary
+            weaves between them, balancing world-class diving with island
+            exploration and cultural encounters.
+          </p>
+        </div>
+
+        <div class="region-grid">
+          <div class="region-card">
+            <div class="region-card__image">
+              <img
+                src="images/manta-rays.jpg"
+                alt="Manta rays at cleaning station in Dampier Strait"
+              />
+            </div>
+            <div class="region-card__content">
+              <span class="region-card__label">Central Raja Ampat</span>
+              <h3 class="region-card__title">Dampier Strait & Fam Islands</h3>
+              <p class="region-card__desc">
+                The most accessible and dive-rich region. The Dampier Strait
+                between Waigeo and Batanta hosts the highest concentration of
+                world-class dive sites, including Cape Kri, Blue Magic, and the
+                famous manta cleaning stations.
+              </p>
+              <div class="region-card__highlights">
+                <span class="region-card__highlight">Manta Stations</span>
+                <span class="region-card__highlight">Cape Kri</span>
+                <span class="region-card__highlight">Penemu Viewpoint</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="region-card">
+            <div class="region-card__image">
+              <img
+                src="images/wayag-sunset.jpg"
+                alt="Wayag Islands karst formations at sunset"
+              />
+            </div>
+            <div class="region-card__content">
+              <span class="region-card__label">Northern Raja Ampat</span>
+              <h3 class="region-card__title">Wayag & Waigeo</h3>
+              <p class="region-card__desc">
+                Iconic mushroom-shaped karst islands rising from turquoise
+                lagoons. The Wayag viewpoint hike reveals one of the world's
+                most photographed seascapes. Waigeo's western coast offers
+                bird-of-paradise treks at dawn.
+              </p>
+              <div class="region-card__highlights">
+                <span class="region-card__highlight">Wayag Viewpoint</span>
+                <span class="region-card__highlight">Bird-of-Paradise</span>
+                <span class="region-card__highlight">Rock Art</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="region-card">
+            <div class="region-card__image">
+              <img
+                src="images/misool-lagoon.jpg"
+                alt="Hidden lagoon in Misool, South Raja Ampat"
+              />
+            </div>
+            <div class="region-card__content">
+              <span class="region-card__label">Southern Raja Ampat</span>
+              <h3 class="region-card__title">Misool</h3>
+              <p class="region-card__desc">
+                Remote and pristine. Misool feels like a world apart. Dramatic
+                karst formations hide secret lagoons, ancient rock art adorns
+                cliff faces, and the diving features exceptional soft coral
+                coverage unmatched anywhere.
+              </p>
+              <div class="region-card__highlights">
+                <span class="region-card__highlight">Magic Mountain</span>
+                <span class="region-card__highlight">Soft Coral</span>
+                <span class="region-card__highlight">Hidden Lagoons</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       WORLD-CLASS DIVING — With Snorkel Note
+       ════════════════════════════════════════════════════════════════ -->
+    <section id="diving" class="section section--white">
+      <div class="section__inner">
+        <div class="section-header">
+          <span class="section-header__label">World-Class Diving</span>
+          <h2 class="section-header__title">Legendary Dive Sites</h2>
+          <p class="section-header__subtitle">
+            Raja Ampat consistently ranks among the world's top dive
+            destinations. Many sites are also snorkel-friendly—close to the
+            surface with excellent visibility, so you don't need to dive to
+            experience the magic.
+          </p>
+        </div>
+
+        <!-- First 8 dive sites -->
+        <div class="dive-grid" id="diveSitesMain">
+          <div class="dive-card">
+            <div class="dive-card__image">
+              <img src="images/coral-reef.jpg" alt="Cape Kri dive site" />
+            </div>
+            <div class="dive-card__content">
+              <span class="dive-card__region">Central · Dampier Strait</span>
+              <h3 class="dive-card__title">Cape Kri</h3>
+              <p class="dive-card__desc">
+                World record holder: 374 fish species counted on a single dive.
+              </p>
+              <div class="dive-card__tags">
+                <span class="dive-card__tag">World Record</span>
+                <span class="dive-card__tag">Schools</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dive-card">
+            <div class="dive-card__image">
+              <img src="images/manta-rays.jpg" alt="Manta Sandy" />
+            </div>
+            <div class="dive-card__content">
+              <span class="dive-card__region">Central · Dampier Strait</span>
+              <h3 class="dive-card__title">Manta Sandy</h3>
+              <p class="dive-card__desc">
+                Sandy bottom cleaning station with reliable manta encounters.
+              </p>
+              <div class="dive-card__tags">
+                <span class="dive-card__tag">Mantas</span>
+                <span class="dive-card__tag">Snorkel OK</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dive-card">
+            <div class="dive-card__image">
+              <img src="images/karst-turquoise.jpg" alt="Blue Magic" />
+            </div>
+            <div class="dive-card__content">
+              <span class="dive-card__region">Central · Dampier Strait</span>
+              <h3 class="dive-card__title">Blue Magic</h3>
+              <p class="dive-card__desc">
+                Submerged pinnacle attracting pelagics, mantas, and sharks.
+              </p>
+              <div class="dive-card__tags">
+                <span class="dive-card__tag">Pelagics</span>
+                <span class="dive-card__tag">Advanced</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dive-card">
+            <div class="dive-card__image">
+              <img
+                src="images/soft-coral-mangrove.jpg"
+                alt="Melissa's Garden"
+              />
+            </div>
+            <div class="dive-card__content">
+              <span class="dive-card__region">Central · Fam Islands</span>
+              <h3 class="dive-card__title">Melissa's Garden</h3>
+              <p class="dive-card__desc">
+                Pristine hard coral garden with exceptional table coral
+                coverage.
+              </p>
+              <div class="dive-card__tags">
+                <span class="dive-card__tag">Coral</span>
+                <span class="dive-card__tag">Snorkel OK</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dive-card">
+            <div class="dive-card__image">
+              <img src="images/cave-diving.jpg" alt="Boo Windows" />
+            </div>
+            <div class="dive-card__content">
+              <span class="dive-card__region">South · Misool</span>
+              <h3 class="dive-card__title">Boo Windows</h3>
+              <p class="dive-card__desc">
+                Cathedral-like swim-throughs with soft coral-encrusted walls.
+              </p>
+              <div class="dive-card__tags">
+                <span class="dive-card__tag">Topography</span>
+                <span class="dive-card__tag">Photo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dive-card">
+            <div class="dive-card__image">
+              <img src="images/split-shot.jpg" alt="The Passage" />
+            </div>
+            <div class="dive-card__content">
+              <span class="dive-card__region">Central · Waigeo/Gam</span>
+              <h3 class="dive-card__title">The Passage</h3>
+              <p class="dive-card__desc">
+                Unique channel with soft corals growing on mangrove roots.
+              </p>
+              <div class="dive-card__tags">
+                <span class="dive-card__tag">Unique</span>
+                <span class="dive-card__tag">Snorkel OK</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dive-card">
+            <div class="dive-card__image">
+              <img src="images/wayag-aerial.jpg" alt="Wayag Lagoon" />
+            </div>
+            <div class="dive-card__content">
+              <span class="dive-card__region">North · Wayag</span>
+              <h3 class="dive-card__title">Wayag Lagoon</h3>
+              <p class="dive-card__desc">
+                Crystal-clear lagoons surrounded by karst formations.
+              </p>
+              <div class="dive-card__tags">
+                <span class="dive-card__tag">Snorkel</span>
+                <span class="dive-card__tag">Scenic</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dive-card">
+            <div class="dive-card__image">
+              <img src="images/beach-turquoise.jpg" alt="Sardine Reef" />
+            </div>
+            <div class="dive-card__content">
+              <span class="dive-card__region">Central · Dampier Strait</span>
+              <h3 class="dive-card__title">Sardine Reef</h3>
+              <p class="dive-card__desc">
+                Massive schools of fusiliers, surgeonfish, and barracuda.
+              </p>
+              <div class="dive-card__tags">
+                <span class="dive-card__tag">Schools</span>
+                <span class="dive-card__tag">Action</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional 8 dive sites (hidden by default) -->
+        <div class="dive-grid dive-grid--hidden" id="diveSitesMore">
+          <div class="dive-card">
+            <div class="dive-card__image">
+              <img src="images/dunia-baru.jpg" alt="Magic Mountain" />
+            </div>
+            <div class="dive-card__content">
+              <span class="dive-card__region">South · Misool</span>
+              <h3 class="dive-card__title">Magic Mountain</h3>
+              <p class="dive-card__desc">
+                Submerged pinnacle with manta cleaning station.
+              </p>
+              <div class="dive-card__tags">
+                <span class="dive-card__tag">Mantas</span>
+                <span class="dive-card__tag">Remote</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dive-card">
+            <div class="dive-card__image">
+              <img src="images/hero-phinisi.jpg" alt="Sauwandarek Jetty" />
+            </div>
+            <div class="dive-card__content">
+              <span class="dive-card__region">Central · Waigeo</span>
+              <h3 class="dive-card__title">Sauwandarek Jetty</h3>
+              <p class="dive-card__desc">
+                Wobbegong and walking sharks, incredible macro diversity.
+              </p>
+              <div class="dive-card__tags">
+                <span class="dive-card__tag">Night Dive</span>
+                <span class="dive-card__tag">Sharks</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dive-card">
+            <div class="dive-card__image">
+              <img src="images/wayag-sunset.jpg" alt="Fiabacet" />
+            </div>
+            <div class="dive-card__content">
+              <span class="dive-card__region">South · Misool</span>
+              <h3 class="dive-card__title">Fiabacet</h3>
+              <p class="dive-card__desc">
+                Pristine soft corals in every imaginable color.
+              </p>
+              <div class="dive-card__tags">
+                <span class="dive-card__tag">Soft Coral</span>
+                <span class="dive-card__tag">Remote</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dive-card">
+            <div class="dive-card__image">
+              <img src="images/misool-lagoon.jpg" alt="Manta Ridge" />
+            </div>
+            <div class="dive-card__content">
+              <span class="dive-card__region">Central · Arborek</span>
+              <h3 class="dive-card__title">Manta Ridge</h3>
+              <p class="dive-card__desc">
+                Ridge formation serving as manta highway.
+              </p>
+              <div class="dive-card__tags">
+                <span class="dive-card__tag">Mantas</span>
+                <span class="dive-card__tag">Snorkel OK</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dive-card">
+            <div class="dive-card__image">
+              <img src="images/coral-reef.jpg" alt="Mike's Point" />
+            </div>
+            <div class="dive-card__content">
+              <span class="dive-card__region">North · Waigeo</span>
+              <h3 class="dive-card__title">Mike's Point</h3>
+              <p class="dive-card__desc">
+                Pygmy seahorses, nudibranchs, exceptional macro.
+              </p>
+              <div class="dive-card__tags">
+                <span class="dive-card__tag">Macro</span>
+                <span class="dive-card__tag">Seahorses</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dive-card">
+            <div class="dive-card__image">
+              <img src="images/soft-coral-mangrove.jpg" alt="Yenbuba Jetty" />
+            </div>
+            <div class="dive-card__content">
+              <span class="dive-card__region">Central · Mansuar</span>
+              <h3 class="dive-card__title">Yenbuba Jetty</h3>
+              <p class="dive-card__desc">
+                Village jetty dive with walking sharks at night.
+              </p>
+              <div class="dive-card__tags">
+                <span class="dive-card__tag">Night Dive</span>
+                <span class="dive-card__tag">Easy</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dive-card">
+            <div class="dive-card__image">
+              <img src="images/cave-diving.jpg" alt="Citrus Ridge" />
+            </div>
+            <div class="dive-card__content">
+              <span class="dive-card__region">Central · Dampier</span>
+              <h3 class="dive-card__title">Citrus Ridge</h3>
+              <p class="dive-card__desc">
+                Exceptional hard coral coverage and schooling fish.
+              </p>
+              <div class="dive-card__tags">
+                <span class="dive-card__tag">Coral</span>
+                <span class="dive-card__tag">Schools</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dive-card">
+            <div class="dive-card__image">
+              <img src="images/manta-rays.jpg" alt="Dayan" />
+            </div>
+            <div class="dive-card__content">
+              <span class="dive-card__region">South · Misool</span>
+              <h3 class="dive-card__title">Dayan</h3>
+              <p class="dive-card__desc">
+                Vibrant coral pinnacles covered in soft coral.
+              </p>
+              <div class="dive-card__tags">
+                <span class="dive-card__tag">Soft Coral</span>
+                <span class="dive-card__tag">Pinnacles</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="view-more-wrapper">
+          <button
+            class="link-toggle"
+            id="viewMoreBtn"
+            onclick="toggleDiveSites()"
+          >
+            <span class="link-toggle__text">VIEW MORE DIVE SITES</span>
+            <svg class="link-toggle__arrow" viewBox="0 0 24 24"
+              ><polyline points="6 9 12 15 18 9"></polyline></svg
+            >
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       BIODIVERSITY — What You'll See (Updated species)
+       ════════════════════════════════════════════════════════════════ -->
+    <section id="biodiversity" class="section section--cream">
+      <div class="section__inner">
+        <div class="section-header">
+          <span class="section-header__label">Biodiversity</span>
+          <h2 class="section-header__title">What You'll See</h2>
+          <p class="section-header__subtitle">
+            Raja Ampat's marine life encounters range from the microscopic to
+            the majestic. Here's what to expect on a typical voyage.
+          </p>
+        </div>
+
+        <div class="bio-grid">
+          <div class="bio-card">
+            <div class="bio-card__image">
+              <img src="images/manta-rays.jpg" alt="Manta ray" />
+            </div>
+            <div class="bio-card__content">
+              <h3 class="bio-card__name">Manta Rays</h3>
+              <p class="bio-card__latin">Mobula alfredi & Mobula birostris</p>
+              <p class="bio-card__desc">
+                Both reef and oceanic mantas frequent cleaning stations.
+                Wingspans exceeding 5 meters regularly recorded.
+              </p>
+            </div>
+          </div>
+
+          <div class="bio-card">
+            <div class="bio-card__image">
+              <img src="images/cave-diving.jpg" alt="Wobbegong shark" />
+            </div>
+            <div class="bio-card__content">
+              <h3 class="bio-card__name">Wobbegong Sharks</h3>
+              <p class="bio-card__latin">Orectolobus spp.</p>
+              <p class="bio-card__desc">
+                Carpet sharks tucked under coral ledges—a Raja Ampat specialty.
+                Look carefully on every dive.
+              </p>
+            </div>
+          </div>
+
+          <div class="bio-card">
+            <div class="bio-card__image">
+              <img src="images/soft-coral-mangrove.jpg" alt="Walking shark" />
+            </div>
+            <div class="bio-card__content">
+              <h3 class="bio-card__name">Walking Sharks</h3>
+              <p class="bio-card__latin">Hemiscyllium spp.</p>
+              <p class="bio-card__desc">
+                Endemic epaulette sharks that "walk" on pectoral fins. Emerge at
+                night on shallow reefs.
+              </p>
+            </div>
+          </div>
+
+          <div class="bio-card">
+            <div class="bio-card__image">
+              <img src="images/coral-reef.jpg" alt="Pygmy seahorse" />
+            </div>
+            <div class="bio-card__content">
+              <h3 class="bio-card__name">Pygmy Seahorses</h3>
+              <p class="bio-card__latin">Hippocampus bargibanti & denise</p>
+              <p class="bio-card__desc">
+                Multiple species smaller than your fingernail, camouflaged on
+                sea fans.
+              </p>
+            </div>
+          </div>
+
+          <div class="bio-card">
+            <div class="bio-card__image">
+              <img src="images/wayag-aerial.jpg" alt="Karst pinnacles" />
+            </div>
+            <div class="bio-card__content">
+              <h3 class="bio-card__name">Iconic Karst Pinnacles</h3>
+              <p class="bio-card__latin">Limestone formations</p>
+              <p class="bio-card__desc">
+                Mushroom-shaped islands rising from turquoise
+                lagoons—Indonesia's most photographed seascape.
+              </p>
+            </div>
+          </div>
+
+          <div class="bio-card">
+            <div class="bio-card__image">
+              <img src="images/misool-lagoon.jpg" alt="Soft coral gardens" />
+            </div>
+            <div class="bio-card__content">
+              <h3 class="bio-card__name">Soft Coral Gardens</h3>
+              <p class="bio-card__latin">Dendronephthya spp.</p>
+              <p class="bio-card__desc">
+                Misool's signature—walls exploding with color in every shade of
+                pink, purple, orange, and red.
+              </p>
+            </div>
+          </div>
+
+          <div class="bio-card">
+            <div class="bio-card__image">
+              <img src="images/karst-turquoise.jpg" alt="Bird-of-Paradise" />
+            </div>
+            <div class="bio-card__content">
+              <h3 class="bio-card__name">Birds-of-Paradise</h3>
+              <p class="bio-card__latin">Cicinnurus respublica</p>
+              <p class="bio-card__desc">
+                Wilson's and Red Birds-of-Paradise display at dawn—endemic
+                species found nowhere else.
+              </p>
+            </div>
+          </div>
+
+          <div class="bio-card">
+            <div class="bio-card__image">
+              <img src="images/beach-turquoise.jpg" alt="Sea turtles" />
+            </div>
+            <div class="bio-card__content">
+              <h3 class="bio-card__name">Sea Turtles</h3>
+              <p class="bio-card__latin">
+                Chelonia mydas & Eretmochelys imbricata
+              </p>
+              <p class="bio-card__desc">
+                Green and hawksbill turtles on virtually every dive. Nesting
+                beaches protected throughout.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Numbers & Rare Encounters -->
+        <div class="stats-showcase">
+          <div class="stats-showcase__numbers">
+            <h3 class="stats-showcase__title">The Numbers</h3>
+            <ul class="stats-showcase__list">
+              <li class="stats-showcase__item">
+                <span class="stats-showcase__number">1,600+</span>
+                <span class="stats-showcase__label"
+                  >fish species documented and counting</span
+                >
+              </li>
+              <li class="stats-showcase__item">
+                <span class="stats-showcase__number">600+</span>
+                <span class="stats-showcase__label"
+                  >coral species (75% of world's known species)</span
+                >
+              </li>
+              <li class="stats-showcase__item">
+                <span class="stats-showcase__number">700+</span>
+                <span class="stats-showcase__label"
+                  >mollusk species identified</span
+                >
+              </li>
+              <li class="stats-showcase__item">
+                <span class="stats-showcase__number">57</span>
+                <span class="stats-showcase__label"
+                  >mantis shrimp species (more than entire Caribbean)</span
+                >
+              </li>
+              <li class="stats-showcase__item">
+                <span class="stats-showcase__number">13</span>
+                <span class="stats-showcase__label"
+                  >endemic marine species found nowhere else</span
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="stats-showcase__rare">
+            <h3 class="stats-showcase__rare-title">Rare Encounters</h3>
+            <div class="stats-showcase__rare-text">
+              <p>
+                Beyond the reliable sightings, Raja Ampat offers possibilities
+                that keep even veteran divers returning year after year.
+              </p>
+              <p>
+                <strong>Whale sharks</strong> pass through seasonally—unpredictable
+                but possible, particularly in channel crossings. <strong
+                  >Dolphins</strong
+                > are common, and <strong>pilot whale</strong> sightings occur during
+                open-water transits.
+              </p>
+            </div>
+            <div class="stats-showcase__rare-creatures">
+              <div class="stats-showcase__creature">
+                <div class="stats-showcase__creature-name">Whale Sharks</div>
+                <div class="stats-showcase__creature-note">Seasonal</div>
+              </div>
+              <div class="stats-showcase__creature">
+                <div class="stats-showcase__creature-name">Dolphins</div>
+                <div class="stats-showcase__creature-note">Common</div>
+              </div>
+              <div class="stats-showcase__creature">
+                <div class="stats-showcase__creature-name">Pilot Whales</div>
+                <div class="stats-showcase__creature-note">Open Water</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       WHEN TO VISIT — With Color Coding
+       ════════════════════════════════════════════════════════════════ -->
+    <section id="seasons" class="section section--white">
+      <div class="section__inner">
+        <div class="section-header">
+          <span class="section-header__label">Planning</span>
+          <h2 class="section-header__title">When to Visit Raja Ampat</h2>
+          <p class="section-header__subtitle">
+            Raja Ampat's optimal season runs October through April, with peak
+            conditions December through February.
+          </p>
+        </div>
+
+        <div class="two-col-text">
+          <div>
+            <h3>Optimal Season: October – April</h3>
+            <p>
+              The dry season brings calm seas, excellent visibility (often 30+
+              meters), and reliable conditions across all regions. This is when
+              Raja Ampat delivers its best—mantas feeding in the Dampier Strait,
+              clear water for photography, and comfortable crossings to Wayag
+              and Misool.
+            </p>
+
+            <p>
+              <strong>December–February</strong> represents peak season. Weather is
+              most stable, visibility is exceptional, and manta activity reaches its
+              height.
+            </p>
+
+            <p>
+              <strong>October–November</strong> offers excellent conditions with fewer
+              boats.
+            </p>
+
+            <p>
+              <strong>March–April</strong> sees conditions gradually shifting but
+              still very good diving.
+            </p>
+
+            <h3>Shoulder Season: May & September</h3>
+            <p>
+              Conditions vary year to year. May can offer excellent diving
+              before winds build; September improves as the monsoon weakens.
+            </p>
+          </div>
+
+          <div>
+            <div class="season-wrapper">
+              <div class="season-chart-wrapper">
+                <div class="season-chart">
+                  <table class="season-chart__table">
+                    <thead>
+                      <tr>
+                        <th>Month</th>
+                        <th>Conditions</th>
+                        <th>Visibility</th>
+                        <th>Mantas</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="season-peak">
+                        <td
+                          ><span class="season-chart__month-name">January</span
+                          ></td
+                        >
+                        <td><span class="season-status">Excellent</span></td>
+                        <td>25-35m</td>
+                        <td>High</td>
+                      </tr>
+                      <tr class="season-peak">
+                        <td
+                          ><span class="season-chart__month-name">February</span
+                          ></td
+                        >
+                        <td><span class="season-status">Excellent</span></td>
+                        <td>25-35m</td>
+                        <td>High</td>
+                      </tr>
+                      <tr class="season-peak">
+                        <td
+                          ><span class="season-chart__month-name">March</span
+                          ></td
+                        >
+                        <td><span class="season-status">Very Good</span></td>
+                        <td>20-30m</td>
+                        <td>High</td>
+                      </tr>
+                      <tr class="season-peak">
+                        <td
+                          ><span class="season-chart__month-name">April</span
+                          ></td
+                        >
+                        <td><span class="season-status">Very Good</span></td>
+                        <td>20-30m</td>
+                        <td>High</td>
+                      </tr>
+                      <tr class="season-shoulder">
+                        <td
+                          ><span class="season-chart__month-name">May</span></td
+                        >
+                        <td><span class="season-status">Variable</span></td>
+                        <td>15-25m</td>
+                        <td>Medium</td>
+                      </tr>
+                      <tr class="season-off">
+                        <td
+                          ><span class="season-chart__month-name">Jun–Aug</span
+                          ></td
+                        >
+                        <td><span class="season-status">Challenging</span></td>
+                        <td>10-20m</td>
+                        <td>Low</td>
+                      </tr>
+                      <tr class="season-shoulder">
+                        <td
+                          ><span class="season-chart__month-name"
+                            >September</span
+                          ></td
+                        >
+                        <td><span class="season-status">Improving</span></td>
+                        <td>15-25m</td>
+                        <td>Medium</td>
+                      </tr>
+                      <tr class="season-peak">
+                        <td
+                          ><span class="season-chart__month-name">October</span
+                          ></td
+                        >
+                        <td><span class="season-status">Excellent</span></td>
+                        <td>25-35m</td>
+                        <td>High</td>
+                      </tr>
+                      <tr class="season-peak">
+                        <td
+                          ><span class="season-chart__month-name">November</span
+                          ></td
+                        >
+                        <td><span class="season-status">Excellent</span></td>
+                        <td>25-35m</td>
+                        <td>High</td>
+                      </tr>
+                      <tr class="season-peak">
+                        <td
+                          ><span class="season-chart__month-name">December</span
+                          ></td
+                        >
+                        <td><span class="season-status">Excellent</span></td>
+                        <td>25-35m</td>
+                        <td>Peak</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="season-legend">
+                <div class="season-legend__item">
+                  <span class="season-legend__dot season-legend__dot--peak"
+                  ></span>
+                  <span class="season-legend__text">Peak</span>
+                </div>
+                <div class="season-legend__item">
+                  <span class="season-legend__dot season-legend__dot--shoulder"
+                  ></span>
+                  <span class="season-legend__text">Shoulder</span>
+                </div>
+                <div class="season-legend__item">
+                  <span class="season-legend__dot season-legend__dot--off"
+                  ></span>
+                  <span class="season-legend__text">Off Season</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="offseason-note">
+          <h4 class="offseason-note__title">
+            A Note on Off-Season (June–August)
+          </h4>
+          <p>
+            Strong southerly winds create challenging conditions from June
+            through August. We generally recommend redirecting to Komodo during
+            this period.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       GETTING THERE - Comprehensive
+       ════════════════════════════════════════════════════════════════ -->
+    <section id="logistics" class="section section--snow">
+      <div class="section__inner">
+        <div class="section-header">
+          <span class="section-header__label">Travel Logistics</span>
+          <h2 class="section-header__title">Getting to Raja Ampat</h2>
+        </div>
+
+        <div class="logistics-two-col">
+          <!-- Flight Times Table -->
+          <div class="flight-table">
+            <div class="flight-table__header">
+              <span class="flight-table__col-label">Departure City</span>
+              <span class="flight-table__col-label">Travel Time</span>
+            </div>
+            <div class="flight-table__row">
+              <span class="flight-table__city">Singapore</span>
+              <span class="flight-table__time"
+                >10 hrs <span class="flight-table__stops">1 stop</span></span
+              >
+            </div>
+            <div class="flight-table__row">
+              <span class="flight-table__city">Hong Kong</span>
+              <span class="flight-table__time"
+                >12 hrs <span class="flight-table__stops">1 stop</span></span
+              >
+            </div>
+            <div class="flight-table__row">
+              <span class="flight-table__city">Dubai</span>
+              <span class="flight-table__time"
+                >14 hrs <span class="flight-table__stops">1 stop</span></span
+              >
+            </div>
+            <div class="flight-table__row">
+              <span class="flight-table__city">Sydney</span>
+              <span class="flight-table__time"
+                >18 hrs <span class="flight-table__stops">1 stop</span></span
+              >
+            </div>
+            <div class="flight-table__row">
+              <span class="flight-table__city">London</span>
+              <span class="flight-table__time"
+                >21 hrs <span class="flight-table__stops">2 stops</span></span
+              >
+            </div>
+            <div class="flight-table__row">
+              <span class="flight-table__city">Los Angeles</span>
+              <span class="flight-table__time"
+                >21 hrs <span class="flight-table__stops">2 stops</span></span
+              >
+            </div>
+            <div class="flight-table__row">
+              <span class="flight-table__city">New York</span>
+              <span class="flight-table__time"
+                >29 hrs <span class="flight-table__stops">2 stops</span></span
+              >
+            </div>
+          </div>
+
+          <!-- Content Side -->
+          <div class="logistics-content">
+            <div class="logistics-content__block">
+              <h3 class="logistics-content__title">Reaching Sorong</h3>
+              <p class="logistics-content__text">
+                All journeys to Raja Ampat connect through Sorong (SOQ), a
+                10-minute drive from the harbor where your yacht awaits. Daily
+                flights operate from Jakarta (4 hours direct), Makassar, Manado,
+                Ambon, and Jayapura. From Bali, connect via Makassar.
+              </p>
+              <p class="logistics-content__text">
+                Many guests choose to break up the journey with a night in
+                Singapore, Hong Kong, or Bali—arriving refreshed and ready to
+                explore. We handle flight recommendations, transfers, and permit
+                purchases so you arrive relaxed.
+              </p>
+            </div>
+
+            <div class="logistics-content__block">
+              <h3 class="logistics-content__title">Private Aviation</h3>
+              <p class="logistics-content__text">
+                Private flights can be arranged from Singapore, Hong Kong,
+                Jakarta, or Bali. International arrivals clear customs in
+                Balikpapan or Manado before continuing to Sorong.
+              </p>
+            </div>
+
+            <div class="logistics-stats">
+              <div class="logistics-stats__item">
+                <span class="logistics-stats__value">SOQ</span>
+                <span class="logistics-stats__label">Gateway Airport</span>
+              </div>
+              <div class="logistics-stats__item">
+                <span class="logistics-stats__value">10 min</span>
+                <span class="logistics-stats__label">To Harbor</span>
+              </div>
+              <div class="logistics-stats__item">
+                <span class="logistics-stats__value">~$100</span>
+                <span class="logistics-stats__label">Park Permit</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       INSIDER KNOWLEDGE
+       ════════════════════════════════════════════════════════════════ -->
+    <section class="section section--deep">
+      <div class="section__inner">
+        <div class="section-header">
+          <span class="section-header__label">From 500+ Voyages</span>
+          <h2 class="section-header__title">Insider Knowledge</h2>
+          <p class="section-header__subtitle">
+            What we've learned from years of chartering these waters.
+          </p>
+        </div>
+
+        <div class="insider-grid">
+          <div class="insider-card">
+            <div class="insider-card__image">
+              <img
+                src="images/manta-rays.jpg"
+                alt="Manta ray at cleaning station"
+              />
+            </div>
+            <div class="insider-card__content">
+              <h3 class="insider-card__title">Timing the Dampier Strait</h3>
+              <p class="insider-card__text">
+                The best manta encounters happen when current flows into
+                cleaning stations, not out. We monitor tides and position the
+                yacht to hit sites at optimal times.
+              </p>
+            </div>
+          </div>
+
+          <div class="insider-card">
+            <div class="insider-card__image">
+              <img src="images/soft-coral-mangrove.jpg" alt="Walking shark" />
+            </div>
+            <div class="insider-card__content">
+              <h3 class="insider-card__title">Finding Walking Sharks</h3>
+              <p class="insider-card__text">
+                Raja Ampat's endemic walking sharks emerge on shallow reefs
+                after dark—but only on certain reef flats, at certain tides. We
+                know the spots.
+              </p>
+            </div>
+          </div>
+
+          <div class="insider-card">
+            <div class="insider-card__image">
+              <img src="images/wayag-aerial.jpg" alt="Wayag viewpoint" />
+            </div>
+            <div class="insider-card__content">
+              <h3 class="insider-card__title">Wayag Without Crowds</h3>
+              <p class="insider-card__text">
+                We arrive early morning—before day boats from Waisai—or late
+                afternoon when others have left. Better light, more peaceful.
+              </p>
+            </div>
+          </div>
+
+          <div class="insider-card">
+            <div class="insider-card__image">
+              <img src="images/karst-turquoise.jpg" alt="Bird-of-Paradise" />
+            </div>
+            <div class="insider-card__content">
+              <h3 class="insider-card__title">Bird-of-Paradise Timing</h3>
+              <p class="insider-card__text">
+                Wilson's and Red Birds-of-Paradise display at dawn, typically
+                5:30-7am. We coordinate with village guides who know where the
+                males are displaying.
+              </p>
+            </div>
+          </div>
+
+          <div class="insider-card">
+            <div class="insider-card__image">
+              <img src="images/hero-phinisi.jpg" alt="Yacht at anchor" />
+            </div>
+            <div class="insider-card__content">
+              <h3 class="insider-card__title">Protected Anchorages</h3>
+              <p class="insider-card__text">
+                When wind picks up, knowing where to shelter makes the
+                difference. We've mapped protected bays throughout Raja Ampat.
+              </p>
+            </div>
+          </div>
+
+          <div class="insider-card">
+            <div class="insider-card__image">
+              <img src="images/coral-reef.jpg" alt="Unnamed dive site" />
+            </div>
+            <div class="insider-card__content">
+              <h3 class="insider-card__title">Beyond the Famous Sites</h3>
+              <p class="insider-card__text">
+                Raja Ampat has hundreds of unnamed sites that rival Cape Kri.
+                Tell us what you want to see, and we'll take you somewhere
+                special.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       ITINERARIES — Actual Raja Ampat Itineraries
+       ════════════════════════════════════════════════════════════════ -->
+    <section id="itineraries" class="section section--cream">
+      <div class="section__inner">
+        <div class="section-header">
+          <span class="section-header__label">Sample Voyages</span>
+          <h2 class="section-header__title">Raja Ampat Itineraries</h2>
+          <p class="section-header__subtitle">
+            Every charter is customized to your interests. These sample
+            itineraries show what's possible.
+          </p>
+        </div>
+
+        <div class="itin-grid">
+          <a href="/itineraries/discovering-raja-ampat" class="itin-medium">
+            <div class="itin-medium__image">
+              <img src="images/wayag-aerial.jpg" alt="Discovering Raja Ampat" />
+              <div class="itin-medium__badge">Snorkeling Focus</div>
+              <div class="itin-medium__duration">
+                <div class="itin-medium__duration-number">7</div>
+                <div class="itin-medium__duration-label">Nights</div>
+              </div>
+            </div>
+            <div class="itin-medium__content">
+              <span class="itin-medium__destination"
+                >Northern & Central · 246 NM</span
+              >
+              <h3 class="itin-medium__name">Discovering Raja Ampat</h3>
+              <p class="itin-medium__tagline">
+                A leisurely cruise through soaring karst pinnacles
+              </p>
+              <p class="itin-medium__route">
+                Sorong → Arborek → Wayag → Penemu → Sorong
+              </p>
+              <span class="itin-medium__cta">View Itinerary →</span>
+            </div>
+          </a>
+
+          <a href="/itineraries/dive-ultramarine" class="itin-medium">
+            <div class="itin-medium__image">
+              <img src="images/coral-reef.jpg" alt="Dive Ultramarine" />
+              <div class="itin-medium__badge">Bucket List</div>
+              <div class="itin-medium__duration">
+                <div class="itin-medium__duration-number">10</div>
+                <div class="itin-medium__duration-label">Nights</div>
+              </div>
+            </div>
+            <div class="itin-medium__content">
+              <span class="itin-medium__destination">Raja Ampat · 390 NM</span>
+              <h3 class="itin-medium__name">Dive Ultramarine</h3>
+              <p class="itin-medium__tagline">
+                The best dive sites discovered over two decades
+              </p>
+              <p class="itin-medium__route">
+                Cape Kri → Blue Magic → Melissa's Garden → Misool
+              </p>
+              <span class="itin-medium__cta">View Itinerary →</span>
+            </div>
+          </a>
+
+          <a href="/itineraries/ultimate-family-adventure" class="itin-medium">
+            <div class="itin-medium__image">
+              <img
+                src="images/misool-lagoon.jpg"
+                alt="Ultimate Family Adventure"
+              />
+              <div class="itin-medium__badge">Best for Families</div>
+              <div class="itin-medium__duration">
+                <div class="itin-medium__duration-number">10</div>
+                <div class="itin-medium__duration-label">Nights</div>
+              </div>
+            </div>
+            <div class="itin-medium__content">
+              <span class="itin-medium__destination"
+                >Full Raja Ampat Loop · 413 NM</span
+              >
+              <h3 class="itin-medium__name">Ultimate Family Adventure</h3>
+              <p class="itin-medium__tagline">
+                One of the least-visited but most remarkable destinations
+              </p>
+              <p class="itin-medium__route">
+                Wayag → Arborek Village → Pianemo → Kabui Bay
+              </p>
+              <span class="itin-medium__cta">View Itinerary →</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="section-footer">
+          <a href="/itineraries" class="section-footer__link"
+            >EXPLORE ALL ITINERARIES →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       YACHTS — Exact Match to Yachts Page
+       ════════════════════════════════════════════════════════════════ -->
+    <section id="yachts" class="section section--white">
+      <div class="section__inner">
+        <div class="section-header">
+          <span class="section-header__label">Your Floating Sanctuary</span>
+          <h2 class="section-header__title">Recommended Yachts</h2>
+          <p class="section-header__subtitle">
+            These vessels are specifically equipped for Raja Ampat expeditions.
+          </p>
+        </div>
+
+        <div class="yacht-grid">
+          <a href="/yachts/dunia-baru" class="yacht-card">
+            <div class="yacht-card__image">
+              <img src="images/dunia-baru.jpg" alt="Dunia Baru" />
+              <span class="yacht-card__badge">Flagship</span>
+            </div>
+            <div class="yacht-card__content">
+              <h3 class="yacht-card__name">Dunia Baru</h3>
+              <p class="yacht-card__specs">
+                52m Phinisi · 14 Guests · 7 Cabins · 28 Crew
+              </p>
+              <div class="yacht-card__footer">
+                <span class="yacht-card__cta">View Yacht →</span>
+                <div class="yacht-card__price">
+                  <div class="yacht-card__price-label">From</div>
+                  <div class="yacht-card__price-value">$140,000/wk</div>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="/yachts/vela" class="yacht-card">
+            <div class="yacht-card__image">
+              <img src="images/hero-phinisi.jpg" alt="Vela" />
+              <span class="yacht-card__badge">Modern Classic</span>
+            </div>
+            <div class="yacht-card__content">
+              <h3 class="yacht-card__name">Vela</h3>
+              <p class="yacht-card__specs">
+                50m Phinisi · 12 Guests · 6 Cabins · 18 Crew
+              </p>
+              <div class="yacht-card__footer">
+                <span class="yacht-card__cta">View Yacht →</span>
+                <div class="yacht-card__price">
+                  <div class="yacht-card__price-label">From</div>
+                  <div class="yacht-card__price-value">$119,000/wk</div>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="/yachts/si-datu-bua" class="yacht-card">
+            <div class="yacht-card__image">
+              <img src="images/dunia-baru.jpg" alt="Si Datu Bua" />
+              <span class="yacht-card__badge">Best Value</span>
+            </div>
+            <div class="yacht-card__content">
+              <h3 class="yacht-card__name">Si Datu Bua</h3>
+              <p class="yacht-card__specs">
+                40m Phinisi · 8 Guests · 3 Cabins · 14 Crew
+              </p>
+              <div class="yacht-card__footer">
+                <span class="yacht-card__cta">View Yacht →</span>
+                <div class="yacht-card__price">
+                  <div class="yacht-card__price-label">From</div>
+                  <div class="yacht-card__price-value">$65,000/wk</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="section-footer">
+          <a href="/yachts" class="section-footer__link">EXPLORE ALL YACHTS →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       MORE INDONESIAN DESTINATIONS
+       ════════════════════════════════════════════════════════════════ -->
+    <section class="section section--snow">
+      <div class="section__inner">
+        <div class="section-header">
+          <span class="section-header__label">Continue Exploring</span>
+          <h2 class="section-header__title">More Indonesian Destinations</h2>
+          <p class="section-header__subtitle">
+            Raja Ampat is the crown jewel, but Indonesia offers countless more
+            adventures.
+          </p>
+        </div>
+
+        <div class="dest-grid">
+          <a href="/destinations/cenderawasih-bay" class="dest-card">
+            <div class="dest-card__image">
+              <img src="images/beach-turquoise.jpg" alt="Cenderawasih Bay" />
+            </div>
+            <div class="dest-card__overlay"></div>
+            <div class="dest-card__season">
+              <div class="dest-card__season-dot"></div>
+              <span class="dest-card__season-text">Year-Round</span>
+            </div>
+            <div class="dest-card__content">
+              <span class="dest-card__region">West Papua</span>
+              <h3 class="dest-card__title">Cenderawasih Bay</h3>
+              <p class="dest-card__tagline">
+                Swim with whale sharks in Indonesia's largest marine park
+              </p>
+              <span class="dest-card__cta">Explore →</span>
+            </div>
+          </a>
+
+          <a href="/destinations/komodo" class="dest-card">
+            <div class="dest-card__image">
+              <img src="images/wayag-sunset.jpg" alt="Komodo National Park" />
+            </div>
+            <div class="dest-card__overlay"></div>
+            <div class="dest-card__season">
+              <div
+                class="dest-card__season-dot dest-card__season-dot--shoulder"
+              >
+              </div>
+              <span class="dest-card__season-text">Apr–Nov</span>
+            </div>
+            <div class="dest-card__content">
+              <span class="dest-card__region">Lesser Sundas</span>
+              <h3 class="dest-card__title">Komodo National Park</h3>
+              <p class="dest-card__tagline">
+                Dragons, mantas, and pink beaches
+              </p>
+              <span class="dest-card__cta">Explore →</span>
+            </div>
+          </a>
+
+          <a href="/destinations/triton-bay" class="dest-card">
+            <div class="dest-card__image">
+              <img src="images/soft-coral-mangrove.jpg" alt="Triton Bay" />
+            </div>
+            <div class="dest-card__overlay"></div>
+            <div class="dest-card__season">
+              <div class="dest-card__season-dot"></div>
+              <span class="dest-card__season-text">Oct–Apr</span>
+            </div>
+            <div class="dest-card__content">
+              <span class="dest-card__region">Bird's Head Peninsula</span>
+              <h3 class="dest-card__title">Triton Bay</h3>
+              <p class="dest-card__tagline">
+                True wilderness diving in unexplored waters
+              </p>
+              <span class="dest-card__cta">Explore →</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="section-footer">
+          <a href="/destinations" class="section-footer__link"
+            >EXPLORE ALL DESTINATIONS →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       FAQ SECTION
+       ════════════════════════════════════════════════════════════════ -->
+    <section id="faq" class="section section--cream">
+      <div class="section__inner">
+        <div class="section-header">
+          <span class="section-header__label">Questions</span>
+          <h2 class="section-header__title">Raja Ampat FAQ</h2>
+        </div>
+
+        <!-- First 4 FAQs (always visible) -->
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-item__question">
+              What's the best time to visit Raja Ampat?
+            </h3>
+            <p class="faq-item__answer">
+              October through April offers optimal conditions—calm seas, 25-35m
+              visibility, and peak manta activity. December-February is peak
+              season. Avoid June-August.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__question">
+              How much does a Raja Ampat charter cost?
+            </h3>
+            <p class="faq-item__answer">
+              Luxury yacht charters range $55,000-$150,000+ per week. Budget
+              approximately $8,000-15,000 per person all-inclusive.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__question">
+              Is Raja Ampat good for non-divers?
+            </h3>
+            <p class="faq-item__answer">
+              Absolutely. World-class snorkeling, manta encounters from the
+              surface, kayaking, island hikes, bird watching, and village
+              visits.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__question">
+              How long should I spend in Raja Ampat?
+            </h3>
+            <p class="faq-item__answer">
+              Minimum 7 nights to justify the travel; 10-14 nights ideal for
+              comprehensive exploration.
+            </p>
+          </div>
+        </div>
+
+        <!-- Additional 4 FAQs (hidden by default) -->
+        <div class="faq-grid faq-grid--hidden" id="faqMore">
+          <div class="faq-item">
+            <h3 class="faq-item__question">Is Raja Ampat safe for families?</h3>
+            <p class="faq-item__answer">
+              Yes, for families with children who snorkel confidently (typically
+              age 8+). Calm anchorages and varied activities suit families well.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__question">
+              What diving experience do I need?
+            </h3>
+            <p class="faq-item__answer">
+              Open Water certification minimum, but 20-30+ logged dives
+              recommended. Itineraries always include sites for all levels.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__question">Is there WiFi in Raja Ampat?</h3>
+            <p class="faq-item__answer">
+              Mobile coverage is minimal. Most yachts offer satellite WiFi
+              (limited bandwidth—suitable for email, not streaming).
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-item__question">
+              What's the Raja Ampat Marine Park Permit?
+            </h3>
+            <p class="faq-item__answer">
+              All visitors must purchase this permit (~$100 USD, valid one
+              year). Revenue funds marine conservation. We arrange permits.
+            </p>
+          </div>
+        </div>
+
+        <div class="view-more-wrapper">
+          <button class="link-toggle" id="viewMoreFaqBtn" onclick="toggleFaq()">
+            <span class="link-toggle__text">SHOW MORE FAQ</span>
+            <svg class="link-toggle__arrow" viewBox="0 0 24 24"
+              ><polyline points="6 9 12 15 18 9"></polyline></svg
+            >
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════
+       CTA BANNER
+       ════════════════════════════════════════════════════════════════ -->
+    <section class="cta-banner">
+      <div class="cta-banner__inner">
+        <h2 class="cta-banner__title">Ready to explore Raja Ampat?</h2>
+        <p class="cta-banner__text">
+          Tell us your dates and interests. We'll craft a personalized itinerary<br
+          />for your Raja Ampat voyage.
+        </p>
+        <button class="cta-banner__button" onclick="openModal()"
+          >Plan Your Voyage <span>→</span></button
+        >
+      </div>
+    </section>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="formModal" onclick="closeModal(event)">
+      <div class="modal" onclick="event.stopPropagation()">
+        <button class="modal__close" onclick="closeModal()" aria-label="Close">
+          <svg
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <div class="modal__content" id="modalContent">
+          <div class="modal__header">
+            <p class="modal__eyebrow">Explore Raja Ampat</p>
+            <h3 class="modal__headline">Plan Your Raja Ampat Charter</h3>
+            <p class="modal__body">
+              Share your dates and group size and we'll match you with the ideal
+              yacht and itinerary for Raja Ampat.
+            </p>
+          </div>
+          <form id="inquiryForm" onsubmit="handleSubmit(event)">
+            <div class="form__row">
+              <div class="form__field">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="form__field">
+                <input type="tel" name="phone" placeholder="Phone Number" />
+              </div>
+            </div>
+            <div class="form__field">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+              />
+            </div>
+            <div class="form__row">
+              <div class="form__field">
+                <select name="guests" required>
+                  <option value="" disabled selected>Group Size</option>
+                  <option value="2-4">2–4 Guests</option>
+                  <option value="5-8">5–8 Guests</option>
+                  <option value="9-12">9–12 Guests</option>
+                  <option value="13-16">13–16 Guests</option>
+                  <option value="17+">17+ Guests</option>
+                </select>
+              </div>
+              <div class="form__field">
+                <select name="budget">
+                  <option value="" disabled selected>Budget (Per Week)</option>
+                  <option value="under-50k">Under $50,000</option>
+                  <option value="50k-80k">$50,000 – $80,000</option>
+                  <option value="80k-120k">$80,000 – $120,000</option>
+                  <option value="120k+">$120,000+</option>
+                  <option value="flexible">Flexible</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__field">
+              <textarea
+                name="details"
+                placeholder="Dates you're considering, destinations that interest you, or anything else that helps us personalize your recommendations."
+              ></textarea>
+            </div>
+            <input type="hidden" name="source" value="destination-raja-ampat" />
+            <input type="hidden" name="destination" value="Raja Ampat" />
+            <button type="submit" class="form__submit"
+              >Plan Your Voyage <span>→</span></button
+            >
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      // Dive Sites Toggle
+      function toggleDiveSites() {
+        const moreSection = document.getElementById("diveSitesMore");
+        const btn = document.getElementById("viewMoreBtn");
+
+        if (moreSection.classList.contains("active")) {
+          moreSection.classList.remove("active");
+          btn.innerHTML =
+            '<span class="link-toggle__text">VIEW MORE DIVE SITES</span><svg class="link-toggle__arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+          btn.classList.remove("link-toggle--expanded");
+        } else {
+          moreSection.classList.add("active");
+          btn.innerHTML =
+            '<span class="link-toggle__text">VIEW LESS DIVE SITES</span><svg class="link-toggle__arrow" viewBox="0 0 24 24"><polyline points="6 15 12 9 18 15"></polyline></svg>';
+          btn.classList.add("link-toggle--expanded");
+        }
+      }
+
+      // FAQ Toggle
+      function toggleFaq() {
+        const moreSection = document.getElementById("faqMore");
+        const btn = document.getElementById("viewMoreFaqBtn");
+
+        if (moreSection.classList.contains("active")) {
+          moreSection.classList.remove("active");
+          btn.innerHTML =
+            '<span class="link-toggle__text">SHOW MORE FAQ</span><svg class="link-toggle__arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+          btn.classList.remove("link-toggle--expanded");
+        } else {
+          moreSection.classList.add("active");
+          btn.innerHTML =
+            '<span class="link-toggle__text">SHOW LESS FAQ</span><svg class="link-toggle__arrow" viewBox="0 0 24 24"><polyline points="6 15 12 9 18 15"></polyline></svg>';
+          btn.classList.add("link-toggle--expanded");
+        }
+      }
+
+      // Modal Functions
+      function openModal() {
+        document.getElementById("formModal").classList.add("active");
+        document.body.style.overflow = "hidden";
+        setTimeout(() => {
+          const firstInput = document.querySelector(
+            '.modal input[name="name"]'
+          );
+          if (firstInput) firstInput.focus();
+        }, 400);
+      }
+
+      function closeModal(event) {
+        if (event && event.target !== event.currentTarget) return;
+        document.getElementById("formModal").classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeModal();
+      });
+
+      function handleSubmit(event) {
+        event.preventDefault();
+        document.getElementById("modalContent").innerHTML = `
+        <div class="form-success">
+          <svg class="form-success__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <h3 class="form-success__title">Thank You</h3>
+          <p class="form-success__text">We'll be in touch within 24 hours with personalized recommendations for your voyage.</p>
+          <button class="form-success__close" onclick="closeModal()">Close</button>
+        </div>
+      `;
+      }
+    </script>
+  </body>
+</html>
