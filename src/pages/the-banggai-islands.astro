@@ -38,7 +38,7 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
         --charcoal: #1a1a1a;
         --slate: #4a4a4a;
         --silver: #6c6b6b;
-        --gold-muted: #b8a878;
+        --gold-muted: #786e4d;
         --peak: #2d6a4f;
         --shoulder: #c17f24;
       }
@@ -2535,6 +2535,7 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
           src={heroPhinisi}
           alt="The Banggai Islands, Sulawesi's fragile archipelago"
           fetchpriority="high"
+          loading="eager"
         />
       </div>
       <div class="hero__overlay"></div>
@@ -2703,7 +2704,13 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
         </div>
 
         <div class="two-col-with-image__image">
-          <Image src={coralReef} alt="Coastal waters of the Banggai Islands" />
+          <Image
+            src={coralReef}
+            alt="Coastal waters of the Banggai Islands"
+            width={1239}
+            height={826}
+            quality={72}
+          />
         </div>
       </div>
     </div>
@@ -2779,6 +2786,9 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
         <Image
           src={wayagAerial}
           alt="Lake Paisupok and the islands of Peleng"
+          width={1219}
+          height={684}
+          quality={72}
         />
         <div class="beyond-section__image-accent"></div>
       </div>

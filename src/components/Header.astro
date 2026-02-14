@@ -402,10 +402,10 @@ import logoSailsRed from "../assets/images/Indo_Yachts_Sails_Red.png";
 </header>
 
 <script type="module">
-  // Header scroll behavior
+  // Header scroll behavior — defer scroll read to avoid forced reflow (Lighthouse)
   const header = document.getElementById("header");
   if (!header) throw new Error("Header element not found");
-  let lastScrollY = window.scrollY;
+  let lastScrollY = 0;
   let isHeaderHidden = false;
   const scrollThreshold = 100;
 
@@ -441,7 +441,11 @@ import logoSailsRed from "../assets/images/Indo_Yachts_Sails_Red.png";
   }
 
   window.addEventListener("scroll", updateHeader, { passive: true });
-  updateHeader();
+  // Defer initial read to next frame to avoid forced reflow on load
+  requestAnimationFrame(() => {
+    lastScrollY = window.scrollY;
+    updateHeader();
+  });
 </script>
 
 <style>
