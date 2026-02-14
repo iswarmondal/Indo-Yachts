@@ -1,5 +1,13 @@
 ---
-
+import { Image } from "astro:assets";
+import duniaBaruInRajaAmpat from "../assets/images/Dunia_Baru_in_Raja_Ampat.jpg";
+import vela3 from "../assets/images/Vela-3.jpg";
+import rajaAmpatExpedition from "../assets/images/Raja_Ampat_Expedition.jpg";
+import highlightPadarIsland from "../assets/images/Highlight_Padar_Island.jpg";
+import duniaBaru11 from "../assets/images/Dunia_Baru-11.jpg";
+import labuanBajo3 from "../assets/images/Labuan_Bajo-3.jpg";
+import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
+import logoSailsRed from "../assets/images/Indo_Yachts_Sails_Red.png";
 ---
 
 <header class="header header-dark" id="header">
@@ -50,10 +58,7 @@
               <div class="mega-menu-featured">
                 <a href="#" class="mega-menu-card">
                   <div class="mega-menu-card-image">
-                    <img
-                      src="images/Dunia_Baru_in_Raja_Ampat.jpg"
-                      alt="Dunia Baru"
-                    />
+                    <Image src={duniaBaruInRajaAmpat} alt="Dunia Baru" />
                   </div>
                   <p class="mega-menu-card-label">Best All-Rounder</p>
                   <h3 class="mega-menu-card-title">Dunia Baru</h3>
@@ -61,7 +66,7 @@
                 </a>
                 <a href="#" class="mega-menu-card">
                   <div class="mega-menu-card-image">
-                    <img src="images/Vela-3.jpg" alt="Vela" />
+                    <Image src={vela3} alt="Vela" />
                   </div>
                   <p class="mega-menu-card-label">Newest Addition</p>
                   <h3 class="mega-menu-card-title">Vela</h3>
@@ -129,10 +134,7 @@
               <div class="mega-menu-featured">
                 <a href="/raja-ampat-destination" class="mega-menu-card">
                   <div class="mega-menu-card-image">
-                    <img
-                      src="images/Raja_Ampat_Expedition.jpg"
-                      alt="Raja Ampat"
-                    />
+                    <Image src={rajaAmpatExpedition} alt="Raja Ampat" />
                   </div>
                   <p class="mega-menu-card-label">Fly to Sorong</p>
                   <h3 class="mega-menu-card-title">Raja Ampat</h3>
@@ -142,7 +144,10 @@
                 </a>
                 <a href="/the-banggai-islands" class="mega-menu-card">
                   <div class="mega-menu-card-image">
-                    <img src="images/Highlight_Padar_Island.jpg" alt="The Banggai Islands" />
+                    <Image
+                      src={highlightPadarIsland}
+                      alt="The Banggai Islands"
+                    />
                   </div>
                   <p class="mega-menu-card-label">Fly to Luwuk</p>
                   <h3 class="mega-menu-card-title">The Banggai Islands</h3>
@@ -213,10 +218,7 @@
               <div class="mega-menu-featured">
                 <a href="#" class="mega-menu-card">
                   <div class="mega-menu-card-image">
-                    <img
-                      src="images/Dunia_Baru-11.jpg"
-                      alt="Ultimate Raja Ampat"
-                    />
+                    <Image src={duniaBaru11} alt="Ultimate Raja Ampat" />
                   </div>
                   <p class="mega-menu-card-label">Most Popular</p>
                   <h3 class="mega-menu-card-title">Ultimate Raja Ampat</h3>
@@ -224,7 +226,7 @@
                 </a>
                 <a href="#" class="mega-menu-card">
                   <div class="mega-menu-card-image">
-                    <img src="images/Labuan_Bajo-3.jpg" alt="Land of Dragons" />
+                    <Image src={labuanBajo3} alt="Land of Dragons" />
                   </div>
                   <p class="mega-menu-card-label">Best for Families</p>
                   <h3 class="mega-menu-card-title">To The Land of Dragons</h3>
@@ -252,16 +254,32 @@
     </nav>
 
     <!-- LOGO -->
-    <div class="logo">
-      <img
-        src="images/Indo_Yachts_Sails_Light.png"
+    <div class="logo" style="width: 36px; height: 42px;">
+      <Image
+        src={logoSailsLight}
         alt="Indo Yachts"
         class="logo-light"
+        width={72}
+        height={84}
+        quality={95}
+        fit="contain"
+        style="width: 100%; height: 100%; object-fit: contain;"
+        loading="eager"
+        fetchpriority="high"
+        sizes="36px"
       />
-      <img
-        src="images/Indo_Yachts_Sails_Red.png"
+      <Image
+        src={logoSailsRed}
         alt="Indo Yachts"
         class="logo-dark"
+        width={72}
+        height={84}
+        quality={95}
+        fit="contain"
+        style="width: 100%; height: 100%; object-fit: contain;"
+        loading="eager"
+        fetchpriority="high"
+        sizes="36px"
       />
     </div>
 

@@ -1,6 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
+import rajaAmpatExpedition from "../assets/images/Raja_Ampat_Expedition.jpg";
 // import Footer from "../components/Footer.astro";
 // import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 // import "../styles/global.css";
@@ -18,7 +19,7 @@ import Header from "../components/Header.astro";
     <section class="hero">
       <div
         class="hero-bg"
-        style="background-image: url('images/Raja_Ampat_Expedition.jpg');"
+        style={`background-image: url(${rajaAmpatExpedition.src});`}
       >
       </div>
       <div class="hero-content">
