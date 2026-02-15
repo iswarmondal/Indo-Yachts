@@ -40,9 +40,9 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
         --charcoal: #1a1a1a;
         --slate: #4a4a4a;
         --silver: #6c6b6b;
-        --gold-muted: #786e4d;
+        --gold-muted: #B8A878;
         --peak: #2d6a4f;
-        --shoulder: #c17f24;
+        --shoulder: #96681a;
       }
 
       *,
@@ -495,7 +495,7 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
         font-weight: 300;
         font-style: italic;
         color: var(--deep-sea);
-        opacity: 0.5;
+        opacity: 0.65;
         margin-bottom: 16px;
         flex: 1;
       }
@@ -503,7 +503,7 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
       .itin-medium__route {
         font-size: 12px;
         color: var(--deep-sea);
-        opacity: 0.4;
+        opacity: 0.65;
         margin-bottom: 20px;
       }
 
@@ -1919,14 +1919,14 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
         font-weight: 300;
         font-style: italic;
         color: var(--deep-sea);
-        opacity: 0.5;
+        opacity: 0.65;
         margin-bottom: 16px;
       }
 
       .itin-medium__route {
         font-size: 12px;
         color: var(--deep-sea);
-        opacity: 0.4;
+        opacity: 0.65;
         margin-bottom: 20px;
       }
 
@@ -2051,7 +2051,7 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
         font-weight: 500;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.4);
+        color: rgba(255, 255, 255, 0.6);
         margin-bottom: 4px;
       }
 
@@ -2772,9 +2772,9 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
           alt="The Banggai Islands, Sulawesi's fragile archipelago"
           fetchpriority="high"
           loading="eager"
-          width={1859}
-          height={862}
-          quality={85}
+          widths={[480, 768, 1200, 1859]}
+          sizes="100vw"
+          quality={70}
         />
       </div>
       <div class="hero__overlay"></div>
@@ -2853,9 +2853,9 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
           <Image
             src={wayagAerial}
             alt={"Islands of the Banggai Archipelago, Central Sulawesi"}
-            width={660}
-            height={371}
-            quality={70}
+            widths={[400, 660]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            quality={60}
           />
           <p class="overview__image-caption">
             The Banggai Archipelago-quiet beauty and challenging logistics
@@ -2915,9 +2915,9 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
           <Image
             src={coralReef}
             alt="Coastal waters of the Banggai Islands"
-            width={670}
-            height={446}
-            quality={72}
+            widths={[400, 670]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            quality={60}
           />
         </div>
       </div>
