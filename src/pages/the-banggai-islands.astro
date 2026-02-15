@@ -141,7 +141,7 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
 
       .hero__title {
         font-family: "Cormorant Garamond", serif;
-        font-size: clamp(52px, 8vw, 88px);
+        font-size: clamp(38px, 8vw, 88px);
         font-weight: 300;
         font-style: italic;
         color: var(--white);
@@ -287,6 +287,7 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
       @media (max-width: 768px) {
         .section {
           padding: 60px 24px;
+          overflow: hidden;
         }
       }
 
@@ -319,6 +320,7 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
         line-height: 1.9;
         color: var(--slate);
         max-width: 700px;
+        width: 100%;
         margin: 0 auto;
       }
 
@@ -573,6 +575,19 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
         font-size: 14px;
         color: var(--gold-muted);
         letter-spacing: 0.05em;
+      }
+
+      @media (max-width: 768px) {
+        .featured-quote {
+          padding: 80px 24px;
+        }
+        .featured-quote::before {
+          font-size: 120px;
+          top: 30px;
+        }
+        .featured-quote__text {
+          font-size: 24px;
+        }
       }
 
       /* Two Column with Image */
@@ -1401,10 +1416,13 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
       .season-chart-wrapper {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+        margin: 0 -24px;
+        padding: 0 24px;
       }
 
       .season-chart {
         min-width: 700px;
+        padding-bottom: 20px;
       }
 
       .season-chart__table {
@@ -1480,6 +1498,14 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
         padding: 20px;
         background: var(--snow);
         border-top: 1px solid var(--sand);
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 768px) {
+        .season-legend {
+          gap: 20px;
+          padding: 16px;
+        }
       }
 
       .season-legend__item {
@@ -1535,6 +1561,9 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
         .two-col-text {
           grid-template-columns: 1fr;
           gap: 40px;
+        }
+        .two-col-text > div {
+          min-width: 0;
         }
       }
 
@@ -2673,7 +2702,7 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
           left: 0;
           right: 0;
           z-index: 40;
-          padding: 22px 24px;
+          padding: 30px 24px;
         }
         .mobile-header__hamburger {
           position: absolute;
