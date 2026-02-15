@@ -440,7 +440,17 @@ import logoSailsRed from "../assets/images/Indo_Yachts_Sails_Red.png";
     lastScrollY = currentScrollY;
   }
 
-  window.addEventListener("scroll", updateHeader, { passive: true });
+  // Defer scroll work to next frame to avoid forced reflow (read layout once per frame)
+  let scrollScheduled = false;
+  function onScroll() {
+    if (scrollScheduled) return;
+    scrollScheduled = true;
+    requestAnimationFrame(() => {
+      scrollScheduled = false;
+      updateHeader();
+    });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
   // Defer initial read to next frame to avoid forced reflow on load
   requestAnimationFrame(() => {
     lastScrollY = window.scrollY;
