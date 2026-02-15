@@ -402,60 +402,54 @@ import logoSailsRed from "../assets/images/Indo_Yachts_Sails_Red.png";
 </header>
 
 <script type="module">
-  // Header scroll behavior — defer scroll read to avoid forced reflow (Lighthouse)
-  const header = document.getElementById("header");
-  if (!header) throw new Error("Header element not found");
-  let lastScrollY = 0;
-  let isHeaderHidden = false;
-  const scrollThreshold = 100;
+  // Header scroll behavior — deferred until after load to improve LCP (Lighthouse)
+  function initHeaderScroll() {
+    const header = document.getElementById("header");
+    if (!header) return;
+    let lastScrollY = 0;
+    let isHeaderHidden = false;
+    const scrollThreshold = 100;
 
-  function updateHeader() {
-    const currentScrollY = window.scrollY;
-    const scrollingDown = currentScrollY > lastScrollY;
-    const scrollingUp = currentScrollY < lastScrollY;
+    function updateHeader() {
+      const currentScrollY = window.scrollY;
+      const scrollingDown = currentScrollY > lastScrollY;
+      const scrollingUp = currentScrollY < lastScrollY;
 
-    // Hide header when scrolling down past threshold
-    if (scrollingDown && currentScrollY > scrollThreshold && !isHeaderHidden) {
-      header.classList.add("header-hidden");
-      isHeaderHidden = true;
+      if (scrollingDown && currentScrollY > scrollThreshold && !isHeaderHidden) {
+        header.classList.add("header-hidden");
+        isHeaderHidden = true;
+      }
+      if (scrollingUp && isHeaderHidden) {
+        header.classList.remove("header-hidden");
+        isHeaderHidden = false;
+      }
+      if (currentScrollY <= 50) {
+        header.classList.remove("header-light");
+        header.classList.add("header-dark");
+      } else if (!isHeaderHidden) {
+        header.classList.remove("header-dark");
+        header.classList.add("header-light");
+      }
+      lastScrollY = currentScrollY;
     }
 
-    // Show header when scrolling up
-    if (scrollingUp && isHeaderHidden) {
-      header.classList.remove("header-hidden");
-      isHeaderHidden = false;
+    let scrollScheduled = false;
+    function onScroll() {
+      if (scrollScheduled) return;
+      scrollScheduled = true;
+      requestAnimationFrame(() => {
+        scrollScheduled = false;
+        updateHeader();
+      });
     }
-
-    // Update header appearance based on scroll position
-    if (currentScrollY <= 50) {
-      // At top - transparent dark mode
-      header.classList.remove("header-light");
-      header.classList.add("header-dark");
-    } else if (!isHeaderHidden) {
-      // Scrolled but visible - white background
-      header.classList.remove("header-dark");
-      header.classList.add("header-light");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  // Defer scroll work to next frame to avoid forced reflow (read layout once per frame)
-  let scrollScheduled = false;
-  function onScroll() {
-    if (scrollScheduled) return;
-    scrollScheduled = true;
+    window.addEventListener("scroll", onScroll, { passive: true });
     requestAnimationFrame(() => {
-      scrollScheduled = false;
+      lastScrollY = window.scrollY;
       updateHeader();
     });
   }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  // Defer initial read to next frame to avoid forced reflow on load
-  requestAnimationFrame(() => {
-    lastScrollY = window.scrollY;
-    updateHeader();
-  });
+  if (document.readyState === "complete") setTimeout(initHeaderScroll, 0);
+  else window.addEventListener("load", initHeaderScroll);
 </script>
 
 <style>

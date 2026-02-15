@@ -4457,131 +4457,104 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
     </div>
   </main>
   <script>
-    // Dive Sites Toggle
-    const diveSitesBtn = document.getElementById("viewMoreBtn");
-    if (diveSitesBtn) {
-      diveSitesBtn.addEventListener("click", function () {
-        const moreSection = document.getElementById("diveSitesMore");
-        if (!moreSection) return;
-        const btn = this;
-        if (!btn) return;
-
-        const textSpan = btn.querySelector(".link-toggle__text");
-        if (moreSection.classList.contains("active")) {
-          moreSection.classList.remove("active");
-          btn.classList.remove("link-toggle--expanded");
-          if (textSpan) {
-            textSpan.textContent = "VIEW MORE HIGHLIGHTS";
+    // Defer non-critical JS until after load to improve LCP (Lighthouse)
+    function initPageScripts() {
+      var diveSitesBtn = document.getElementById("viewMoreBtn");
+      if (diveSitesBtn) {
+        diveSitesBtn.addEventListener("click", function () {
+          var moreSection = document.getElementById("diveSitesMore");
+          if (!moreSection) return;
+          var btn = this;
+          var textSpan = btn.querySelector(".link-toggle__text");
+          if (moreSection.classList.contains("active")) {
+            moreSection.classList.remove("active");
+            btn.classList.remove("link-toggle--expanded");
+            if (textSpan) textSpan.textContent = "VIEW MORE HIGHLIGHTS";
+          } else {
+            moreSection.classList.add("active");
+            btn.classList.add("link-toggle--expanded");
+            if (textSpan) textSpan.textContent = "VIEW LESS HIGHLIGHTS";
           }
-        } else {
-          moreSection.classList.add("active");
-          btn.classList.add("link-toggle--expanded");
-          if (textSpan) {
-            textSpan.textContent = "VIEW LESS HIGHLIGHTS";
-          }
-        }
-      });
-    }
-
-    // FAQ Toggle
-    const faqBtn = document.getElementById("viewMoreFaqBtn");
-    if (faqBtn) {
-      faqBtn.addEventListener("click", function () {
-        const moreSection = document.getElementById("faqMore");
-        if (!moreSection) return;
-        const btn = this; // Use specific button
-        if (!btn) return;
-
-        const textSpan = btn.querySelector(".link-toggle__text");
-        if (moreSection.classList.contains("active")) {
-          moreSection.classList.remove("active");
-          btn.classList.remove("link-toggle--expanded");
-          if (textSpan) textSpan.textContent = "SHOW MORE FAQ";
-        } else {
-          moreSection.classList.add("active");
-          btn.classList.add("link-toggle--expanded");
-          if (textSpan) textSpan.textContent = "SHOW LESS FAQ";
-        }
-      });
-    }
-
-    // Modal Functions
-    const modal = document.getElementById("formModal");
-    const openBtn = document.getElementById("openModalBtn");
-    const closeBtn = document.getElementById("closeModalBtn");
-    // const modalContent = document.querySelector(".modal"); // unused
-    const form = document.getElementById("inquiryForm");
-
-    if (openBtn && modal) {
-      openBtn.addEventListener("click", function () {
-        modal.classList.add("active");
-        document.body.style.overflow = "hidden";
-        setTimeout(() => {
-          const firstInput = document.querySelector(
-            '.modal input[name="name"]'
-          ) as HTMLInputElement | null;
-          if (firstInput) firstInput.focus({ preventScroll: true });
-        }, 400);
-      });
-    }
-
-    if (closeBtn && modal) {
-      closeBtn.addEventListener("click", closeModal);
-    }
-
-    if (modal) {
-      modal.addEventListener("click", function (event) {
-        if (event.target === modal) {
-          closeModal();
-        }
-      });
-    }
-
-    function closeModal() {
-      if (modal) {
-        modal.classList.remove("active");
-        document.body.style.overflow = "";
-      }
-    }
-
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") closeModal();
-    });
-
-    if (form) {
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        const content = document.getElementById("modalContent");
-        if (content) {
-          content.innerHTML = `
-            <div class="form-success">
-              <svg class="form-success__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <h3 class="form-success__title">Thank You</h3>
-              <p class="form-success__text">We'll be in touch within 24 hours with personalized recommendations for your voyage.</p>
-              <button class="form-success__close" id="successCloseBtn">Close</button>
-            </div>
-          `;
-          // Re-attach close listener to new button
-          const newClose = document.getElementById("successCloseBtn");
-          if (newClose) newClose.addEventListener("click", closeModal);
-        }
-      });
-    }
-  </script>
-
-  <!-- Mobile Menu Hamburger Trigger -->
-  <script is:inline>
-    (function () {
-      var hamburgerBtn = document.getElementById("mobile-hamburger-btn");
-      var mobileOverlay = document.getElementById("mobile-menu-overlay");
-      if (hamburgerBtn && mobileOverlay) {
-        hamburgerBtn.addEventListener("click", function () {
-          mobileOverlay.classList.add("open");
-          document.body.style.overflow = "hidden";
         });
       }
+      var faqBtn = document.getElementById("viewMoreFaqBtn");
+      if (faqBtn) {
+        faqBtn.addEventListener("click", function () {
+          var moreSection = document.getElementById("faqMore");
+          if (!moreSection) return;
+          var btn = this;
+          var textSpan = btn.querySelector(".link-toggle__text");
+          if (moreSection.classList.contains("active")) {
+            moreSection.classList.remove("active");
+            btn.classList.remove("link-toggle--expanded");
+            if (textSpan) textSpan.textContent = "SHOW MORE FAQ";
+          } else {
+            moreSection.classList.add("active");
+            btn.classList.add("link-toggle--expanded");
+            if (textSpan) textSpan.textContent = "SHOW LESS FAQ";
+          }
+        });
+      }
+      var modal = document.getElementById("formModal");
+      var openBtn = document.getElementById("openModalBtn");
+      var closeBtn = document.getElementById("closeModalBtn");
+      var form = document.getElementById("inquiryForm");
+      function closeModal() {
+        if (modal) {
+          modal.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+      }
+      if (openBtn && modal) {
+        var modalEl = modal;
+        openBtn.addEventListener("click", function () {
+          modalEl.classList.add("active");
+          document.body.style.overflow = "hidden";
+          setTimeout(function () {
+            var firstInput = document.querySelector('.modal input[name="name"]') as HTMLInputElement | null;
+            if (firstInput) firstInput.focus({ preventScroll: true });
+          }, 400);
+        });
+      }
+      if (closeBtn && modal) closeBtn.addEventListener("click", closeModal);
+      if (modal) {
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) closeModal();
+        });
+      }
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeModal();
+      });
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var content = document.getElementById("modalContent");
+          if (content) {
+            content.innerHTML = '<div class="form-success"><svg class="form-success__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><h3 class="form-success__title">Thank You</h3><p class="form-success__text">We\'ll be in touch within 24 hours with personalized recommendations for your voyage.</p><button class="form-success__close" id="successCloseBtn">Close</button></div>';
+            var newClose = document.getElementById("successCloseBtn");
+            if (newClose) newClose.addEventListener("click", closeModal);
+          }
+        });
+      }
+    }
+    if (document.readyState === "complete") setTimeout(initPageScripts, 0);
+    else window.addEventListener("load", initPageScripts);
+  </script>
+
+  <script is:inline>
+    (function () {
+      function initHamburger() {
+        var hamburgerBtn = document.getElementById("mobile-hamburger-btn");
+        var mobileOverlay = document.getElementById("mobile-menu-overlay");
+        if (hamburgerBtn && mobileOverlay) {
+          hamburgerBtn.addEventListener("click", function () {
+            mobileOverlay.classList.add("open");
+            document.body.style.overflow = "hidden";
+          });
+        }
+      }
+      if (document.readyState === "complete") setTimeout(initHamburger, 0);
+      else window.addEventListener("load", initHamburger);
     })();
   </script>
 
