@@ -16,7 +16,7 @@ import splitShot from "../assets/images/split-shot.jpg";
 import duniaBaru from "../assets/images/dunia-baru.jpg";
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta
@@ -94,8 +94,7 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
       .hero__overlay {
         position: absolute;
         inset: 0;
-        background:
-          linear-gradient(
+        background: linear-gradient(
             to bottom,
             rgba(10, 22, 40, 0.5) 0%,
             rgba(10, 22, 40, 0.2) 15%,
@@ -388,6 +387,144 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
         .overview-grid {
           grid-template-columns: 1fr;
           gap: 40px;
+        }
+      }
+
+      /* ════════════════════════════════════════════════════════════════
+       ITINERARY CARDS - Shared Style
+       ════════════════════════════════════════════════════════════════ */
+      .itin-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+      }
+
+      .itin-medium {
+        display: flex;
+        flex-direction: column;
+        background: var(--white);
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(10, 22, 40, 0.03),
+          0 12px 24px rgba(10, 22, 40, 0.06);
+        transition: box-shadow 0.4s ease, transform 0.4s ease;
+      }
+
+      .itin-medium:hover {
+        box-shadow: 0 8px 12px rgba(10, 22, 40, 0.04),
+          0 20px 40px rgba(10, 22, 40, 0.08);
+        transform: translateY(-4px);
+      }
+
+      .itin-medium::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--oxblood);
+        z-index: 2;
+      }
+
+      .itin-medium__image {
+        aspect-ratio: 16/10;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .itin-medium__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .itin-medium:hover .itin-medium__image img {
+        transform: scale(1.04);
+      }
+
+      .itin-medium__badge {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: var(--deep-sea);
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--white);
+        padding: 10px 14px;
+      }
+
+      .itin-medium__content {
+        padding: 32px;
+        text-align: center;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .itin-medium__destination {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--oxblood);
+        margin-bottom: 12px;
+      }
+
+      .itin-medium__name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 26px;
+        font-weight: 400;
+        color: var(--deep-sea);
+        margin-bottom: 8px;
+        line-height: 1.2;
+      }
+
+      .itin-medium__tagline {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 15px;
+        font-weight: 300;
+        font-style: italic;
+        color: var(--deep-sea);
+        opacity: 0.5;
+        margin-bottom: 16px;
+        flex: 1;
+      }
+
+      .itin-medium__route {
+        font-size: 12px;
+        color: var(--deep-sea);
+        opacity: 0.4;
+        margin-bottom: 20px;
+      }
+
+      .itin-medium__cta {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--oxblood);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding-top: 18px;
+        border-top: 1px solid var(--sand);
+        transition: gap 0.3s ease;
+        justify-content: center;
+      }
+
+      .itin-medium:hover .itin-medium__cta {
+        gap: 16px;
+      }
+
+      @media (max-width: 1000px) {
+        .itin-grid {
+          grid-template-columns: 1fr;
+          max-width: 500px;
+          margin: 0 auto;
         }
       }
 
@@ -878,9 +1015,7 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
         background: var(--white);
         overflow: hidden;
         box-shadow: 0 4px 20px rgba(10, 22, 40, 0.06);
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
       .dive-card:hover {
@@ -968,9 +1103,9 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
         background: none;
         border: none;
         font-family: "Manrope", sans-serif;
-        font-size: 12px;
-        font-weight: 500;
-        letter-spacing: 0.1em;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
         color: #722f37;
         cursor: pointer;
@@ -984,11 +1119,16 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
       }
 
       .link-toggle__arrow {
-        width: 14px;
-        height: 14px;
+        width: 12px;
+        height: 12px;
         stroke: currentColor;
-        stroke-width: 2;
+        stroke-width: 2.5;
         fill: none;
+        transition: transform 0.3s ease;
+      }
+
+      .link-toggle--expanded .link-toggle__arrow {
+        transform: rotate(180deg);
       }
 
       @media (max-width: 1200px) {
@@ -1639,17 +1779,13 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
         overflow: hidden;
         position: relative;
         text-decoration: none;
-        box-shadow:
-          0 4px 6px rgba(10, 22, 40, 0.03),
+        box-shadow: 0 4px 6px rgba(10, 22, 40, 0.03),
           0 12px 24px rgba(10, 22, 40, 0.06);
-        transition:
-          box-shadow 0.4s ease,
-          transform 0.4s ease;
+        transition: box-shadow 0.4s ease, transform 0.4s ease;
       }
 
       .itin-medium:hover {
-        box-shadow:
-          0 8px 12px rgba(10, 22, 40, 0.04),
+        box-shadow: 0 8px 12px rgba(10, 22, 40, 0.04),
           0 20px 40px rgba(10, 22, 40, 0.08);
         transform: translateY(-4px);
       }
@@ -2249,9 +2385,7 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
         padding: 24px;
         opacity: 0;
         visibility: hidden;
-        transition:
-          opacity 0.3s ease,
-          visibility 0.3s ease;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
       }
 
       .modal-overlay.active {
@@ -2268,9 +2402,7 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
         position: relative;
         transform: translateY(20px);
         opacity: 0;
-        transition:
-          transform 0.4s ease,
-          opacity 0.4s ease;
+        transition: transform 0.4s ease, opacity 0.4s ease;
         box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
       }
 
@@ -2588,50 +2720,25 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
           <h2>A Realistic Guide to Sulawesi's Fragile Archipelago</h2>
 
           <p>
-            The wooden boat smelled of clove cigarettes and dried fish, a scent
-            that seems to permeate every harbor in Sulawesi. We were sitting on
-            plastic stools on the open deck of a public ferry leaving Luwuk,
-            watching the mainland fade into a haze of humidity. Ahead of us lay
-            the Banggai Archipelago, a cluster of islands that has recently
-            drifted into the peripheral vision of the adventurous travel
-            circuit.
+            Most come for <strong>Lake Paisupok</strong>. You've seen the
+            photos-a body of water so glassy and distinctively blue that it
+            looks like a swimming pool dropped into a jungle. It is the image
+            that launched a thousand Instagram saves.
           </p>
 
           <p>
-            Most people come here for one reason: <strong>Lake Paisupok</strong
-            >. You have likely seen the photos-a body of water so glassy and
-            distinctively blue that it looks like a swimming pool dropped into a
-            jungle. It is the image that launched a thousand Instagram saves.
+            But the reality is unpolished. This is not the next Raja Ampat or a
+            bite-sized Bali. Infrastructure is brittle. English is rarely
+            spoken. The electricity grid is a part-time participant. You might
+            swim in the clearest water of your life in the morning and be
+            stranded on a roadside by afternoon.
           </p>
 
           <p>
-            But the reality of the Banggai Islands is far more complex, and far
-            less polished, than a single drone shot suggests. This is not the
-            next Raja Ampat, nor is it a bite-sized version of Bali. It is a <strong
-              >remote regency in Central Sulawesi</strong
-            > where tourism is still an awkward, fledgling concept. Infrastructure
-            is brittle. English is rarely spoken. The electricity grid is a part-time
-            participant in daily life.
-          </p>
-
-          <p>
-            We spent two weeks moving between Peleng, Banggai Laut, and the
-            smaller satellites. We found a region of quiet beauty and
-            frustrating logistics. It is a place where you might swim in the
-            clearest water of your life in the morning and spend the afternoon
-            stranded on a roadside because a petrol station ran dry.
-          </p>
-
-          <p>
-            If you are patient, self-sufficient, and willing to trade comfort
-            for silence, the Banggai Islands are remarkable. If you are looking
-            for seamless transfers and air-conditioned cafes, you should
-            probably stop reading here.
-          </p>
-
-          <p>
-            This guide is a documentation of how we did it, what went wrong, and
-            what we would do differently.
+            If you are patient and self-sufficient, the Banggai Islands are
+            remarkable. If you need seamless transfers, stop reading here. This
+            guide documents how we did it, what went wrong, and what we would do
+            differently.
           </p>
         </div>
 
@@ -2671,35 +2778,26 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
           <h3>Understanding the Destination</h3>
 
           <p>
-            <strong>Geography and Layout:</strong> The archipelago is split into two
-            main administrative regencies: Banggai Kepulauan (Bangkep) and Banggai
-            Laut (Balut). <strong>Peleng Island</strong> (Bangkep) is the massive,
-            mountainous island closest to the mainland-home to Lake Paisupok, the
-            jellyfish lagoon, and most tourist accommodation; the capital is Salakan.
-            <strong>Banggai Island</strong> (Balut) lies further south and east, the
-            historical center of the Banggai Kingdom, more maritime and culturally
-            distinct. Labobo and Bokan are smaller islands offering incredible reefs
-            and isolation, but requiring significant effort to reach.
+            <strong>Geography:</strong> The archipelago is split into two regencies:
+            Banggai Kepulauan (Bangkep) and Banggai Laut (Balut).
+            <strong>Peleng Island</strong> (Bangkep) is the massive island closest
+            to the mainland-home to Lake Paisupok and most accommodation. <strong
+              >Banggai Island</strong
+            > (Balut) lies further south, the historical center of the Sultanate.
           </p>
 
           <p>
-            <strong>Access and Gateways:</strong> There is no airport on the islands
-            for commercial jets from Jakarta or Bali. The gateway is <strong
-              >Luwuk (LWK)</strong
-            > on the Sulawesi mainland. You typically fly into Luwuk (usually via
-            Makassar), take a taxi to the harbor, and ferry across to Peleng Island.
+            <strong>Access:</strong> There is no airport on the islands. The gateway
+            is <strong>Luwuk (LWK)</strong> on the Sulawesi mainland. Fly into Luwuk
+            (via Makassar), taxi to the harbor, and ferry across to Leme-Leme on
+            Peleng.
           </p>
 
           <p>
-            <strong>The Budget Reality:</strong> While Indonesia is generally cheap,
-            remote Indonesia is surprisingly expensive. Logistics cost money. Accommodation:
-            250,000-400,000 IDR (16-26 USD) per night for a basic room. Food: 30,000-60,000
-            IDR (2-4 USD) per meal. Transport is the budget killer: a car charter
-            can cost 700,000 IDR (45 USD) per day; boat charters to outlying islands
-            can run from 800,000 to 1,500,000 IDR (50-100 USD) depending on fuel prices.
-            You need cash. We found ATMs in Luwuk and Salakan (the capital of Peleng),
-            and one lonely machine in Banggai town that rejected our cards. Once you
-            leave the main towns, cash is the only way to pay.
+            <strong>The Budget Reality:</strong> Remote Indonesia is surprisingly
+            expensive. Logistics cost money. Accommodation is cheap (250k-400k IDR),
+            but transport kills the budget. A car charter is 700k IDR/day; boat charters
+            run 800k-1.5m IDR. You need cash. ATMs are scarce outside Luwuk and Salakan.
           </p>
         </div>
 
@@ -2723,43 +2821,22 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
         <span class="beyond-section__label">Peleng Island</span>
         <h2>Lake Paisupok & the Jellyfish Lagoon</h2>
         <p>
-          <strong>Paisupok Lake</strong> is genuinely shocking-the water is so clear
-          you can see every submerged log and rock fifty feet down. The color is not
-          a filter; it is a deep, impossible turquoise. We walked down a dirt track
-          and paid the entrance fee (15,000 IDR). We rented a small canoe (30,000
-          IDR); this is mandatory if you want to get away from the main dock. We paddled
-          out to the center of the lake. It was dead silent. The jungle overhangs
-          the water, and because the lake is freshwater but connected to the sea via
-          underground tunnels, there are no waves. It is like floating on glass. The
-          wooden boardwalks that zigzag across the western end are slippery with moss
-          and missing planks in places-watch your step. Go on a weekday; on Sundays,
-          locals from Salakan flood the area with karaoke speakers and picnic baskets.
+          <strong>Paisupok Lake</strong> is shocking-the water is so clear you can
+          see logs fifty feet down. The color is a deep, impossible turquoise. Rent
+          a canoe (30k IDR) to find silence away from the dock. Go on a weekday to
+          avoid crowds.
         </p>
         <p>
-          In the afternoon we rented a scooter (100,000 IDR) to explore the
-          coast. The road east of Luk Panenteng is rough; potholes are the size
-          of dinner plates. We passed small fishing hamlets where children
-          screamed "Hello Mister!" with frantic enthusiasm. We found a small
-          cove with white sand, but as is common in Indonesia, the high tide
-          line was choked with plastic waste-bottles, wrappers, flip-flops. It's
-          a heartbreaking reality that is impossible to edit out of the
-          experience.
+          Rent a scooter (100k IDR) to explore the coast east of Luk Panenteng.
+          The road is rough, passing fishing hamlets and coves. Be warned: high
+          tide often brings plastic waste-a heartbreaking reality here.
         </p>
         <p>
-          About 30 minutes from Luk Panenteng is <strong>Paisubatango</strong>,
-          a lagoon home to stingless jellyfish-smaller and murkier than Raja
-          Ampat's or Kakaban's, but thousands of them pulsating quietly in the
-          green gloom. A local farmer pointed us toward a muddy path through a
-          cocoa plantation; the walk took 15 minutes and was humid enough to
-          soak our clothes instantly. Do not wear sunscreen or insect repellent
-          here; the chemicals kill the jellyfish. We saw an oil slick on the
-          surface near the entry point, likely from previous tourists. Nearby <strong
-            >Paisu Pok</strong
-          > is a freshwater cave pool-freezing cold and often empty; the "facilities"
-          consisted of a broken wooden bench. Back at the homestay, the power didn't
-          come on at 6:00 PM once-the generator had a mechanical issue. We ate dinner
-          by the light of our headlamps. The power kicked in at 9:00 PM, and the village
-          cheered.
+          Nearby <strong>Paisubatango</strong> is a lagoon filled with stingless
+          jellyfish. A farmer guides you through cocoa trees to find it. Don't wear
+          sunscreen. Also check out <strong>Paisu Pok</strong>, a chilly cave
+          pool. Back at the homestay, expect erratic power and dinner by
+          headlamp.
         </p>
         <div class="beyond-section__highlights">
           <div class="beyond-section__highlight">
@@ -2811,20 +2888,14 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
           hornbills in the canopy.
         </p>
         <p class="expertise-hero__text">
-          The Banggai Islands are in a fragile transition. The road to Luk
-          Panenteng is being widened. More homestays are being built. A "resort"
-          is rumored. In five years, the silence we experienced might be gone,
-          replaced by the hum of constant generators and tour buses.
+          The Banggai Islands are in a fragile transition. Roads are widening.
+          Homestays are multiplying. In five years, the silence might be gone.
         </p>
         <p class="expertise-hero__text">
-          Right now, it is a destination that demands something from
-          you-patience, resilience, and a willingness to be uncomfortable. In
-          exchange, it offers glimpses of a world that feels untouched, even if
-          the edges are starting to fray. If you go, go gently. Tread lightly on
-          the boardwalks, take your trash with you, and appreciate the dark,
-          quiet nights where the only light comes from the stars and the erratic
-          glow of fireflies. It is imperfect, difficult, and absolutely worth
-          the journey.
+          Right now, it demands patience and resilience. In exchange, it offers
+          glimpses of a world that feels untouched. Use the boardwalks, take
+          your trash, and appreciate the dark nights. It is imperfect,
+          difficult, and absolutely worth the journey.
         </p>
         <div class="expertise-hero__stats">
           <div>
@@ -3241,15 +3312,11 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
       </div>
 
       <div class="view-more-wrapper">
-        <button
-          class="link-toggle"
-          id="viewMoreBtn"
-          onclick="toggleDiveSites()"
-        >
+        <button class="link-toggle" id="viewMoreBtn">
           <span class="link-toggle__text">VIEW MORE HIGHLIGHTS</span>
           <svg class="link-toggle__arrow" viewBox="0 0 24 24"
-            ><polyline points="6 9 12 15 18 9"></polyline></svg
-          >
+            ><polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
         </button>
       </div>
     </div>
@@ -3476,31 +3543,19 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
 
       <div class="two-col-text">
         <div>
-          <h3>Ideal: September - November</h3>
+          <h3>Seasons & Conditions</h3>
           <p>
-            The seas are calmest and the rain is manageable. This is when the
-            Banggai Islands deliver the best experience-reliable ferry
-            crossings, clearer water for snorkelling, and fewer cancelled boats.
+            <strong>Sept-Nov (Ideal):</strong> Calmest seas and reliable ferries.
+            Perfect for snorkelling and island hopping.
           </p>
-
           <p>
-            <strong>January and February:</strong> the winds pick up. The crossing
-            between Luwuk and the islands can be cancelled or become dangerous. We
-            would avoid the peak of the monsoon unless you have a lot of buffer time
-            for delays.
+            <strong>Jan-Feb (Risky):</strong> Monsoon winds make crossings dangerous
+            or impossible. Avoid unless you have flexible dates.
           </p>
-
           <p>
-            <strong>Water clarity:</strong> Paisupok Lake is clear year-round. Heavy
-            rains can make the surrounding ocean murky, ruining the snorkelling. Plan
-            lake days for any season; ocean days for calmer, drier windows.
-          </p>
-
-          <h3>Ramadan</h3>
-          <p>
-            Travel during Ramadan (dates vary) is tricky. Food stalls close
-            during the day. Drivers are fasting and may be fatigued. However,
-            the evenings are festive. Plan accordingly if your dates overlap.
+            <strong>Good to Know:</strong> Lake Paisupok is always clear, but ocean
+            visibility drops in rain. During <strong>Ramadan</strong>, day
+            dining is limited but nights are festive.
           </p>
         </div>
 
@@ -3520,36 +3575,32 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
                   <tbody>
                     <tr class="season-peak">
                       <td
-                        ><span class="season-chart__month-name">Sept-Nov</span
-                        ></td
-                      >
+                        ><span class="season-chart__month-name">Sept-Nov</span>
+                      </td>
                       <td><span class="season-status">Ideal</span></td>
                       <td>Calm</td>
                       <td>Best time</td>
                     </tr>
                     <tr class="season-shoulder">
                       <td
-                        ><span class="season-chart__month-name">May-Aug</span
-                        ></td
-                      >
+                        ><span class="season-chart__month-name">May-Aug</span>
+                      </td>
                       <td><span class="season-status">Variable</span></td>
                       <td>Mixed</td>
                       <td>Possible</td>
                     </tr>
                     <tr class="season-off">
                       <td
-                        ><span class="season-chart__month-name">Dec-Feb</span
-                        ></td
-                      >
+                        ><span class="season-chart__month-name">Dec-Feb</span>
+                      </td>
                       <td><span class="season-status">Monsoon</span></td>
                       <td>Rough</td>
                       <td>Buffer time</td>
                     </tr>
                     <tr class="season-shoulder">
                       <td
-                        ><span class="season-chart__month-name">Mar-Apr</span
-                        ></td
-                      >
+                        ><span class="season-chart__month-name">Mar-Apr</span>
+                      </td>
                       <td><span class="season-status">Transition</span></td>
                       <td>Improving</td>
                       <td>OK</td>
@@ -3612,131 +3663,83 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
             <span class="flight-table__time"
               >Usually via Makassar <span class="flight-table__stops"
                 >from Jakarta/Bali</span
-              ></span
-            >
+              >
+            </span>
           </div>
           <div class="flight-table__row">
             <span class="flight-table__city">Taxi → Luwuk Harbor</span>
             <span class="flight-table__time"
               >Ignore touts <span class="flight-table__stops"
                 >flag a car at gate</span
-              ></span
-            >
+              >
+            </span>
           </div>
           <div class="flight-table__row">
             <span class="flight-table__city">Wooden boat → Leme-Leme</span>
             <span class="flight-table__time"
               >~2 PM daily <span class="flight-table__stops"
                 >3-4 hrs, cheap</span
-              ></span
-            >
+              >
+            </span>
           </div>
           <div class="flight-table__row">
             <span class="flight-table__city">Fast boat → Salakan</span>
             <span class="flight-table__time"
               >Fiberglass <span class="flight-table__stops"
                 >expensive, 2 hrs drive to lake</span
-              ></span
-            >
+              >
+            </span>
           </div>
           <div class="flight-table__row">
             <span class="flight-table__city">Leme-Leme → Luk Panenteng</span>
             <span class="flight-table__time"
               >Pre-arrange pickup <span class="flight-table__stops"
                 >20 min drive</span
-              ></span
-            >
+              >
+            </span>
           </div>
           <div class="flight-table__row">
             <span class="flight-table__city">Salakan → Banggai Town</span>
             <span class="flight-table__time"
               >Daily wooden boat 2 PM <span class="flight-table__stops"
                 >50K IDR, 3-4 hrs</span
-              ></span
-            >
+              >
+            </span>
           </div>
           <div class="flight-table__row">
             <span class="flight-table__city">Banggai → Luwuk (return)</span>
             <span class="flight-table__time"
               >Speedboat ~8 AM <span class="flight-table__stops"
                 >250K IDR, 3.5 hrs</span
-              ></span
-            >
+              >
+            </span>
           </div>
         </div>
 
         <!-- Content Side -->
         <div class="logistics-content">
           <div class="logistics-content__block">
-            <h3 class="logistics-content__title">Reaching Luwuk</h3>
-            <p class="logistics-content__text">
-              There is no airport on the islands for commercial jets from
-              Jakarta or Bali. The gateway is <strong>Luwuk (LWK)</strong> on the
-              Sulawesi mainland. Fly into Luwuk (usually via Makassar), take a taxi
-              to the harbor, and ferry across to Peleng Island. From Peleng you move
-              deeper into the archipelago by boat.
-            </p>
-            <p class="logistics-content__text">
-              <strong>You need cash.</strong> ATMs in Luwuk and Salakan (capital of
-              Peleng), and one lonely machine in Banggai Town that rejected our cards.
-              Once you leave main towns, cash is the only way to pay. Bring all the
-              cash you think you need, then add 30%. ATMs often run out of money or
-              reject foreign cards due to connection errors. We almost got stuck in
-              Banggai Town because the BNI ATM was down for two days; we luckily had
-              emergency USD we exchanged at a gold shop at a terrible rate.
-            </p>
-          </div>
-
-          <div class="logistics-content__block">
-            <h3 class="logistics-content__title">Scooters & Local Transport</h3>
-            <p class="logistics-content__text">
-              Rentals are informal-you are renting someone's personal bike.
-              Check the brakes. Check the tires (many are bald). Helmets are
-              often not provided or are cracked plastic shells. Petrol is sold
-              in glass Absolut Vodka bottles at roadside shacks (Pertamini).
-            </p>
-          </div>
-
-          <div class="logistics-content__block">
             <h3 class="logistics-content__title">
-              Accommodation: The Honest Breakdown
+              Reaching Luwuk & Getting Around
             </h3>
             <p class="logistics-content__text">
-              Accommodation in the Banggai Islands is functional, not
-              experiential. You are paying for a roof, not a vibe.
-            </p>
-            <p class="logistics-content__text">
-              <strong>Luk Panenteng (Peleng):</strong> Rustic homestays-usually a
-              row of rooms facing the sea or the road. The walls are thin plywood;
-              you will hear your neighbour snoring, the geckos fighting, and the generator
-              humming. Sheets were clean but worn. The bathrooms are wet rooms (toilet,
-              shower bucket, sink in one tiled space); the floor is perpetually wet.
-              Food is included because there are no restaurants-expect fish, rice,
-              noodles, and eggs. If you are vegetarian, you will eat a lot of eggs
-              and kangkung. Most are not on Booking.com; find them on Google Maps
-              and WhatsApp the owner. Use Google Translate.
-            </p>
-            <p class="logistics-content__text">
-              <strong>Salakan (Peleng):</strong> Government worker transit hotels.
-              Sterile, tiled, fluorescent lighting. Cleaner than village homestays
-              but zero charm. Usually have AC and TV.
-            </p>
-            <p class="logistics-content__text">
-              <strong>Banggai Town (Banggai Laut):</strong> Faded glory-old hotels
-              with heavy wooden furniture and high ceilings. Some rooms have no windows;
-              ask to see the room before paying. Check the AC unit-if it looks brown
-              and ancient, it probably just blows fan air.
+              The gateway is <strong>Luwuk (LWK)</strong>. Fly in, taxi to the
+              harbor, and ferry to Peleng.
+              <strong>Cash is essential</strong>-ATMs are scarce and unreliable.
+              Scooter rentals are informal; check brakes and tires before
+              riding.
             </p>
           </div>
 
           <div class="logistics-content__block">
-            <h3 class="logistics-content__title">Language & Connectivity</h3>
+            <h3 class="logistics-content__title">Accommodation & Essentials</h3>
             <p class="logistics-content__text">
-              English is virtually non-existent outside a few guides. Use Google
-              Translate offline; learn basic Bahasa (e.g. kanan/kiri, mahal, jam
-              berapa?). <strong>Telkomsel</strong> is the only carrier that matters;
-              4G in Salakan and Banggai Town, 3G or Edge in Luk Panenteng. Download
-              offline maps.
+              <strong>Luk Panenteng:</strong> Rustic homestays with plywood walls
+              and mandi bathrooms.
+              <strong>Salakan:</strong> Functional transit hotels.
+              <strong>Banggai Town:</strong> Faded historical hotels. Power outages
+              are common everywhere. English is rare; download offline Google Translate
+              and Maps. <strong>Telkomsel</strong> is the only reliable carrier.
             </p>
           </div>
 
@@ -3921,104 +3924,142 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
         </div>
       </div>
 
-      <div class="two-col-text" style="margin-top: 48px;">
-        <div>
-          <h3>Day 1: The Crossing</h3>
-          <p>
-            Route: Luwuk Airport → Luwuk Harbor → Leme-Leme (Peleng) → Luk
-            Panenteng. We landed in Luwuk around midday, ignored the taxi touts
-            and flagged a car to the ferry terminal. Two options: the public
-            wooden boat to Leme-Leme (slow, 3-4 hours, cheap) or the fast boat
-            to Salakan (expensive, then 2 hours drive to the lake). We chose the
-            wooden boat; it departs daily around 2:00 PM-"2:00 PM" is a
-            suggestion. We sat on the roof with the locals; the sea was calm but
-            the boat is loud. We docked in Leme-Leme just before sunset; no
-            taxis-pre-arrange pickup to Luk Panenteng. 20-minute drive through
-            dense coconut plantations. Homestay: concrete room, mattress on
-            floor, mosquito net; electricity 6 PM-6 AM only; mandi style, cold
-            water. Cost: 350,000 IDR ($23 USD) including three meals.
-          </p>
+      <div class="itin-grid">
+        <!-- Day 1 -->
+        <a href="#" class="itin-medium" style="cursor: default;">
+          <div class="itin-medium__image">
+            <Image src={heroPhinisi} alt="Day 1: The Crossing" />
+            <div class="itin-medium__badge">Day 1</div>
+          </div>
+          <div class="itin-medium__content">
+            <span class="itin-medium__destination">The Crossing</span>
+            <h3 class="itin-medium__name">Luwuk to Peleng</h3>
+            <p class="itin-medium__tagline">
+              A journey by wooden boat across the strait to the remote village
+              of Leme-Leme.
+            </p>
+            <p class="itin-medium__route">Luwuk → Leme-Leme → Luk Panenteng</p>
+          </div>
+        </a>
 
-          <h3>Day 2: The Mirror Lake (Paisupok)</h3>
-          <p>
-            We woke at 5:30 AM. Paisupok Lake is a 10-minute walk from the
-            homestays; entrance 15,000 IDR. We rented a canoe (30,000 IDR) and
-            paddled to the center-dead silent, like floating on glass. By 11:00
-            AM the sun was blistering; we retreated for lunch (grilled fish and
-            kangkung-this became our diet for the week). Afternoon: scooter
-            rental (100,000 IDR) east along rough roads, fishing hamlets, and a
-            small cove (plastic waste at the high tide line).
-          </p>
+        <!-- Day 2 -->
+        <a href="#" class="itin-medium" style="cursor: default;">
+          <div class="itin-medium__image">
+            <Image src={misoolLagoon} alt="Day 2: The Mirror Lake" />
+            <div class="itin-medium__badge">Day 2</div>
+          </div>
+          <div class="itin-medium__content">
+            <span class="itin-medium__destination">Paisupok Lake</span>
+            <h3 class="itin-medium__name">The Mirror Lake</h3>
+            <p class="itin-medium__tagline">
+              Paddling across crystal-clear waters that look like glass in the
+              morning light.
+            </p>
+            <p class="itin-medium__route">Morning Canoe · Afternoon Scooter</p>
+          </div>
+        </a>
 
-          <h3>Day 3: Jellyfish and Caves</h3>
-          <p>
-            Paisubatango (stingless jellyfish lagoon) about 30 minutes
-            away-muddy path through a cocoa plantation, 15 minutes humid walk.
-            Then Paisu Pok, a freezing freshwater cave pool; we were the only
-            ones there. That evening the power didn't come on at 6 PM; the
-            generator had a mechanical issue. We ate dinner by headlamp; the
-            host brought extra tea. Power came on at 9:00 PM and the village
-            cheered.
-          </p>
+        <!-- Day 3 -->
+        <a href="#" class="itin-medium" style="cursor: default;">
+          <div class="itin-medium__image">
+            <Image src={caveDiving} alt="Day 3: Jellyfish and Caves" />
+            <div class="itin-medium__badge">Day 3</div>
+          </div>
+          <div class="itin-medium__content">
+            <span class="itin-medium__destination">Nature's Wonders</span>
+            <h3 class="itin-medium__name">Jellyfish & Caves</h3>
+            <p class="itin-medium__tagline">
+              Swimming with stingless jellyfish at Paisubatango and cooling off
+              in Paisu Pok cave.
+            </p>
+            <p class="itin-medium__route">
+              Paisubatango Lagoon · Paisu Pok Cave
+            </p>
+          </div>
+        </a>
 
-          <h3>Day 4: Moving South to Banggai Laut</h3>
-          <p>
-            Luk Panenteng → Salakan (2 hours by pre-arranged driver; the road
-            improves near the capital-Salakan has Indomarets and a traffic
-            light). Daily wooden boat from Salakan to Banggai Town departs 2:00
-            PM; 50,000 IDR per person; 3-4 hours. The crossing was rougher; we
-            crossed open water where currents meet; passengers were vomiting
-            into plastic bags. Banggai Town feels totally different-maritime,
-            dense, built to the water's edge, mosques and houses on stilts. We
-            stayed at a hotel near the harbor: AC, private bathroom with shower
-            (cold water), Wi-Fi for WhatsApp. Cost: 300,000 IDR ($20 USD).
-          </p>
+        <!-- Day 4 -->
+        <a href="#" class="itin-medium" style="cursor: default;">
+          <div class="itin-medium__image">
+            <Image src={softCoralMangrove} alt="Day 4: Moving South" />
+            <div class="itin-medium__badge">Day 4</div>
+          </div>
+          <div class="itin-medium__content">
+            <span class="itin-medium__destination">Island Transfer</span>
+            <h3 class="itin-medium__name">To Banggai Laut</h3>
+            <p class="itin-medium__tagline">
+              Crossing open waters to the maritime capital of Banggai Town, a
+              city on stilts.
+            </p>
+            <p class="itin-medium__route">
+              Luk Panenteng → Salakan → Banggai Town
+            </p>
+          </div>
+        </a>
 
-          <h3>Day 5: The Cardinal Fish & The King's Bath</h3>
-          <p>
-            We walked to the main jetty in Banggai Town and looked down between
-            the pilings-hundreds of Banggai Cardinalfish among the sea urchins
-            under the busy dock. We chartered a boat for the day (800,000 IDR):
-            Bone Baru (fine white sand, vibrant table and soft corals), Mandel
-            (saw a turtle; current was strong). Back on Banggai Island we took
-            an ojek to the King's Bath (Pemandian Raja)-freshwater spring once
-            reserved for royalty, now a public swimming hole; cool and clear but
-            concrete covered in moss and some litter. Dinner at the Night Market
-            (Pasar Malam) near the harbor: grilled fish with dabu-dabu. Best
-            meal of the trip. Cost: 40,000 IDR for a whole fish and rice.
-          </p>
+        <!-- Day 5 -->
+        <a href="#" class="itin-medium" style="cursor: default;">
+          <div class="itin-medium__image">
+            <Image src={coralReef} alt="Day 5: Cardinal Fish" />
+            <div class="itin-medium__badge">Day 5</div>
+          </div>
+          <div class="itin-medium__content">
+            <span class="itin-medium__destination">Local Treasures</span>
+            <h3 class="itin-medium__name">Cardinal Fish & King's Bath</h3>
+            <p class="itin-medium__tagline">
+              Endemic Cardinalfish under the jetty, island hopping, and a royal
+              freshwater bath.
+            </p>
+            <p class="itin-medium__route">
+              Bone Baru · Mandel · Pemandian Raja
+            </p>
+          </div>
+        </a>
 
-          <h3>Day 6: The Long Road Back</h3>
-          <p>
-            Speedboat from Banggai to Luwuk direct: 250,000 IDR per person,
-            supposedly departs 8:00 AM. Long narrow fiberglass tube, windows
-            sealed; 3.5 hours, bone-jarring. We checked into a hotel in Luwuk
-            for the night-hot shower and a predictable electrical grid.
-          </p>
-        </div>
-        <div>
-          <h3>Shorter 4-5 Day Itinerary (Highlights Only)</h3>
-          <p>
-            If you don't have a week, skip Banggai Laut and focus on Peleng.
-          </p>
-          <p>
+        <!-- Day 6 -->
+        <a href="#" class="itin-medium" style="cursor: default;">
+          <div class="itin-medium__image">
+            <Image src={wayagSunset} alt="Day 6: The Return" />
+            <div class="itin-medium__badge">Day 6</div>
+          </div>
+          <div class="itin-medium__content">
+            <span class="itin-medium__destination">Homeward Bound</span>
+            <h3 class="itin-medium__name">The Long Road Back</h3>
+            <p class="itin-medium__tagline">
+              A bone-jarring speedboat ride back to Luwuk, ending the adventure
+              with a hot shower.
+            </p>
+            <p class="itin-medium__route">Banggai Town → Luwuk (Direct)</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="highlight-box" style="margin-top: 60px;">
+        <h3 class="highlight-box__title">
+          Alternative: Shorter 4-5 Day Itinerary (Highlights Only)
+        </h3>
+        <p>If you don't have a week, skip Banggai Laut and focus on Peleng.</p>
+        <ul
+          style="margin-top: 16px; margin-left: 20px; font-size: 15px; color: var(--slate); line-height: 1.8;"
+        >
+          <li>
             <strong>Day 1:</strong> Fly to Luwuk AM. Ferry to Leme-Leme. Sleep Luk
             Panenteng.
-          </p>
-          <p>
+          </li>
+          <li>
             <strong>Day 2:</strong> Paisupok Lake (early AM). Paisubatango (Jellyfish)
             PM.
-          </p>
-          <p>
+          </li>
+          <li>
             <strong>Day 3:</strong> Island hopping around Luk Panenteng (Poco Island)
             or coastal scooter ride.
-          </p>
-          <p>
+          </li>
+          <li>
             <strong>Day 4:</strong> Morning swim. Drive to Salakan. Ferry or speedboat
             to Luwuk.
-          </p>
-          <p><strong>Day 5:</strong> Fly out.</p>
-        </div>
+          </li>
+          <li><strong>Day 5:</strong> Fly out.</li>
+        </ul>
       </div>
 
       <div class="section-footer">
@@ -4289,8 +4330,8 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
         <button class="link-toggle" id="viewMoreFaqBtn" onclick="toggleFaq()">
           <span class="link-toggle__text">SHOW MORE FAQ</span>
           <svg class="link-toggle__arrow" viewBox="0 0 24 24"
-            ><polyline points="6 9 12 15 18 9"></polyline></svg
-          >
+            ><polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
         </button>
       </div>
     </div>
@@ -4307,8 +4348,8 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
         />itinerary for Sulawesi's fragile archipelago.
       </p>
       <button class="cta-banner__button" onclick="openModal()"
-        >Plan Your Trip <span>→</span></button
-      >
+        >Plan Your Trip <span>→</span>
+      </button>
     </div>
   </section>
 
@@ -4395,82 +4436,117 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
             />
             <input type="hidden" name="destination" value="Banggai Islands" />
             <button type="submit" class="form__submit"
-              >Plan Your Voyage <span>→</span></button
-            >
+              >Plan Your Voyage <span>→</span>
+            </button>
           </form>
         </div>
       </div>
     </div>
   </main>
-  <script type="module">
+  <script>
     // Dive Sites Toggle
-    function toggleDiveSites() {
-      const moreSection = document.getElementById("diveSitesMore");
-      const btn = document.getElementById("viewMoreBtn");
+    const diveSitesBtn = document.getElementById("viewMoreBtn");
+    if (diveSitesBtn) {
+      diveSitesBtn.addEventListener("click", function () {
+        const moreSection = document.getElementById("diveSitesMore");
+        const btn = this;
 
-      if (moreSection.classList.contains("active")) {
-        moreSection.classList.remove("active");
-        btn.innerHTML =
-          '<span class="link-toggle__text">VIEW MORE DIVE SITES</span><svg class="link-toggle__arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>';
-        btn.classList.remove("link-toggle--expanded");
-      } else {
-        moreSection.classList.add("active");
-        btn.innerHTML =
-          '<span class="link-toggle__text">VIEW LESS DIVE SITES</span><svg class="link-toggle__arrow" viewBox="0 0 24 24"><polyline points="6 15 12 9 18 15"></polyline></svg>';
-        btn.classList.add("link-toggle--expanded");
-      }
+        if (moreSection.classList.contains("active")) {
+          moreSection.classList.remove("active");
+          btn.classList.remove("link-toggle--expanded");
+          btn.querySelector(".link-toggle__text").textContent =
+            "VIEW MORE HIGHLIGHTS";
+        } else {
+          moreSection.classList.add("active");
+          btn.classList.add("link-toggle--expanded");
+          btn.querySelector(".link-toggle__text").textContent =
+            "VIEW LESS HIGHLIGHTS";
+        }
+      });
     }
 
     // FAQ Toggle
-    function toggleFaq() {
-      const moreSection = document.getElementById("faqMore");
-      const btn = document.getElementById("viewMoreFaqBtn");
+    const faqBtn = document.getElementById("viewMoreFaqBtn");
+    if (faqBtn) {
+      faqBtn.addEventListener("click", function () {
+        const moreSection = document.getElementById("faqMore");
+        const btn = this; // Use specific button
 
-      if (moreSection.classList.contains("active")) {
-        moreSection.classList.remove("active");
-        btn.innerHTML =
-          '<span class="link-toggle__text">SHOW MORE FAQ</span><svg class="link-toggle__arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>';
-        btn.classList.remove("link-toggle--expanded");
-      } else {
-        moreSection.classList.add("active");
-        btn.innerHTML =
-          '<span class="link-toggle__text">SHOW LESS FAQ</span><svg class="link-toggle__arrow" viewBox="0 0 24 24"><polyline points="6 15 12 9 18 15"></polyline></svg>';
-        btn.classList.add("link-toggle--expanded");
-      }
+        if (moreSection.classList.contains("active")) {
+          moreSection.classList.remove("active");
+          btn.classList.remove("link-toggle--expanded");
+          btn.querySelector(".link-toggle__text").textContent = "SHOW MORE FAQ";
+        } else {
+          moreSection.classList.add("active");
+          btn.classList.add("link-toggle--expanded");
+          btn.querySelector(".link-toggle__text").textContent = "SHOW LESS FAQ";
+        }
+      });
     }
 
     // Modal Functions
-    function openModal() {
-      document.getElementById("formModal").classList.add("active");
-      document.body.style.overflow = "hidden";
-      setTimeout(() => {
-        const firstInput = document.querySelector('.modal input[name="name"]');
-        if (firstInput) firstInput.focus();
-      }, 400);
+    const modal = document.getElementById("formModal");
+    const openBtn = document.getElementById("openModalBtn");
+    const closeBtn = document.getElementById("closeModalBtn");
+    // const modalContent = document.querySelector(".modal"); // unused
+    const form = document.getElementById("inquiryForm");
+
+    if (openBtn && modal) {
+      openBtn.addEventListener("click", function () {
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+        setTimeout(() => {
+          const firstInput = document.querySelector(
+            '.modal input[name="name"]'
+          );
+          if (firstInput) firstInput.focus();
+        }, 400);
+      });
     }
 
-    function closeModal(event) {
-      if (event && event.target !== event.currentTarget) return;
-      document.getElementById("formModal").classList.remove("active");
-      document.body.style.overflow = "";
+    if (closeBtn && modal) {
+      closeBtn.addEventListener("click", closeModal);
+    }
+
+    if (modal) {
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+    }
+
+    function closeModal() {
+      if (modal) {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
     }
 
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") closeModal();
     });
 
-    function handleSubmit(event) {
-      event.preventDefault();
-      document.getElementById("modalContent").innerHTML = `
-        <div class="form-success">
-          <svg class="form-success__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <h3 class="form-success__title">Thank You</h3>
-          <p class="form-success__text">We'll be in touch within 24 hours with personalized recommendations for your voyage.</p>
-          <button class="form-success__close" onclick="closeModal()">Close</button>
-        </div>
-      `;
+    if (form) {
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const content = document.getElementById("modalContent");
+        if (content) {
+          content.innerHTML = `
+            <div class="form-success">
+              <svg class="form-success__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <h3 class="form-success__title">Thank You</h3>
+              <p class="form-success__text">We'll be in touch within 24 hours with personalized recommendations for your voyage.</p>
+              <button class="form-success__close" id="successCloseBtn">Close</button>
+            </div>
+          `;
+          // Re-attach close listener to new button
+          const newClose = document.getElementById("successCloseBtn");
+          if (newClose) newClose.addEventListener("click", closeModal);
+        }
+      });
     }
   </script>
 
