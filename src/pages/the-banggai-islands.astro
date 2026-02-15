@@ -1223,7 +1223,7 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
       .bio-card__latin {
         font-size: 12px;
         font-style: italic;
-        color: var(--gold-muted);
+        color: var(--silver);
         margin-bottom: 12px;
       }
 
@@ -2785,7 +2785,9 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
       src={logoSailsLight}
       alt="Indo Yachts"
       class="mobile-header__logo"
-      quality={95}
+      widths={[96, 192]}
+      sizes="75px"
+      quality={80}
     />
   </div>
   <!-- ════════════════════════════════════════════════════════════════
@@ -2799,9 +2801,9 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
           alt="The Banggai Islands, Sulawesi's fragile archipelago"
           fetchpriority="high"
           loading="eager"
-          widths={[480, 768, 1200, 1859]}
+          widths={[480, 768, 1200, 1400, 1859]}
           sizes="100vw"
-          quality={55}
+          quality={45}
         />
       </div>
       <div class="hero__overlay"></div>
@@ -2880,9 +2882,9 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
           <Image
             src={wayagAerial}
             alt={"Islands of the Banggai Archipelago, Central Sulawesi"}
-            widths={[400, 660]}
+            widths={[320, 400, 600, 660]}
             sizes="(max-width: 768px) 100vw, 50vw"
-            quality={50}
+            quality={40}
           />
           <p class="overview__image-caption">
             The Banggai Archipelago-quiet beauty and challenging logistics
@@ -2941,9 +2943,9 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
           <Image
             src={coralReef}
             alt="Coastal waters of the Banggai Islands"
-            widths={[400, 670]}
+            widths={[320, 400, 600, 670]}
             sizes="(max-width: 768px) 100vw, 50vw"
-            quality={50}
+            quality={40}
           />
         </div>
       </div>
@@ -2998,9 +3000,9 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
         <Image
           src={wayagAerial}
           alt="Lake Paisupok and the islands of Peleng"
-          width={1219}
-          height={684}
-          quality={72}
+          widths={[400, 580, 700]}
+          sizes="(max-width: 900px) 100vw, 50vw"
+          quality={55}
         />
         <div class="beyond-section__image-accent"></div>
       </div>
@@ -3013,9 +3015,9 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
       <Image
         src={heroPhinisi}
         alt="The Banggai Islands at dawn"
-        width={1859}
-        height={772}
-        quality={80}
+        widths={[768, 1200, 1400, 1859]}
+        sizes="100vw"
+        quality={65}
       />
     </div>
     <div class="expertise-hero__overlay"></div>
@@ -3161,7 +3163,13 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
       <div class="dive-grid" id="diveSitesMain">
         <div class="dive-card">
           <div class="dive-card__image">
-            <Image src={coralReef} alt="Lake Paisupok" />
+            <Image
+              src={coralReef}
+              alt="Lake Paisupok"
+              widths={[320, 400, 600]}
+              sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px"
+              quality={45}
+            />
           </div>
           <div class="dive-card__content">
             <span class="dive-card__region">Peleng · Luk Panenteng</span>
@@ -3269,7 +3277,13 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
 
         <div class="dive-card">
           <div class="dive-card__image">
-            <Image src={wayagAerial} alt="Banggai Town jetty" />
+            <Image
+              src={wayagAerial}
+              alt="Banggai Town jetty"
+              widths={[320, 400, 600]}
+              sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px"
+              quality={45}
+            />
           </div>
           <div class="dive-card__content">
             <span class="dive-card__region">Banggai Town</span>
@@ -3327,7 +3341,13 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
 
         <div class="dive-card">
           <div class="dive-card__image">
-            <Image src={heroPhinisi} alt="Salakan" />
+            <Image
+              src={heroPhinisi}
+              alt="Salakan"
+              widths={[320, 400, 600]}
+              sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px"
+              quality={45}
+            />
           </div>
           <div class="dive-card__content">
             <span class="dive-card__region">Peleng · Capital</span>
@@ -3381,7 +3401,13 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
 
         <div class="dive-card">
           <div class="dive-card__image">
-            <Image src={coralReef} alt="Luwuk" />
+            <Image
+              src={coralReef}
+              alt="Luwuk"
+              widths={[320, 400, 600]}
+              sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 400px"
+              quality={45}
+            />
           </div>
           <div class="dive-card__content">
             <span class="dive-card__region">Mainland Gateway</span>
@@ -3527,7 +3553,13 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
 
         <div class="bio-card">
           <div class="bio-card__image">
-            <Image src={coralReef} alt="Reefs Bone Baru" />
+            <Image
+              src={coralReef}
+              alt="Reefs Bone Baru"
+              widths={[140, 280, 360]}
+              sizes="(max-width: 600px) 100vw, (max-width: 900px) 140px, 180px"
+              quality={45}
+            />
           </div>
           <div class="bio-card__content">
             <h3 class="bio-card__name">Table Corals & Reefs</h3>
@@ -3989,7 +4021,13 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
 
         <div class="insider-card">
           <div class="insider-card__image">
-            <Image src={coralReef} alt="Waste" />
+            <Image
+              src={coralReef}
+              alt="Waste"
+              widths={[320, 400, 600]}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={45}
+            />
           </div>
           <div class="insider-card__content">
             <h3 class="insider-card__title">Waste</h3>
@@ -4022,7 +4060,13 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
       <div class="itin-grid">
         <div class="itin-medium">
           <div class="itin-medium__image">
-            <Image src={wayagAerial} alt="6-day Banggai loop" />
+            <Image
+              src={wayagAerial}
+              alt="6-day Banggai loop"
+              widths={[320, 400, 600]}
+              sizes="(max-width: 1000px) 100vw, 500px"
+              quality={45}
+            />
             <div class="itin-medium__badge">Full Loop</div>
             <div class="itin-medium__duration">
               <div class="itin-medium__duration-number">6</div>
@@ -4045,7 +4089,13 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
 
         <div class="itin-medium">
           <div class="itin-medium__image">
-            <Image src={coralReef} alt="4-5 day highlights" />
+            <Image
+              src={coralReef}
+              alt="4-5 day highlights"
+              widths={[320, 400, 600]}
+              sizes="(max-width: 1000px) 100vw, 500px"
+              quality={45}
+            />
             <div class="itin-medium__badge">Highlights Only</div>
             <div class="itin-medium__duration">
               <div class="itin-medium__duration-number">4-5</div>
