@@ -1,0 +1,1328 @@
+---
+import { Image } from "astro:assets";
+import logoSailsRed from "../assets/images/Indo_Yachts_Sails_Red.png";
+import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
+---
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay">
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu__main">
+            <div class="mobile-menu__header">
+                <Image
+                    src={logoSailsRed}
+                    alt="Indo Yachts"
+                    class="mobile-menu__logo"
+                    width={64}
+                    height={74}
+                    quality={95}
+                />
+                <button
+                    class="mobile-menu__close"
+                    id="mobile-menu-close"
+                    aria-label="Close menu"></button>
+            </div>
+            <div class="mobile-menu__body">
+                <button class="mobile-menu__nav-item" data-panel="yachts">
+                    <span class="mobile-menu__nav-title">Yachts</span>
+                    <span class="mobile-menu__nav-arrow">→</span>
+                </button>
+                <button class="mobile-menu__nav-item" data-panel="destinations">
+                    <span class="mobile-menu__nav-title">Destinations</span>
+                    <span class="mobile-menu__nav-arrow">→</span>
+                </button>
+                <button class="mobile-menu__nav-item" data-panel="itineraries">
+                    <span class="mobile-menu__nav-title">Itineraries</span>
+                    <span class="mobile-menu__nav-arrow">→</span>
+                </button>
+                <div class="mobile-menu__divider"></div>
+                <div class="mobile-menu__secondary">
+                    <button
+                        class="mobile-menu__secondary-item"
+                        data-panel="about"
+                    >
+                        <span class="mobile-menu__secondary-title">About</span>
+                        <span class="mobile-menu__secondary-arrow">→</span>
+                    </button>
+                    <button
+                        class="mobile-menu__secondary-item"
+                        data-panel="resources"
+                    >
+                        <span class="mobile-menu__secondary-title"
+                            >Resources</span
+                        >
+                        <span class="mobile-menu__secondary-arrow">→</span>
+                    </button>
+                    <button
+                        class="mobile-menu__secondary-item"
+                        data-panel="contact"
+                    >
+                        <span class="mobile-menu__secondary-title">Contact</span
+                        >
+                        <span class="mobile-menu__secondary-arrow">→</span>
+                    </button>
+                </div>
+            </div>
+            <div class="mobile-menu__footer">
+                <div class="mobile-menu__footer-accent"></div>
+                <div class="mobile-menu__footer-inner">
+                    <Image
+                        src={logoSailsLight}
+                        alt="Indo Yachts"
+                        class="mobile-menu__footer-logo"
+                        width={40}
+                        height={46}
+                        quality={95}
+                    />
+                    <a href="/contact/quote" class="mobile-menu__cta"
+                        >Request a Quote</a
+                    >
+                </div>
+                <div class="mobile-menu__footer-bottom"></div>
+            </div>
+        </div>
+
+        <!-- ==========================================
+       YACHTS PANEL
+       ========================================== -->
+        <div class="mobile-menu__panel" id="mm-panel-yachts">
+            <div class="mm-panel__header">
+                <div class="mm-panel__title">Yachts</div>
+            </div>
+            <div class="mm-panel__body">
+                <div class="mm-panel__tabs">
+                    <button
+                        class="mm-panel__tab active"
+                        data-mm-tab="mm-yachts-finest">Finest</button
+                    >
+                    <button
+                        class="mm-panel__tab"
+                        data-mm-tab="mm-yachts-families">Families</button
+                    >
+                    <button
+                        class="mm-panel__tab"
+                        data-mm-tab="mm-yachts-couples">Small Groups</button
+                    >
+                    <button
+                        class="mm-panel__tab"
+                        data-mm-tab="mm-yachts-expedition">Expedition</button
+                    >
+                    <button
+                        class="mm-panel__tab"
+                        data-mm-tab="mm-yachts-resorts">Resort Brands</button
+                    >
+                </div>
+                <div class="mm-panel__tab-content active" id="mm-yachts-finest">
+                    <div class="mm-panel__featured-label">
+                        Indonesia's Finest
+                    </div>
+                    <a href="/yachts/dunia-baru" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Dunia Baru</div>
+                        <div class="mm-panel__item-meta">
+                            50m · 14 guests · From $140k/week
+                        </div>
+                    </a>
+                    <a href="/yachts/vela" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Vela</div>
+                        <div class="mm-panel__item-meta">
+                            50m · 12 guests · From $119k/week
+                        </div>
+                    </a>
+                    <a href="/yachts/si-datu-bua" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Si Datu Bua</div>
+                        <div class="mm-panel__item-meta">
+                            40m · 8 guests · From $87k/week
+                        </div>
+                    </a>
+                    <a href="/yachts/silolona" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Silolona</div>
+                        <div class="mm-panel__item-meta">
+                            50m · 10 guests · From $130k/week
+                        </div>
+                    </a>
+                    <a href="/yachts/lamima" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Lamima</div>
+                        <div class="mm-panel__item-meta">
+                            65m · 14 guests · From $160k/week
+                        </div>
+                    </a>
+                </div>
+                <div class="mm-panel__tab-content" id="mm-yachts-families">
+                    <div class="mm-panel__featured-label">Family Charters</div>
+                    <a href="/yachts/celestia" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Celestia</div>
+                        <div class="mm-panel__item-meta">
+                            40m · 12 guests · From $110k/week
+                        </div>
+                    </a>
+                    <a href="/yachts/rebel" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Rebel</div>
+                        <div class="mm-panel__item-meta">
+                            32m · 10 guests · From $90k/week
+                        </div>
+                    </a>
+                    <a href="/yachts/rascal" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Rascal</div>
+                        <div class="mm-panel__item-meta">
+                            32m · 10 guests · From $80k/week
+                        </div>
+                    </a>
+                    <a href="/yachts/el-aleph" class="mm-panel__item">
+                        <div class="mm-panel__item-name">El Aleph</div>
+                        <div class="mm-panel__item-meta">
+                            40m · 10 guests · From $70k/week
+                        </div>
+                    </a>
+                </div>
+                <div class="mm-panel__tab-content" id="mm-yachts-couples">
+                    <div class="mm-panel__featured-label">
+                        Couples & Small Groups
+                    </div>
+                    <a href="/yachts/the-oracle" class="mm-panel__item">
+                        <div class="mm-panel__item-name">The Oracle</div>
+                        <div class="mm-panel__item-meta">
+                            36m · 6 guests · From $60k/week
+                        </div>
+                    </a>
+                    <a href="/yachts/senja" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Senja</div>
+                        <div class="mm-panel__item-meta">
+                            32m · 4 guests · From $45k/week
+                        </div>
+                    </a>
+                    <a href="/yachts/dewata" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Dewata</div>
+                        <div class="mm-panel__item-meta">
+                            32m · 6 guests · From $35k/week
+                        </div>
+                    </a>
+                    <a href="/yachts/nataraja" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Nataraja</div>
+                        <div class="mm-panel__item-meta">
+                            32m · 6 guests · From $35k/week
+                        </div>
+                    </a>
+                </div>
+                <div class="mm-panel__tab-content" id="mm-yachts-expedition">
+                    <div class="mm-panel__featured-label">
+                        Expedition & Adventure
+                    </div>
+                    <a href="/yachts/kudanil-explorer" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Kudanil Explorer</div>
+                        <div class="mm-panel__item-meta">
+                            50m · 16 guests · From $160k/week
+                        </div>
+                    </a>
+                    <a href="/yachts/the-seven-seas" class="mm-panel__item">
+                        <div class="mm-panel__item-name">The Seven Seas</div>
+                        <div class="mm-panel__item-meta">
+                            40m · 16 guests · From $70k/week
+                        </div>
+                    </a>
+                    <a href="/yachts/fenides" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Fenides</div>
+                        <div class="mm-panel__item-meta">
+                            40m · 10 guests · From $70k/week
+                        </div>
+                    </a>
+                    <a href="/yachts/siloina" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Siloina</div>
+                        <div class="mm-panel__item-meta">
+                            40m · 10 guests · From $70k/week
+                        </div>
+                    </a>
+                </div>
+                <div class="mm-panel__tab-content" id="mm-yachts-resorts">
+                    <div class="mm-panel__featured-label">Resort Brands</div>
+                    <a href="/yachts/amandira" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Amandira</div>
+                        <div class="mm-panel__item-meta">
+                            50m · 10 guests · From $130k/week
+                        </div>
+                    </a>
+                    <a href="/yachts/alila-purnama" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Alila Purnama</div>
+                        <div class="mm-panel__item-meta">
+                            50m · 10 guests · From $110k/week
+                        </div>
+                    </a>
+                    <a href="/yachts/aqua-blu" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Aqua Blu</div>
+                        <div class="mm-panel__item-meta">
+                            65m · 30 guests · From $260k/week
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="mm-panel__footer">
+                <a href="/yachts" class="mm-panel__footer-cta"
+                    >View All Yachts</a
+                >
+                <button class="mm-panel__footer-back" data-mm-back>
+                    <svg
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        ><path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Menu
+                </button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+       DESTINATIONS PANEL
+       ========================================== -->
+        <div class="mobile-menu__panel" id="mm-panel-destinations">
+            <div class="mm-panel__header">
+                <div class="mm-panel__title">Destinations</div>
+            </div>
+            <div class="mm-panel__body">
+                <div class="mm-panel__tabs">
+                    <button
+                        class="mm-panel__tab active"
+                        data-mm-tab="mm-dest-westpapua">West Papua</button
+                    >
+                    <button class="mm-panel__tab" data-mm-tab="mm-dest-komodo"
+                        >Komodo</button
+                    >
+                    <button class="mm-panel__tab" data-mm-tab="mm-dest-surf"
+                        >Surf</button
+                    >
+                    <button class="mm-panel__tab" data-mm-tab="mm-dest-sulawesi"
+                        >Sulawesi</button
+                    >
+                    <button class="mm-panel__tab" data-mm-tab="mm-dest-spice"
+                        >Spice Route</button
+                    >
+                </div>
+                <div
+                    class="mm-panel__tab-content active"
+                    id="mm-dest-westpapua"
+                >
+                    <div class="mm-panel__featured-label">
+                        West Papua & Bird's Head
+                    </div>
+                    <a href="/destinations/raja-ampat" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Raja Ampat</div>
+                        <div class="mm-panel__item-meta">
+                            Oct – Apr · Crown jewel of marine biodiversity
+                        </div>
+                    </a>
+                    <a
+                        href="/destinations/cenderawasih-bay"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">Cenderawasih Bay</div>
+                        <div class="mm-panel__item-meta">
+                            Year-round · Whale shark encounters
+                        </div>
+                    </a>
+                    <a href="/destinations/triton-bay" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Triton Bay</div>
+                        <div class="mm-panel__item-meta">
+                            Oct – Apr · True wilderness diving
+                        </div>
+                    </a>
+                </div>
+                <div class="mm-panel__tab-content" id="mm-dest-komodo">
+                    <div class="mm-panel__featured-label">
+                        Komodo & Lesser Sundas
+                    </div>
+                    <a href="/destinations/komodo" class="mm-panel__item">
+                        <div class="mm-panel__item-name">
+                            Komodo National Park
+                        </div>
+                        <div class="mm-panel__item-meta">
+                            Apr – Nov · Dragons, mantas, pink beaches
+                        </div>
+                    </a>
+                    <a href="/destinations/alor" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Alor Archipelago</div>
+                        <div class="mm-panel__item-meta">
+                            Apr – Nov · Traditional cultures, pristine reefs
+                        </div>
+                    </a>
+                    <a href="/destinations/bali-lombok" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Bali & Lombok</div>
+                        <div class="mm-panel__item-meta">
+                            Year-round · Gateway islands
+                        </div>
+                    </a>
+                    <a href="/destinations/moyo" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Moyo Island</div>
+                        <div class="mm-panel__item-meta">
+                            Apr – Nov · Secluded luxury
+                        </div>
+                    </a>
+                </div>
+                <div class="mm-panel__tab-content" id="mm-dest-surf">
+                    <div class="mm-panel__featured-label">The Endless Wave</div>
+                    <a href="/destinations/mentawai" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Mentawai Islands</div>
+                        <div class="mm-panel__item-meta">
+                            Apr – Oct · World's most consistent waves
+                        </div>
+                    </a>
+                    <a href="/destinations/telo" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Telo Islands</div>
+                        <div class="mm-panel__item-meta">
+                            Apr – Oct · Mentawai quality, uncrowded
+                        </div>
+                    </a>
+                    <a href="/destinations/sumba" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Sumba</div>
+                        <div class="mm-panel__item-meta">
+                            Apr – Oct · Empty lineups, raw power
+                        </div>
+                    </a>
+                    <a href="/destinations/rote-savu" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Rote & Savu</div>
+                        <div class="mm-panel__item-meta">
+                            Apr – Oct · Indonesia's southernmost waves
+                        </div>
+                    </a>
+                </div>
+                <div class="mm-panel__tab-content" id="mm-dest-sulawesi">
+                    <div class="mm-panel__featured-label">Sulawesi</div>
+                    <a
+                        href="/destinations/bunaken-lembeh"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">Bunaken & Lembeh</div>
+                        <div class="mm-panel__item-meta">
+                            Year-round · Wall diving meets macro magic
+                        </div>
+                    </a>
+                    <a href="/destinations/wakatobi" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Wakatobi</div>
+                        <div class="mm-panel__item-meta">
+                            Year-round · Indonesia's finest protected reefs
+                        </div>
+                    </a>
+                    <a href="/destinations/banggai" class="mm-panel__item">
+                        <div class="mm-panel__item-name">Banggai Islands</div>
+                        <div class="mm-panel__item-meta">
+                            Year-round · Famous Banggai cardinalfish
+                        </div>
+                    </a>
+                </div>
+                <div class="mm-panel__tab-content" id="mm-dest-spice">
+                    <div class="mm-panel__featured-label">The Spice Route</div>
+                    <a
+                        href="/destinations/spice-islands"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">The Spice Islands</div>
+                        <div class="mm-panel__item-meta">
+                            Sep – Nov · Where empires clashed for nutmeg
+                        </div>
+                    </a>
+                    <a
+                        href="/destinations/banda-islands"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">Banda Islands</div>
+                        <div class="mm-panel__item-meta">
+                            Sep – Nov · Historic heart of the spice trade
+                        </div>
+                    </a>
+                    <a
+                        href="/destinations/forgotten-islands"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">
+                            The Forgotten Islands
+                        </div>
+                        <div class="mm-panel__item-meta">
+                            Sep – Nov · Ultimate expedition territory
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="mm-panel__footer">
+                <a href="/destinations" class="mm-panel__footer-cta"
+                    >View All Destinations</a
+                >
+                <button class="mm-panel__footer-back" data-mm-back>
+                    <svg
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        ><path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Menu
+                </button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+       ITINERARIES PANEL
+       ========================================== -->
+        <div class="mobile-menu__panel" id="mm-panel-itineraries">
+            <div class="mm-panel__header">
+                <div class="mm-panel__title">Itineraries</div>
+            </div>
+            <div class="mm-panel__body">
+                <div class="mm-panel__tabs">
+                    <button
+                        class="mm-panel__tab active"
+                        data-mm-tab="mm-itin-featured">Featured</button
+                    >
+                    <button class="mm-panel__tab" data-mm-tab="mm-itin-diving"
+                        >Diving</button
+                    >
+                    <button class="mm-panel__tab" data-mm-tab="mm-itin-families"
+                        >Families</button
+                    >
+                    <button
+                        class="mm-panel__tab"
+                        data-mm-tab="mm-itin-whalesharks">Whale Sharks</button
+                    >
+                    <button class="mm-panel__tab" data-mm-tab="mm-itin-surfing"
+                        >Surfing</button
+                    >
+                    <button
+                        class="mm-panel__tab"
+                        data-mm-tab="mm-itin-expedition">Expedition</button
+                    >
+                </div>
+                <div class="mm-panel__tab-content active" id="mm-itin-featured">
+                    <div class="mm-panel__featured-label">Featured Voyages</div>
+                    <a href="/itineraries/last-paradise" class="mm-panel__item">
+                        <div class="mm-panel__item-name">The Last Paradise</div>
+                        <div class="mm-panel__item-meta">
+                            Raja Ampat · 7 nights
+                        </div>
+                    </a>
+                    <a
+                        href="/itineraries/ultimate-family-adventure"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">
+                            Ultimate Family Adventure
+                        </div>
+                        <div class="mm-panel__item-meta">
+                            Raja Ampat · 10 nights
+                        </div>
+                    </a>
+                    <a
+                        href="/itineraries/land-of-dragons"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">
+                            To The Land of Dragons
+                        </div>
+                        <div class="mm-panel__item-meta">
+                            Bali → Komodo · 10 nights
+                        </div>
+                    </a>
+                </div>
+                <div class="mm-panel__tab-content" id="mm-itin-diving">
+                    <div class="mm-panel__featured-label">Dive Trips</div>
+                    <a
+                        href="/itineraries/dive-ultramarine"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">Dive Ultramarine</div>
+                        <div class="mm-panel__item-meta">
+                            Raja Ampat · 10 nights
+                        </div>
+                    </a>
+                    <a
+                        href="/itineraries/crossing-wallace-line"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">
+                            Crossing the Wallace Line
+                        </div>
+                        <div class="mm-panel__item-meta">
+                            Bali → Komodo → Bali · 10 nights
+                        </div>
+                    </a>
+                    <a
+                        href="/itineraries/eastern-expedition"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">
+                            Eastern Expedition
+                        </div>
+                        <div class="mm-panel__item-meta">
+                            Komodo → Alor · 10 nights
+                        </div>
+                    </a>
+                </div>
+                <div class="mm-panel__tab-content" id="mm-itin-families">
+                    <div class="mm-panel__featured-label">
+                        Family Adventures
+                    </div>
+                    <a
+                        href="/itineraries/ultimate-family-adventure"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">
+                            Ultimate Family Adventure
+                        </div>
+                        <div class="mm-panel__item-meta">
+                            Raja Ampat · 10 nights
+                        </div>
+                    </a>
+                    <a
+                        href="/itineraries/land-of-dragons"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">
+                            To The Land of Dragons
+                        </div>
+                        <div class="mm-panel__item-meta">
+                            Bali → Komodo · 10 nights
+                        </div>
+                    </a>
+                    <a
+                        href="/itineraries/starter-charter"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">Starter Charter</div>
+                        <div class="mm-panel__item-meta">Komodo · 3 nights</div>
+                    </a>
+                </div>
+                <div class="mm-panel__tab-content" id="mm-itin-whalesharks">
+                    <div class="mm-panel__featured-label">
+                        Whale Shark Encounters
+                    </div>
+                    <a
+                        href="/itineraries/whale-shark-experience"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">
+                            Private Whale Shark Experience
+                        </div>
+                        <div class="mm-panel__item-meta">
+                            Cenderawasih Bay · 7 nights
+                        </div>
+                    </a>
+                    <a
+                        href="/itineraries/whale-sharks-west-papua"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">
+                            Whale Sharks in West Papua
+                        </div>
+                        <div class="mm-panel__item-meta">
+                            Raja Ampat + Triton · 12 nights
+                        </div>
+                    </a>
+                </div>
+                <div class="mm-panel__tab-content" id="mm-itin-surfing">
+                    <div class="mm-panel__featured-label">
+                        Private Surf Charters
+                    </div>
+                    <a href="/itineraries/surf-safari" class="mm-panel__item">
+                        <div class="mm-panel__item-name">
+                            Private Surf Safari
+                        </div>
+                        <div class="mm-panel__item-meta">
+                            Bali → Sumbawa · 10 nights
+                        </div>
+                    </a>
+                    <a
+                        href="/itineraries/nihi-sumba-expedition"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">
+                            Nihi Sumba Expedition
+                        </div>
+                        <div class="mm-panel__item-meta">
+                            Bali → Sumba · 7 nights
+                        </div>
+                    </a>
+                </div>
+                <div class="mm-panel__tab-content" id="mm-itin-expedition">
+                    <div class="mm-panel__featured-label">
+                        Expedition Voyages
+                    </div>
+                    <a
+                        href="/itineraries/explorers-bucket-list"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">
+                            The Explorer's Bucket List
+                        </div>
+                        <div class="mm-panel__item-meta">
+                            Timika → Ambon · 13 nights
+                        </div>
+                    </a>
+                    <a
+                        href="/itineraries/extended-spice-route"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">
+                            Extended Spice Route
+                        </div>
+                        <div class="mm-panel__item-meta">
+                            Ambon → Maumere · 12 nights
+                        </div>
+                    </a>
+                    <a
+                        href="/itineraries/eastern-expedition"
+                        class="mm-panel__item"
+                    >
+                        <div class="mm-panel__item-name">
+                            Eastern Expedition
+                        </div>
+                        <div class="mm-panel__item-meta">
+                            Komodo → Alor · 10 nights
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="mm-panel__footer">
+                <a href="/itineraries" class="mm-panel__footer-cta"
+                    >View All Itineraries</a
+                >
+                <button class="mm-panel__footer-back" data-mm-back>
+                    <svg
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        ><path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Menu
+                </button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+       ABOUT PANEL
+       ========================================== -->
+        <div class="mobile-menu__panel" id="mm-panel-about">
+            <div class="mm-panel__header">
+                <div class="mm-panel__title">About</div>
+            </div>
+            <div class="mm-panel__body">
+                <div class="mm-panel__simple">
+                    <a href="/about/services" class="mm-panel__simple-item">
+                        <span class="mm-panel__simple-name">Our Services</span>
+                    </a>
+                    <a href="/about/story" class="mm-panel__simple-item">
+                        <span class="mm-panel__simple-name">Our Story</span>
+                    </a>
+                    <a
+                        href="/about/testimonials"
+                        class="mm-panel__simple-item last"
+                    >
+                        <span class="mm-panel__simple-name"
+                            >Testimonials & Press</span
+                        >
+                    </a>
+                </div>
+            </div>
+            <div class="mm-panel__footer">
+                <a href="/about" class="mm-panel__footer-cta">Read About Us</a>
+                <button class="mm-panel__footer-back" data-mm-back>
+                    <svg
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        ><path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Menu
+                </button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+       RESOURCES PANEL
+       ========================================== -->
+        <div class="mobile-menu__panel" id="mm-panel-resources">
+            <div class="mm-panel__header">
+                <div class="mm-panel__title">Resources</div>
+            </div>
+            <div class="mm-panel__body">
+                <div class="mm-panel__simple">
+                    <a
+                        href="/resources/practical-guides"
+                        class="mm-panel__simple-item"
+                    >
+                        <span class="mm-panel__simple-name"
+                            >Practical Guides</span
+                        >
+                    </a>
+                    <a
+                        href="/resources/knowledge-base"
+                        class="mm-panel__simple-item"
+                    >
+                        <span class="mm-panel__simple-name">Knowledge Base</span
+                        >
+                    </a>
+                    <a
+                        href="/resources/stories-news"
+                        class="mm-panel__simple-item last"
+                    >
+                        <span class="mm-panel__simple-name">Stories & News</span
+                        >
+                    </a>
+                </div>
+            </div>
+            <div class="mm-panel__footer">
+                <a href="/resources" class="mm-panel__footer-cta"
+                    >All Resources</a
+                >
+                <button class="mm-panel__footer-back" data-mm-back>
+                    <svg
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        ><path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Menu
+                </button>
+            </div>
+        </div>
+
+        <!-- ==========================================
+       CONTACT PANEL
+       ========================================== -->
+        <div class="mobile-menu__panel" id="mm-panel-contact">
+            <div class="mm-panel__header">
+                <div class="mm-panel__title">Contact</div>
+            </div>
+            <div class="mm-panel__body">
+                <div class="mm-panel__simple">
+                    <a href="/contact/message" class="mm-panel__simple-item">
+                        <span class="mm-panel__simple-name">Send a Message</span
+                        >
+                    </a>
+                    <a href="/contact/quote" class="mm-panel__simple-item">
+                        <span class="mm-panel__simple-name"
+                            >Request a Quote</span
+                        >
+                    </a>
+                    <a
+                        href="/contact/preferences"
+                        class="mm-panel__simple-item last"
+                    >
+                        <span class="mm-panel__simple-name"
+                            >Fill in Charter Preferences</span
+                        >
+                    </a>
+                </div>
+            </div>
+            <div class="mm-panel__footer">
+                <a href="/contact" class="mm-panel__footer-cta">Contact Page</a>
+                <button class="mm-panel__footer-back" data-mm-back>
+                    <svg
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        ><path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Menu
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* ==========================================
+     MOBILE MENU OVERLAY
+     ========================================== */
+    .mobile-menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+        background: white;
+        overflow: hidden;
+    }
+    .mobile-menu-overlay.open {
+        display: block;
+    }
+
+    /* ==========================================
+     MENU BASE
+     ========================================== */
+    .mobile-menu {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+    }
+    .mobile-menu__main {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .mobile-menu.panel-open .mobile-menu__main {
+        transform: translateX(-100%);
+    }
+    .mobile-menu__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 24px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    .mobile-menu__logo {
+        height: 32px;
+        width: auto;
+    }
+    .mobile-menu__close {
+        width: 24px;
+        height: 24px;
+        position: relative;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    .mobile-menu__close::before,
+    .mobile-menu__close::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 18px;
+        height: 1px;
+        background: #999;
+    }
+    .mobile-menu__close::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .mobile-menu__close::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    .mobile-menu__body {
+        flex: 1;
+        overflow-y: auto;
+        padding: 12px 0;
+    }
+    .mobile-menu__nav-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 24px;
+        background: none;
+        border: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .mobile-menu__nav-item:hover {
+        background: var(--snow, #fafafa);
+    }
+    .mobile-menu__nav-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 28px;
+        font-weight: 400;
+        color: var(--text-primary, #0a1628);
+    }
+    .mobile-menu__nav-arrow {
+        font-size: 18px;
+        color: #ccc;
+        transition: transform 0.2s, color 0.2s;
+    }
+    .mobile-menu__nav-item:hover .mobile-menu__nav-arrow {
+        transform: translateX(4px);
+        color: var(--oxblood, #953334);
+    }
+    .mobile-menu__divider {
+        height: 1px;
+        background: rgba(0, 0, 0, 0.06);
+        margin: 8px 24px;
+    }
+    .mobile-menu__secondary {
+        padding: 0 24px 12px;
+    }
+    .mobile-menu__secondary-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+        background: none;
+        border: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+    .mobile-menu__secondary-item:last-child {
+        border-bottom: none;
+    }
+    .mobile-menu__secondary-title {
+        font-size: 15px;
+        font-weight: 400;
+        color: var(--text-primary, #0a1628);
+        opacity: 0.6;
+        transition: opacity 0.2s;
+    }
+    .mobile-menu__secondary-item:hover .mobile-menu__secondary-title {
+        opacity: 1;
+    }
+    .mobile-menu__secondary-arrow {
+        font-size: 14px;
+        color: #ccc;
+        transition: transform 0.2s, color 0.2s;
+    }
+    .mobile-menu__secondary-item:hover .mobile-menu__secondary-arrow {
+        transform: translateX(3px);
+        color: var(--oxblood, #953334);
+    }
+    .mobile-menu__footer {
+        background: var(--deep-sea, #0a1628);
+        position: relative;
+    }
+    .mobile-menu__footer-accent {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        height: 32px;
+        background: var(--oxblood, #953334);
+    }
+    .mobile-menu__footer-inner {
+        padding: 56px 24px 28px;
+        text-align: center;
+    }
+    .mobile-menu__footer-logo {
+        height: 20px;
+        width: auto;
+        opacity: 0.9;
+        margin-bottom: 24px;
+    }
+    .mobile-menu__cta {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: white;
+        background: var(--oxblood, #953334);
+        padding: 16px 24px;
+        text-decoration: none;
+        transition: background 0.2s;
+    }
+    .mobile-menu__cta:hover {
+        background: #7a2a2b;
+    }
+    .mobile-menu__footer-bottom {
+        height: 2px;
+        background: var(--oxblood, #953334);
+    }
+
+    /* ==========================================
+     PANEL STYLES
+     ========================================== */
+    .mobile-menu__panel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        transform: translateX(100%);
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        z-index: 10;
+    }
+    .mobile-menu__panel.active {
+        transform: translateX(0);
+    }
+    .mm-panel__header {
+        padding: 18px 24px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    .mm-panel__title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 24px;
+        font-weight: 400;
+        color: var(--text-primary, #0a1628);
+    }
+    .mm-panel__body {
+        flex: 1;
+        overflow-y: auto;
+    }
+    .mm-panel__tabs {
+        display: flex;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        padding: 0 24px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .mm-panel__tabs::-webkit-scrollbar {
+        display: none;
+    }
+    .mm-panel__tab {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #aaaaaa;
+        padding: 16px 14px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        white-space: nowrap;
+        position: relative;
+        transition: color 0.2s;
+    }
+    .mm-panel__tab:first-child {
+        padding-left: 0;
+    }
+    .mm-panel__tab:hover {
+        color: var(--text-primary, #0a1628);
+    }
+    .mm-panel__tab.active {
+        color: var(--text-primary, #0a1628);
+    }
+    .mm-panel__tab.active::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--oxblood, #953334);
+    }
+    .mm-panel__tab:first-child.active::after {
+        left: 0;
+    }
+
+    /* Tab Content */
+    .mm-panel__tab-content {
+        display: none;
+        padding: 20px 24px;
+    }
+    .mm-panel__tab-content.active {
+        display: block;
+    }
+    .mm-panel__featured-label {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--oxblood, #953334);
+        margin-bottom: 16px;
+    }
+    .mm-panel__item {
+        display: block;
+        text-decoration: none;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        transition: transform 0.2s;
+    }
+    .mm-panel__item:last-child {
+        border-bottom: none;
+    }
+    .mm-panel__item:hover {
+        transform: translateX(4px);
+    }
+    .mm-panel__item-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 20px;
+        color: var(--text-primary, #0a1628);
+        transition: color 0.2s;
+        margin-bottom: 2px;
+    }
+    .mm-panel__item:hover .mm-panel__item-name {
+        color: var(--oxblood, #953334);
+    }
+    .mm-panel__item-meta {
+        font-size: 12px;
+        color: #aaaaaa;
+    }
+
+    /* Simple Panel Section */
+    .mm-panel__simple {
+        padding: 24px;
+    }
+    .mm-panel__simple-item {
+        display: block;
+        padding: 18px 0;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        transition: transform 0.2s;
+    }
+    .mm-panel__simple-item:hover {
+        transform: translateX(4px);
+    }
+    .mm-panel__simple-item.last {
+        border-bottom: none;
+    }
+    .mm-panel__simple-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 22px;
+        color: var(--text-primary, #0a1628);
+        transition: color 0.2s;
+    }
+    .mm-panel__simple-item:hover .mm-panel__simple-name {
+        color: var(--oxblood, #953334);
+    }
+
+    /* Panel Footer */
+    .mm-panel__footer {
+        background: var(--snow, #fafafa);
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    .mm-panel__footer-cta {
+        display: block;
+        text-align: center;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: white;
+        background: var(--oxblood, #953334);
+        text-decoration: none;
+        padding: 18px 24px;
+        margin: 16px 24px;
+        transition: background 0.2s;
+    }
+    .mm-panel__footer-cta:hover {
+        background: #7a2a2b;
+    }
+    .mm-panel__footer-back {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        padding: 18px 24px 34px;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        color: rgba(255, 255, 255, 0.7);
+        background: var(--deep-sea, #0a1628);
+        border: none;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+    .mm-panel__footer-back:hover {
+        color: white;
+    }
+    .mm-panel__footer-back svg {
+        width: 16px;
+        height: 16px;
+    }
+</style>
+
+<script is:inline>
+    (function () {
+        var mobileMenu = document.getElementById("mobile-menu");
+        var overlay = document.getElementById("mobile-menu-overlay");
+        var closeBtn = document.getElementById("mobile-menu-close");
+
+        // Close menu
+        if (closeBtn) {
+            closeBtn.addEventListener("click", function () {
+                if (overlay) {
+                    overlay.classList.remove("open");
+                    document.body.style.overflow = "";
+                }
+            });
+        }
+
+        // Open panel
+        var navItems = document.querySelectorAll(
+            ".mobile-menu__nav-item[data-panel], .mobile-menu__secondary-item[data-panel]"
+        );
+        for (var i = 0; i < navItems.length; i++) {
+            navItems[i].addEventListener("click", function () {
+                var panelName = this.getAttribute("data-panel");
+                var panel = document.getElementById("mm-panel-" + panelName);
+                if (mobileMenu && panel) {
+                    // Close any currently active panels first
+                    var activePanels = mobileMenu.querySelectorAll(
+                        ".mobile-menu__panel.active"
+                    );
+                    for (var j = 0; j < activePanels.length; j++) {
+                        activePanels[j].classList.remove("active");
+                    }
+                    mobileMenu.classList.add("panel-open");
+                    panel.classList.add("active");
+                }
+            });
+        }
+
+        // Close panel (back buttons)
+        var backBtns = document.querySelectorAll("[data-mm-back]");
+        for (var i = 0; i < backBtns.length; i++) {
+            backBtns[i].addEventListener("click", function () {
+                if (mobileMenu) {
+                    mobileMenu.classList.remove("panel-open");
+                    var panels = mobileMenu.querySelectorAll(
+                        ".mobile-menu__panel"
+                    );
+                    for (var j = 0; j < panels.length; j++) {
+                        panels[j].classList.remove("active");
+                    }
+                }
+            });
+        }
+
+        // Tab switching functionality
+        var tabs = document.querySelectorAll(".mm-panel__tab");
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].addEventListener("click", function () {
+                var tabId = this.getAttribute("data-mm-tab");
+                var panel = this.closest(".mobile-menu__panel");
+
+                // Remove active from all tabs in this panel
+                var panelTabs = panel.querySelectorAll(".mm-panel__tab");
+                for (var j = 0; j < panelTabs.length; j++) {
+                    panelTabs[j].classList.remove("active");
+                }
+
+                // Hide all tab content in this panel
+                var contents = panel.querySelectorAll(".mm-panel__tab-content");
+                for (var j = 0; j < contents.length; j++) {
+                    contents[j].classList.remove("active");
+                }
+
+                // Activate clicked tab
+                this.classList.add("active");
+
+                // Show corresponding content
+                var content = document.getElementById(tabId);
+                if (content) {
+                    content.classList.add("active");
+                }
+            });
+        }
+    })();
+</script>

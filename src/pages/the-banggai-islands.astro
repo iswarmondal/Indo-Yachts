@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import MobileMenu from "../components/MobileMenu.astro";
 import BaseHead from "../components/BaseHead.astro";
 import { Image } from "astro:assets";
 import heroPhinisi from "../assets/images/hero-phinisi.jpg";
@@ -14,6 +15,7 @@ import softCoralMangrove from "../assets/images/soft-coral-mangrove.jpg";
 import karstTurquoise from "../assets/images/karst-turquoise.jpg";
 import splitShot from "../assets/images/split-shot.jpg";
 import duniaBaru from "../assets/images/dunia-baru.jpg";
+import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
 ---
 
 <!DOCTYPE html>
@@ -2653,10 +2655,83 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
           margin-top: 12px;
         }
       }
+
+      /* ════════════════════════════════════════════════════════════════
+       MOBILE HEADER BAR (hamburger + logo)
+       ════════════════════════════════════════════════════════════════ */
+      .mobile-header {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .mobile-header {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 40;
+          padding: 22px 24px;
+        }
+        .mobile-header__hamburger {
+          position: absolute;
+          left: 24px;
+          top: 50%;
+          transform: translateY(-50%);
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 8px;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        }
+        .mobile-header__hamburger span {
+          display: block;
+          width: 24px;
+          height: 2px;
+          background: white;
+          border-radius: 1px;
+        }
+        .mobile-header__logo {
+          height: 32px;
+          width: auto;
+        }
+      }
+
+      @media (max-width: 768px) {
+        :global(.header) {
+          display: none !important;
+        }
+      }
     </style>
   </head>
 
   <Header />
+  <MobileMenu />
+
+  <!-- Mobile Header Bar (hamburger + logo) -->
+  <div class="mobile-header">
+    <button
+      class="mobile-header__hamburger"
+      id="mobile-hamburger-btn"
+      aria-label="Open menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <Image
+      src={logoSailsLight}
+      alt="Indo Yachts"
+      class="mobile-header__logo"
+      width={64}
+      height={74}
+      quality={95}
+    />
+  </div>
   <!-- ════════════════════════════════════════════════════════════════
        HERO - CONCEPT B EDITORIAL FRAME
        ════════════════════════════════════════════════════════════════ -->
@@ -4454,6 +4529,20 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
         }
       });
     }
+  </script>
+
+  <!-- Mobile Menu Hamburger Trigger -->
+  <script is:inline>
+    (function () {
+      var hamburgerBtn = document.getElementById("mobile-hamburger-btn");
+      var mobileOverlay = document.getElementById("mobile-menu-overlay");
+      if (hamburgerBtn && mobileOverlay) {
+        hamburgerBtn.addEventListener("click", function () {
+          mobileOverlay.classList.add("open");
+          document.body.style.overflow = "hidden";
+        });
+      }
+    })();
   </script>
 
 
