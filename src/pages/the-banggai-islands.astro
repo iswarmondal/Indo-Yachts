@@ -18,7 +18,7 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
 import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta
@@ -40,7 +40,7 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
         --charcoal: #1a1a1a;
         --slate: #4a4a4a;
         --silver: #6c6b6b;
-        --gold-muted: #B8A878;
+        --gold-muted: #b8a878;
         --peak: #2d6a4f;
         --shoulder: #96681a;
       }
@@ -96,7 +96,8 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
       .hero__overlay {
         position: absolute;
         inset: 0;
-        background: linear-gradient(
+        background:
+          linear-gradient(
             to bottom,
             rgba(10, 22, 40, 0.5) 0%,
             rgba(10, 22, 40, 0.2) 15%,
@@ -411,13 +412,17 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
         overflow: hidden;
         position: relative;
         text-decoration: none;
-        box-shadow: 0 4px 6px rgba(10, 22, 40, 0.03),
+        box-shadow:
+          0 4px 6px rgba(10, 22, 40, 0.03),
           0 12px 24px rgba(10, 22, 40, 0.06);
-        transition: box-shadow 0.4s ease, transform 0.4s ease;
+        transition:
+          box-shadow 0.4s ease,
+          transform 0.4s ease;
       }
 
       .itin-medium:hover {
-        box-shadow: 0 8px 12px rgba(10, 22, 40, 0.04),
+        box-shadow:
+          0 8px 12px rgba(10, 22, 40, 0.04),
           0 20px 40px rgba(10, 22, 40, 0.08);
         transform: translateY(-4px);
       }
@@ -1032,7 +1037,9 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
         background: var(--white);
         overflow: hidden;
         box-shadow: 0 4px 20px rgba(10, 22, 40, 0.06);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
       }
 
       .dive-card:hover {
@@ -1810,13 +1817,17 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
         overflow: hidden;
         position: relative;
         text-decoration: none;
-        box-shadow: 0 4px 6px rgba(10, 22, 40, 0.03),
+        box-shadow:
+          0 4px 6px rgba(10, 22, 40, 0.03),
           0 12px 24px rgba(10, 22, 40, 0.06);
-        transition: box-shadow 0.4s ease, transform 0.4s ease;
+        transition:
+          box-shadow 0.4s ease,
+          transform 0.4s ease;
       }
 
       .itin-medium:hover {
-        box-shadow: 0 8px 12px rgba(10, 22, 40, 0.04),
+        box-shadow:
+          0 8px 12px rgba(10, 22, 40, 0.04),
           0 20px 40px rgba(10, 22, 40, 0.08);
         transform: translateY(-4px);
       }
@@ -2416,7 +2427,9 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
         padding: 24px;
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
+        transition:
+          opacity 0.3s ease,
+          visibility 0.3s ease;
       }
 
       .modal-overlay.active {
@@ -2433,7 +2446,9 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
         position: relative;
         transform: translateY(20px);
         opacity: 0;
-        transition: transform 0.4s ease, opacity 0.4s ease;
+        transition:
+          transform 0.4s ease,
+          opacity 0.4s ease;
         box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
       }
 
@@ -2756,8 +2771,6 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
       src={logoSailsLight}
       alt="Indo Yachts"
       class="mobile-header__logo"
-      width={64}
-      height={74}
       quality={95}
     />
   </div>
@@ -2774,7 +2787,7 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
           loading="eager"
           widths={[480, 768, 1200, 1859]}
           sizes="100vw"
-          quality={70}
+          quality={55}
         />
       </div>
       <div class="hero__overlay"></div>
@@ -2855,7 +2868,7 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
             alt={"Islands of the Banggai Archipelago, Central Sulawesi"}
             widths={[400, 660]}
             sizes="(max-width: 768px) 100vw, 50vw"
-            quality={60}
+            quality={50}
           />
           <p class="overview__image-caption">
             The Banggai Archipelago-quiet beauty and challenging logistics
@@ -2899,8 +2912,7 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
           <p>
             <strong>Access:</strong> There is no airport on the islands. The gateway
             is <strong>Luwuk (LWK)</strong> on the Sulawesi mainland. Fly into Luwuk
-            (via Makassar), taxi to the harbor, and ferry across to Leme-Leme on
-            Peleng.
+            (via Makassar), taxi to the harbor, and ferry across to Leme-Leme on Peleng.
           </p>
 
           <p>
@@ -2917,7 +2929,7 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
             alt="Coastal waters of the Banggai Islands"
             widths={[400, 670]}
             sizes="(max-width: 768px) 100vw, 50vw"
-            quality={60}
+            quality={50}
           />
         </div>
       </div>
@@ -2942,11 +2954,10 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
           tide often brings plastic waste-a heartbreaking reality here.
         </p>
         <p>
-          Nearby <strong>Paisubatango</strong> is a lagoon filled with stingless
-          jellyfish. A farmer guides you through cocoa trees to find it. Don't wear
-          sunscreen. Also check out <strong>Paisu Pok</strong>, a chilly cave
-          pool. Back at the homestay, expect erratic power and dinner by
-          headlamp.
+          Nearby <strong>Paisubatango</strong> is a lagoon filled with stingless jellyfish.
+          A farmer guides you through cocoa trees to find it. Don't wear sunscreen.
+          Also check out <strong>Paisu Pok</strong>, a chilly cave pool. Back at
+          the homestay, expect erratic power and dinner by headlamp.
         </p>
         <div class="beyond-section__highlights">
           <div class="beyond-section__highlight">
