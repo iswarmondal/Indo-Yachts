@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import BaseHead from "../components/BaseHead.astro";
 import SmoothScroll from "../components/SmoothScroll.astro";
+import LuxuryInteractions from "../components/LuxuryInteractions.astro";
 import { Image } from "astro:assets";
 import heroPhinisi from "../assets/images/hero-phinisi.jpg";
 import wayagAerial from "../assets/images/wayag-aerial.jpg";
@@ -103,12 +104,69 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
       .hero__image {
         position: absolute;
         inset: 0;
+        will-change: transform;
       }
 
       .hero__image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transform: scale(1.06);
+      }
+
+      @keyframes heroReveal {
+        from {
+          opacity: 0;
+          transform: translate3d(0, 22px, 0);
+        }
+        to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .hero__eyebrow,
+        .hero__title,
+        .hero__tagline,
+        .hero__scroll {
+          opacity: 0;
+          animation: heroReveal 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .hero__eyebrow {
+          animation-delay: 0.25s;
+        }
+
+        .hero__title {
+          animation-delay: 0.42s;
+        }
+
+        .hero__tagline {
+          animation-delay: 0.58s;
+        }
+
+        .hero__scroll {
+          animation-delay: 0.75s;
+        }
+
+        .info-footer__item {
+          opacity: 0;
+          animation: heroReveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .info-footer__item:nth-child(1) {
+          animation-delay: 0.85s;
+        }
+        .info-footer__item:nth-child(2) {
+          animation-delay: 0.95s;
+        }
+        .info-footer__item:nth-child(3) {
+          animation-delay: 1.05s;
+        }
+        .info-footer__item:nth-child(4) {
+          animation-delay: 1.15s;
+        }
       }
 
       .hero__overlay {
@@ -135,6 +193,7 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
         left: 8%;
         right: 8%;
         z-index: 2;
+        will-change: opacity, transform;
       }
 
       .hero__eyebrow {
@@ -1248,87 +1307,222 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
       }
 
       /* ════════════════════════════════════════════════════════════════
-       BIODIVERSITY — Horizontal Cards
+       BIODIVERSITY — Editorial species list
        ════════════════════════════════════════════════════════════════ */
       .bio-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        max-width: 1120px;
+        margin: 0 auto;
+        counter-reset: bio-index;
       }
 
       .bio-card {
-        display: flex;
-        background: var(--ivory);
-        overflow: hidden;
-        border: 1px solid var(--sand);
-        transition: border-color 0.3s ease;
+        counter-increment: bio-index;
+        display: grid;
+        grid-template-columns: minmax(260px, 0.92fr) minmax(0, 1.08fr);
+        gap: 56px;
+        align-items: center;
+        padding: 52px 0;
+        border-bottom: 1px solid var(--sand);
+        background: transparent;
+        position: relative;
+        transition: border-color 0.4s ease;
+      }
+
+      .bio-card:first-child {
+        padding-top: 8px;
+      }
+
+      .bio-card:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .bio-card::before {
+        content: counter(bio-index, decimal-leading-zero);
+        position: absolute;
+        top: 52px;
+        left: 0;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0.22em;
+        color: var(--gold-muted);
+        opacity: 0.55;
+      }
+
+      .bio-card:nth-child(even) {
+        grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.92fr);
+      }
+
+      .bio-card:nth-child(even)::before {
+        left: auto;
+        right: 0;
+      }
+
+      .bio-card:nth-child(even) .bio-card__image {
+        order: 2;
+      }
+
+      .bio-card:nth-child(even) .bio-card__content {
+        order: 1;
+        text-align: right;
+        align-items: flex-end;
       }
 
       .bio-card:hover {
-        border-color: var(--border-gold);
+        border-color: var(--linen);
       }
 
       .bio-card__image {
-        width: 180px;
+        width: 100%;
+        aspect-ratio: 5 / 4;
         flex-shrink: 0;
         overflow: hidden;
+        position: relative;
+        border: 1px solid var(--sand);
+        background: var(--ivory);
+      }
+
+      .bio-card__image::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        right: -10px;
+        width: 56px;
+        height: 56px;
+        border: 1px solid var(--gold-muted);
+        opacity: 0.28;
+        pointer-events: none;
+        z-index: 1;
+        transition: opacity 0.4s ease;
+      }
+
+      .bio-card:nth-child(even) .bio-card__image::after {
+        right: auto;
+        left: -10px;
+      }
+
+      .bio-card:hover .bio-card__image::after {
+        opacity: 0.45;
       }
 
       .bio-card__image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.6s ease;
+        transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
       }
 
       .bio-card:hover .bio-card__image img {
-        transform: scale(1.05);
+        transform: scale(1.04);
       }
 
       .bio-card__content {
-        padding: 28px;
+        padding: 8px 0 8px 36px;
         display: flex;
         flex-direction: column;
         justify-content: center;
       }
 
+      .bio-card:nth-child(even) .bio-card__content {
+        padding: 8px 36px 8px 0;
+      }
+
       .bio-card__name {
         font-family: "Cormorant Garamond", serif;
-        font-size: 24px;
-        font-weight: 400;
+        font-size: clamp(26px, 2.8vw, 34px);
+        font-weight: 300;
         color: var(--deep-sea);
-        margin-bottom: 4px;
+        margin-bottom: 8px;
+        line-height: 1.15;
+        letter-spacing: 0.01em;
+      }
+
+      .bio-card__name::after {
+        content: "";
+        display: block;
+        width: 36px;
+        height: 1px;
+        margin-top: 14px;
+        background: var(--gold-muted);
+        opacity: 0.4;
+      }
+
+      .bio-card:nth-child(even) .bio-card__name::after {
+        margin-left: auto;
       }
 
       .bio-card__latin {
-        font-size: 12px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 14px;
         font-style: italic;
+        font-weight: 300;
         color: var(--gold-muted);
-        margin-bottom: 12px;
+        margin-bottom: 18px;
+        letter-spacing: 0.02em;
       }
 
       .bio-card__desc {
-        font-size: 13px;
-        line-height: 1.7;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.85;
         color: var(--slate);
+        max-width: 38ch;
+      }
+
+      .bio-card:first-child {
+        grid-template-columns: minmax(300px, 1fr) minmax(0, 1fr);
+        gap: 64px;
+        padding-bottom: 60px;
+      }
+
+      .bio-card:first-child .bio-card__image {
+        aspect-ratio: 16 / 11;
+      }
+
+      .bio-card:first-child .bio-card__name {
+        font-size: clamp(30px, 3.2vw, 40px);
       }
 
       @media (max-width: 900px) {
-        .bio-grid {
+        .bio-card,
+        .bio-card:nth-child(even),
+        .bio-card:first-child {
           grid-template-columns: 1fr;
+          gap: 28px;
+          padding: 40px 0;
         }
-        .bio-card__image {
-          width: 140px;
-        }
-      }
 
-      @media (max-width: 600px) {
-        .bio-card {
-          flex-direction: column;
+        .bio-card::before,
+        .bio-card:nth-child(even)::before {
+          position: static;
+          display: block;
+          margin-bottom: 4px;
+          opacity: 0.7;
         }
-        .bio-card__image {
-          width: 100%;
-          aspect-ratio: 16/9;
+
+        .bio-card:nth-child(even) .bio-card__image,
+        .bio-card:nth-child(even) .bio-card__content {
+          order: unset;
+          text-align: left;
+          align-items: flex-start;
+        }
+
+        .bio-card__content,
+        .bio-card:nth-child(even) .bio-card__content {
+          padding: 0;
+        }
+
+        .bio-card__image::after,
+        .bio-card:nth-child(even) .bio-card__image::after {
+          display: none;
+        }
+
+        .bio-card__desc {
+          max-width: none;
         }
       }
 
@@ -4620,5 +4814,6 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
       }
     </script>
     <SmoothScroll />
+    <LuxuryInteractions />
   </body>
 </html>
