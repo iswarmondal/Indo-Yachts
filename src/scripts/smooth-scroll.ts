@@ -18,8 +18,7 @@ export function initSmoothScroll() {
   }
 
   const lenis = new Lenis({
-    duration: 1.35,
-    easing: easeInOutCubic,
+    lerp: 0.1,
     wheelMultiplier: 0.68,
     touchMultiplier: 1.1,
     syncTouch: true,
@@ -33,6 +32,8 @@ export function initSmoothScroll() {
     },
     anchors: {
       offset: 96,
+      duration: 1.35,
+      easing: easeInOutCubic,
     },
   });
 
