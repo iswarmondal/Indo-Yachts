@@ -1,4 +1,5 @@
 ---
+import MobileMenu from "./MobileMenu.astro";
 import { Image } from "astro:assets";
 import duniaBaruInRajaAmpat from "../assets/images/Dunia_Baru_in_Raja_Ampat.jpg";
 import vela3 from "../assets/images/Vela-3.jpg";
@@ -12,7 +13,18 @@ import logoSailsRed from "../assets/images/Indo_Yachts_Sails_Red.png";
 
 <header class="header header-dark" id="header">
   <div class="header-inner">
-    <nav>
+    <button
+      class="header-hamburger"
+      id="header-hamburger-btn"
+      type="button"
+      aria-label="Open menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-left">
       <!-- YACHTS DROPDOWN -->
       <div class="dropdown-trigger">
         <a href="#" class="nav-link">Yachts</a>
@@ -401,6 +413,8 @@ import logoSailsRed from "../assets/images/Indo_Yachts_Sails_Red.png";
   </div>
 </header>
 
+<MobileMenu />
+
 <script type="module">
   // Header scroll behavior — deferred until after load to improve LCP (Lighthouse)
   function initHeaderScroll() {
@@ -410,8 +424,12 @@ import logoSailsRed from "../assets/images/Indo_Yachts_Sails_Red.png";
     let isHeaderHidden = false;
     const scrollThreshold = 100;
 
+    function getScrollY() {
+      return window.lenis ? window.lenis.scroll : window.scrollY;
+    }
+
     function updateHeader() {
-      const currentScrollY = window.scrollY;
+      const currentScrollY = getScrollY();
       const scrollingDown = currentScrollY > lastScrollY;
       const scrollingUp = currentScrollY < lastScrollY;
 
@@ -444,12 +462,17 @@ import logoSailsRed from "../assets/images/Indo_Yachts_Sails_Red.png";
     }
     window.addEventListener("scroll", onScroll, { passive: true });
     requestAnimationFrame(() => {
-      lastScrollY = window.scrollY;
+      lastScrollY = getScrollY();
       updateHeader();
     });
   }
-  if (document.readyState === "complete") setTimeout(initHeaderScroll, 0);
-  else window.addEventListener("load", initHeaderScroll);
+
+  function initHeader() {
+    initHeaderScroll();
+  }
+
+  if (document.readyState === "complete") setTimeout(initHeader, 0);
+  else window.addEventListener("load", initHeader);
 </script>
 
 <style>
@@ -782,5 +805,50 @@ import logoSailsRed from "../assets/images/Indo_Yachts_Sails_Red.png";
 
   .header .nav-right .nav-link {
     padding: 12px 16px;
+  }
+
+  .header-hamburger {
+    display: none;
+    position: relative;
+    z-index: 2;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .header-hamburger span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: white;
+    border-radius: 1px;
+    transition: background 0.3s ease;
+  }
+
+  .header.header-light .header-hamburger span {
+    background: var(--deep-sea);
+  }
+
+  @media (max-width: 900px) {
+    .header .nav-left,
+    .header .nav-right {
+      display: none;
+    }
+
+    .header-hamburger {
+      display: flex;
+    }
+
+    .header .header-inner {
+      height: 72px;
+      padding: 0 20px;
+    }
+
+    .header .logo {
+      height: 34px;
+    }
   }
 </style>

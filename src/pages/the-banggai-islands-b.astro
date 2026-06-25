@@ -2,6 +2,7 @@
 import Header from "../components/Header-b.astro";
 import MobileMenu from "../components/MobileMenu.astro";
 import BaseHead from "../components/BaseHead.astro";
+import SmoothScroll from "../components/SmoothScroll.astro";
 import { Image } from "astro:assets";
 import heroPhinisi from "../assets/images/hero-phinisi.jpg";
 import wayagAerial from "../assets/images/wayag-aerial.jpg";
@@ -59,7 +60,6 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
       html {
         font-size: 16px;
         -webkit-font-smoothing: antialiased;
-        scroll-behavior: smooth;
       }
       body {
         font-family: "Manrope", sans-serif;
@@ -4755,22 +4755,5 @@ import logoSailsLight from "../assets/images/Indo_Yachts_Sails_Light.png";
     }
   </script>
 
-  <script is:inline>
-    (function () {
-      function initHamburger() {
-        var hamburgerBtn = document.getElementById("mobile-hamburger-btn");
-        var mobileOverlay = document.getElementById("mobile-menu-overlay");
-        if (hamburgerBtn && mobileOverlay) {
-          hamburgerBtn.addEventListener("click", function () {
-            mobileOverlay.classList.add("open");
-            document.body.style.overflow = "hidden";
-          });
-        }
-      }
-      if (document.readyState === "complete") setTimeout(initHamburger, 0);
-      else window.addEventListener("load", initHamburger);
-    })();
-  </script>
-
-
+  <SmoothScroll />
 </html>
