@@ -35,10 +35,15 @@ const { luxury = false } = Astro.props;
   }
 </style>
 
-<script define:vars={{ luxury }}>
+<div id="smooth-scroll-config" data-luxury={luxury ? "true" : "false"} style="display: none;"></div>
+
+<script>
   import { deferIdle } from "../scripts/defer-idle";
 
   deferIdle(async () => {
+    const configEl = document.getElementById("smooth-scroll-config");
+    const luxury = configEl?.getAttribute("data-luxury") === "true";
+
     const { initSmoothScroll } = await import("../scripts/smooth-scroll");
     initSmoothScroll();
 
