@@ -2973,6 +2973,8 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
               src={heroPhinisi}
               alt="Luxury phinisi yacht anchored among the karst islands of Raja Ampat"
               priority
+              widths={[480, 800, 1200, 1600, heroPhinisi.width]}
+              sizes="(max-width: 480px) 480px, (max-width: 800px) 800px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, 100vw"
             />
           </div>
           <div class="hero__overlay"></div>
@@ -3068,6 +3070,8 @@ import duniaBaru from "../assets/images/dunia-baru.jpg";
                 <Image
                   src={wayagAerial}
                   alt="Aerial view of Wayag Islands' iconic karst limestone formations in Raja Ampat"
+                  widths={[480, 800, 1200, wayagAerial.width]}
+                  sizes="(max-width: 480px) 480px, (max-width: 800px) 800px, (max-width: 1200px) 1200px, 100vw"
                 />
               </div>
               <span class="overview__image-accent" aria-hidden="true"></span>
