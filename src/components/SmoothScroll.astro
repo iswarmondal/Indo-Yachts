@@ -39,18 +39,16 @@ const { luxury = false } = Astro.props;
 
 <script>
   import { deferIdle } from "../scripts/defer-idle";
+  import { initSmoothScroll } from "../scripts/smooth-scroll";
+  import { initLuxuryInteractions } from "../scripts/luxury-interactions";
 
-  deferIdle(async () => {
+  deferIdle(() => {
     const configEl = document.getElementById("smooth-scroll-config");
     const luxury = configEl?.getAttribute("data-luxury") === "true";
 
-    const { initSmoothScroll } = await import("../scripts/smooth-scroll");
     initSmoothScroll();
 
     if (luxury) {
-      const { initLuxuryInteractions } = await import(
-        "../scripts/luxury-interactions"
-      );
       initLuxuryInteractions();
     }
   });
