@@ -38,48 +38,18 @@ const { luxury = false } = Astro.props;
 <div id="smooth-scroll-config" data-luxury={luxury ? "true" : "false"} style="display: none;"></div>
 
 <script>
-  // Enhancement scripts (lenis smooth-scroll + luxury interactions) are pure
-  // post-interaction polish: smooth scroll, cursor follower, scroll-reveal and
-  // parallax only matter once the user scrolls or moves the pointer. Loading
-  // them on the first interaction keeps lenis/interactions off the initial
-  // navigation critical-request chain (Lighthouse) with no loss of behavior.
-  const configEl = document.getElementById("smooth-scroll-config");
-  const luxury = configEl?.getAttribute("data-luxury") === "true";
+  import { deferIdle } from "../scripts/defer-idle";
 
-  const TRIGGERS = [
-    "wheel",
-    "touchstart",
-    "pointermove",
-    "keydown",
-    "scroll",
-  ] as const;
+  deferIdle(async () => {
+    const configEl = document.getElementById("smooth-scroll-config");
+    const luxury = configEl?.getAttribute("data-luxury") === "true";
 
-  let loaded = false;
+    const { initSmoothScroll } = await import("../scripts/smooth-scroll");
+    initSmoothScroll();
 
-  async function loadEnhancements() {
-    if (loaded) return;
-    loaded = true;
-    for (const event of TRIGGERS) {
-      window.removeEventListener(event, loadEnhancements);
+    if (luxury) {
+      const { initLuxuryInteractions } = await import("../scripts/luxury-interactions");
+      initLuxuryInteractions();
     }
-
-    // Fetch both chunks in parallel (no network chain) but init smooth-scroll
-    // first so window.lenis exists before parallax hooks into it.
-    const smoothScrollModule = import("../scripts/smooth-scroll");
-    const luxuryModule = luxury
-      ? import("../scripts/luxury-interactions")
-      : null;
-
-    (await smoothScrollModule).initSmoothScroll();
-    if (luxuryModule) {
-      (await luxuryModule).initLuxuryInteractions();
-    }
-  }
-
-  for (const event of TRIGGERS) {
-    window.addEventListener(event, loadEnhancements, {
-      once: true,
-      passive: true,
-    });
-  }
+  });
 </script>
